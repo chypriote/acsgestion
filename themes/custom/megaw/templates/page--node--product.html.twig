@@ -1,0 +1,34 @@
+{% include theme_path ~ "/templates/header.html.twig" %}
+
+<!-- end Header -->
+<div class="cleared"></div>
+<!-- BEGIN CONTENT -->
+<div id="body" >
+    <div class="wrap-column">
+        <div class="page-entry woocommerce-single-product">
+            <div class="page-entry-body">
+                <div class="page-entry-content content">
+                    <div id="container">
+                        <div id="content" role="main">
+                         
+                                {% if page.content %}
+                                    {{ page.content }}
+                                {% endif %}   
+
+                        </div>
+                    </div>
+                </div>
+                <div class="cleared"></div>
+            </div>
+        </div>
+    </div>
+    {% if page.section %}
+        {{ page.section }}
+    {% endif %} 
+</div>
+
+
+
+
+{% include theme_path ~ "/templates/footer.html.twig" %}               
+

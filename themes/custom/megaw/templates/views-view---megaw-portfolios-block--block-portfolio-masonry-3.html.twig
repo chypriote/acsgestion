@@ -1,0 +1,35 @@
+{% if header %}
+    {{ header }}
+{% endif %}
+
+{% for row in rows %}
+    <div class="wrap-column">
+        <div class="content-column1">
+            <div class="widget-entry">
+                <div class="column1"> </div>
+                <div class="portfolio-container-style-3">
+                    <div class="portfolio-masonry">
+                        {{ row }}
+
+                    </div>
+                    <div class="cleared"></div>
+
+                    {% if pager %}
+                        <div class="wrap">
+                            <div class="paginate paginate-portfolio">
+                                {{ pager }}
+                            </div>
+                        </div>
+                    {% endif %}
+
+
+                    <div class="cleared"></div>
+                    <div class="cleared"></div>
+                </div>
+            </div>
+            <div class="cleared"></div>
+        </div>
+    </div>
+    <!-- end wrap-column no-wrap --> 
+{% endfor %}
+

@@ -1,0 +1,78 @@
+{% include theme_path ~ "/templates/header.html.twig" %}
+{% set term_machine_name = current_term.vid.value.0.target_id %}
+
+    {% if term_machine_name == 'blog_categories' or term_machine_name == 'tags'%}
+        <div class="cleared"></div>
+        <!-- BEGIN CONTENT -->
+        <div id="body" class="content-page blog-template-standard padding-top">
+            <div class="wrap">
+
+                <div class="big-column left taxonomy-line-left">
+                    {% if page.content %}
+                        {{ page.content }}
+                    {% endif %}
+                    <div class="cleared"></div>
+                </div>
+                <div class="small-column right">
+                    {% if page.sidebar %}
+                        {{ page.sidebar }}
+                    {% endif %} 
+                </div>
+                <div class="cleared"></div>
+            </div>
+            {% if page.section %}
+                {{ page.section }}
+            {% endif %} 
+
+        </div>
+    {% elseif term_machine_name == 'portfolios_categories' %}	
+        <div id="body" class="content-page">
+            <div class="full-column">
+                <div class="wrap-column">
+                    <div class="portfolio-cell-container">
+                        {% if page.content %}
+                            {{ page.content }}
+                            <div class="cleared"></div>
+                        {% endif %} 
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% elseif term_machine_name == 'product_tags' or term_machine_name == 'catalog'%}
+
+        {% if page.content %}
+            <div id="body">
+                <div id="content-section1" class="content-section black-text white-bg top-spacing-medium bottom-spacing-medium title-spacing-medium align-center " style="">
+
+                    <div class="wrap-column">
+                        <div class="content-column1">
+                            <div class="widget-entry">
+                                <div class="column1"> 
+
+                                </div>
+                                <div class="column1">
+                                    <div class="woocommerce columns-3">
+                                        <ul class="products">
+                                            {{ page.content }}
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cleared"></div>
+                            </div>
+                            <!-- end widget entry --> </div>
+                        <div class="cleared"></div>
+                    </div>
+                    <!-- end wrap-column no-wrap --> 
+
+                </div>
+                <!-- end content section --> 
+
+            </div>
+        {% endif %} 
+
+    {% else %}
+    {% endif %}
+
+
+    {% include theme_path ~ "/templates/footer.html.twig" %}

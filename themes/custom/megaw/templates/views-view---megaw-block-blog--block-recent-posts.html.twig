@@ -1,0 +1,31 @@
+
+
+{% for row in rows %}
+    <div class="wrap-column">
+        <div class="content-column3_2">
+            <div class="widget-entry">
+                <div class="column1">
+                    {% if header %}
+                        {{ header }}
+                    {% endif %}
+                    <div class="timeline-container">
+                        {{ row }}
+                    </div>
+                </div>
+                <div class="cleared"></div>
+                <div class="cleared"></div>
+            </div>
+        </div>
+        {% if footer %}
+            <div class="content-column3_1">
+                {{ footer }}                 
+            </div>
+        {% endif %}
+        <div class="cleared"></div>
+
+    </div>
+
+{% endfor %}
+
+
+

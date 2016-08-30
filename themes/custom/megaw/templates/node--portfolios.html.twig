@@ -1,0 +1,207 @@
+{#{kint(content)}#}
+{%if node.field_image.0.entity.uri.value %}
+    {% set oneimage = node.field_image.0.entity.uri.value %}
+{% endif %}
+    
+{% if node.field_portfolios_style.0.value %}
+    {% set portfolios_style = node.field_portfolios_style.0.value %}
+{% endif%}
+{% if portfolios_style =="" %}
+    {% set portfolios_style = 'right' %}
+{% endif%}
+    
+{% if node.field_post_format.0.value %}
+    {% set post_format = node.field_post_format.0.value %}
+{% endif%}
+{% if post_format =='' %}
+    {% set post_format = 'image' %}
+{% endif%}
+    {#{kint(node)}#}
+{% if not page %}
+<div class="column3_1 ">
+    <div class="portfolio-cell ">
+        <div class="portfolio-cell-thumb">
+            <div class="portfolio-cell-bg"></div>
+            <a class="portfolio-cell-view" href="{{url}}"><i class="pe-7s-search"></i></a> <a href="{{ url }}">{% if img_uri_400 %} <img src="{{ img_uri_400 }}" class="attachment-wope-thumb-grid-portfolio size-wope-thumb-grid-portfolio" alt="{{node.getTitle()|t}}" /> {% endif %}</a> </div>
+        <div class="portfolio-cell-data">
+            <div class="portfolio-cell-title"> <a href="{{ url }}">{{node.getTitle()|t}}</a> </div>
+            <div class="portfolio-cell-categories">{{content.field_portfolios_categories}}</div>
+        </div>
+    </div>
+</div>
+{% else %}{# portfolios single #}
+{% if portfolios_style == 'left'%}
+    <div class="wrap">
+    <div class="full-column">
+        <div class="portfolio-single-container portfolio-single-left">
+            <div class="portfolio-big-column portfolio-content left">
+                <div class="portfolio-single-media">
+                    {%if post_format == 'video' and node.field_video_embed.0.value%}
+                    <div class="vimeo-container">
+                        {{ content.field_video_embed}}
+                    </div>
+                    {% elseif (node.field_image.0.value and node.field_image|length ==1 or post_format =='image') %}
+                         <img src="{{ file_url(oneimage) }}" class="attachment-post-thumbnail size-post-thumbnail " alt="{{node.field_image.0.alt}}" /> 
+                    {% elseif node.field_image.0.value and node.field_image|length >1 %}
+
+                        {% if post_format =='image_list'%}
+                            <div class="portfolio-single-media">
+                            {% for img in node.field_image %}
+                                <div class="image-list-each"> <img alt="{{img.entity.alt}}" src="{{ file_url(img.entity.uri.value) }}" /> </div>
+                            {% endfor %}
+                            </div>
+                        {% elseif post_format =='image_slider'%}
+                            <div class="portfolio-flexslider">
+                            <div class="flexslider">
+                            <ul class="slides">
+                            {% for img in img_uri_720_625 %}
+                                <li> <img alt="{{title}}" src="{{ img }}" /> </li>
+                            {% endfor %}
+                            </ul>
+                            </div>
+                            </div>
+                        {% else %}             
+                             <img src="{{ file_url(oneimage) }}" class="attachment-post-thumbnail size-post-thumbnail " alt="{{node.field_image.0.alt}}" /> 
+                        {% endif %}
+                 
+                    {% endif %}
+                        
+                   
+                </div>
+            </div>
+            <div class="portfolio-small-column right">
+                <div class="portfolio-single-data">
+                    <div class="portfolio-single-content content">
+                    {{content.body}}  
+                    </div>
+                    <div class="portfolio-single-meta">
+                        <div class="portfolio-single-detail-entry"> <span class="portfolio-single-detail-name">Owner : </span> <span class="portfolio-single-detail-content">{{content.field_owner}}</span> </div>
+                        <div class="portfolio-single-detail-entry"> <span class="portfolio-single-detail-name">Version : </span> <span class="portfolio-single-detail-content">{{content.field_version}}</span> </div>
+                        <div class="portfolio-single-detail-entry"> <span class="portfolio-single-detail-name">Categories : </span> <span class="portfolio-single-detail-content">{{content.field_portfolios_categories}}</span> </div>
+                        <div class="portfolio-single-share"> <span class="portfolio-single-detail-name">share :</span> <span class="portfolio-single-detail-content"> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=640');
+                                return false;" class="post-share facebook-share" href="http://www.facebook.com/sharer/sharer.php?u={{ base_root ~ url}}"><i class="fa fa-facebook"></i></a> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=640');
+                                return false;" class="post-share twitter-share" href="https://twitter.com/share?url=chairs/&text={{ base_root ~ url}}"><i class="fa fa-twitter"></i> </a> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=340,width=640');
+                                return false;" class="post-share google-share" href="https://plus.google.com/share?url={{ base_root ~ url}}"><i class="fa fa-google-plus"></i> </a> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=640,width=750');
+                                return false;" class="post-share pinterest-share" href="http://pinterest.com/pin/create/link/?url={{ base_root ~ url}}"><i class="fa fa-pinterest"></i> </a> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=210,width=640');
+                                return false;" class="post-share linkedin-share" href="https://www.linkedin.com/cws/share?url={{ base_root ~ url}}"><i class="fa fa-linkedin"></i> </a> </span> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cleared"></div>
+        </div>
+    </div>
+</div>
+{% elseif portfolios_style=='right'%}
+    <div class="wrap">
+    <div class="full-column">
+        <div class="portfolio-single-container portfolio-single-right">
+            <div class="portfolio-big-column portfolio-content right">
+                <div class="portfolio-single-media">
+                      {%if post_format == 'video' and node.field_video_embed.0.value%}
+                    <div class="vimeo-container">
+                        {{ content.field_video_embed}}
+                    </div>
+                    {% elseif (node.field_image.0.value and node.field_image|length ==1 or post_format =='image') %}
+                         <img src="{{ file_url(oneimage) }}" class="attachment-post-thumbnail size-post-thumbnail " alt="{{node.field_image.0.alt}}" /> 
+                    {% elseif node.field_image.0.value and node.field_image|length >1 %}
+
+                        {% if post_format =='image_list'%}
+                            <div class="portfolio-single-media">
+                            {% for img in node.field_image %}
+                                <div class="image-list-each"> <img alt="{{img.entity.alt}}" src="{{ file_url(img.entity.uri.value) }}" /> </div>
+                            {% endfor %}
+                            </div>
+                        {% elseif post_format =='image_slider'%}
+                            <div class="portfolio-flexslider">
+                            <div class="flexslider">
+                            <ul class="slides">
+                            {% for img in img_uri_720_625 %}
+                                <li> <img alt="{{title}}" src="{{ img }}" /> </li>
+                            {% endfor %}
+                            </ul>
+                            </div>
+                            </div>
+                        {% else %}
+                           
+                             <img src="{{ file_url(oneimage) }}" class="attachment-post-thumbnail size-post-thumbnail " alt="{{node.field_image.0.alt}}" /> 
+                        {% endif %}
+                 
+                    {% endif %}
+                        
+                </div>
+            </div>
+            <div class="portfolio-small-column left">
+                <div class="portfolio-single-data">
+                    <div class="portfolio-single-content content">
+                   {{content.body}}
+                    </div>
+                    <div class="portfolio-single-meta">
+                        <div class="portfolio-single-detail-entry"> <span class="portfolio-single-detail-name">{{'Owner : '|t}}</span> <span class="portfolio-single-detail-content">{{content.field_owner}}</span> </div>
+                        <div class="portfolio-single-detail-entry"> <span class="portfolio-single-detail-name">{{'Version : '|t}}</span> <span class="portfolio-single-detail-content">{{content.field_version}}</span> </div>
+                        <div class="portfolio-single-detail-entry"> <span class="portfolio-single-detail-name">{{'Categories : '|t}}</span> <span class="portfolio-single-detail-content">{{content.field_portfolios_categories}}</span> </div>
+                        <div class="portfolio-single-share"> <span class="portfolio-single-detail-name">{{'share :'|t}}</span> <span class="portfolio-single-detail-content"> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=640');
+                                return false;" class="post-share facebook-share" href="http://www.facebook.com/sharer/sharer.php?u={{base_root ~ url}}"><i class="fa fa-facebook"></i></a> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=640');
+                                return false;" class="post-share twitter-share" href="https://twitter.com/share?url=clock/&text={{base_root ~ url}}"><i class="fa fa-twitter"></i> </a> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=340,width=640');
+                                return false;" class="post-share google-share" href="https://plus.google.com/share?url={{base_root ~ url}}/"><i class="fa fa-google-plus"></i> </a> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=640,width=750');
+                                return false;" class="post-share pinterest-share" href="http://pinterest.com/pin/create/link/?url={{base_root ~ url}}"><i class="fa fa-pinterest"></i> </a> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=210,width=640');
+                                return false;" class="post-share linkedin-share" href="https://www.linkedin.com/cws/share?url={{base_root ~ url}}"><i class="fa fa-linkedin"></i> </a> </span> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cleared"></div>
+        </div>
+    </div>
+</div>
+{% else %}
+    <div class="wrap">
+    <div class="full-column">
+        <div class="portfolio-single-container portfolio-single-center">
+            <div class="portfolio-big-column top">
+                <div class="portfolio-single-media">            
+                           
+                             <img src="{{ file_url(oneimage) }}" class="attachment-post-thumbnail size-post-thumbnail " alt="{{node.field_image.0.alt}}" /> 
+  
+                </div>
+            </div>
+            <div class="portfolio-small-column bottom">
+                <div class="portfolio-single-data">
+                    <div class="portfolio-single-content content">
+                   {{content.body}}
+                    </div>
+                    <div class="portfolio-single-meta">
+                        <div class="portfolio-single-detail-entry"> <span class="portfolio-single-detail-name">{{'Owner :'|t}} </span> <span class="portfolio-single-detail-content">{{content.field_owner}}</span> </div>
+                        <div class="portfolio-single-detail-entry"> <span class="portfolio-single-detail-name">{{'Version :'|t}} </span> <span class="portfolio-single-detail-content">{{content.field_version}}</span> </div>
+                        <div class="portfolio-single-detail-entry"> <span class="portfolio-single-detail-name">{{'Categories :'|t}} </span> <span class="portfolio-single-detail-content">{{content.field_portfolios_categories}}</span> </div>
+                        <div class="portfolio-single-share"> <span class="portfolio-single-detail-name">{{'share :'|t}}</span> <span class="portfolio-single-detail-content"> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=640');
+                                return false;" class="post-share facebook-share" href="http://www.facebook.com/sharer/sharer.php?u={{base_root ~ url}}"><i class="fa fa-facebook"></i></a> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=640');
+                                return false;" class="post-share twitter-share" href="https://twitter.com/share?url={{base_root ~ url}}&text={{title}}"><i class="fa fa-twitter"></i> </a> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=340,width=640');
+                                return false;" class="post-share google-share" href="https://plus.google.com/share?url={{base_root ~ url}}"><i class="fa fa-google-plus"></i> </a> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=640,width=750');
+                                return false;" class="post-share pinterest-share" href="http://pinterest.com/pin/create/link/?url={{base_root ~ url}}"><i class="fa fa-pinterest"></i> </a> <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=210,width=640');
+                                return false;" class="post-share linkedin-share" href="https://www.linkedin.com/cws/share?url={{base_root ~ url}}"><i class="fa fa-linkedin"></i> </a> </span> </div>
+                    </div>
+                    <div class="cleared"></div>
+                </div>
+            </div>
+            <div class="cleared"></div>
+        </div>
+    </div>
+</div>
+    
+  
+{% endif %}
+
+  {% if related_portfolios|length>=1 %}
+   <div class="portfolio-relatives  ">
+    <div class="wrap-column">
+        <div class="wrap">
+            <div class="post-section-title"> <span>{{'Related Portfolio'|t}}</span> </div>
+        </div>
+         {% for i in related_portfolios|slice(0,3) %}
+                    {{i|raw}}   
+         {% endfor %}
+        <div class="cleared"></div>
+        <div class="cleared"></div>
+      </div>
+   </div>     
+         {% endif %}
+{% endif %}

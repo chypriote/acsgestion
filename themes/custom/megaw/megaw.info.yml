@@ -1,0 +1,33 @@
+name: Megaw
+type: theme
+description: 'Best theme for blogger'
+core: 8.x
+screenshot: screenshot.png
+libraries:
+  - megaw/megaw-lib
+stylesheets-remove:
+  - core/themes/stable/css/views/views.module.css
+  - core/themes/stable/css/system/components/align.module.css
+  - core/assets/vendor/normalize-css/normalize.css
+  - core/modules/system/css/system.module.css
+  - core/modules/system/css/system.theme.css
+  - core/modules/views/css/views.module.css
+  - core/assets/vendor/jquery.ui/themes/base/theme.css
+
+regions:
+  left_top_bar: 'Left top bar'
+  right_top_bar: 'Right top bar'
+  search: 'Search'
+  header: 'Header'
+  breadcrumb: 'Breadcrumb'
+  main_menu: 'Main menu'
+  toggle_menu: 'Toggle menu'
+  slider: 'Slider'
+  content: 'Main content'
+  page_404_content: '404 page content'
+  sidebar: 'Sidebar'
+  section: 'Section content'
+  footer_column_1: 'Footer column 1'
+  footer_column_2: 'Footer column 2'
+  footer_column_3: 'Footer column 3'
+  footer: 'Footer'

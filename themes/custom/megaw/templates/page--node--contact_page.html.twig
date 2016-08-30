@@ -1,0 +1,57 @@
+{%if node.field_contact_page_style.0.value %}
+    {% set contact_page_style=node.field_contact_page_style.0.value %}
+{% endif %}
+
+
+            {% include theme_path ~ "/templates/header.html.twig" %}
+
+            <!-- end Header -->
+            <div class="cleared"></div>
+            <!-- BEGIN CONTENT -->
+            <div id="body">
+                {% if contact_page_style=='style1' %}
+
+                    {% if page.section %}
+                        {{ page.section }}
+                    {% endif %} 
+
+                    <div id="content-section3" class="content-section black-text white-bg  bottom-spacing-medium title-spacing-medium align-center " style="">
+                        <div class="wrap-column">
+                            <div class="content-column1">
+                                <div class="widget-entry">
+
+                                    <div class="cleared"></div>
+                                    {% if page.content %}
+                                        {{ page.content }}
+                                    {% endif %}  
+                                    <div class="cleared"></div>
+                                    <div class="cleared"></div>
+                                </div>
+                                <!-- end widget entry --> </div>
+                            <div class="cleared"></div>
+                        </div>
+                        <!-- end wrap-column no-wrap --> 
+
+                    </div>
+                    <!-- end content section --> 
+
+                {% else %}
+                    {% if page.section %}
+                        {{ page.section }}
+                    {% endif %}
+                    {% if page.content %}
+                        <div id="content-section2" class="content-section black-text white-bg top-spacing-no bottom-spacing-medium title-spacing-medium align-center " style="">
+                            <div class="wrap-column">
+                                {{ page.content }}
+                                <div class="cleared"></div>
+                            </div>
+                            <!-- end wrap-column no-wrap --> 
+
+                        </div>
+                        <!-- end content section --> 
+                    {% endif %} 
+
+                {% endif %}
+            </div>
+            {% include theme_path ~ "/templates/footer.html.twig" %}               
+

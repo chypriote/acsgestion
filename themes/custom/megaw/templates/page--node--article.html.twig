@@ -1,0 +1,57 @@
+{% if node.field_sidebar.0.value %}
+    {% set sidebar = node.field_sidebar.0.value%}
+{% else %}
+    {% set sidebar = blog_sidebar %}
+{% endif %}
+
+{% if sidebar==''%}
+{% set sidebar='right'%}
+{% endif %}
+ 
+{% if blog_style ==''%}
+    {% set blog_style= 'standard'%}
+{% endif %}
+            
+{% include theme_path ~ "/templates/header.html.twig" %}
+{# page style: left, right, center#}
+<!-- end Header -->
+<div class="cleared"></div>
+<!-- BEGIN CONTENT -->
+<div id="body" class="content-page">
+    <div class="wrap">
+        {% if sidebar=='right'%}
+      <div class="big-column left">
+            {% if page.content %}
+            {{ page.content }}
+            {% endif %}
+               <div class="cleared"></div>
+        </div>
+        <div class="small-column right">
+           {% if page.sidebar %}
+           {{ page.sidebar }}
+           {% endif %} 
+        </div>
+         <div class="cleared"></div>
+        {% else %}
+              <div class="big-column right">
+            {% if page.content %}
+            {{ page.content }}
+            {% endif %}
+               <div class="cleared"></div>
+        </div>
+        <div class="small-column left">
+           {% if page.sidebar %}
+           {{ page.sidebar }}
+           {% endif %} 
+        </div>
+         <div class="cleared"></div>
+            
+         {% endif %}
+    </div>
+    {% if page.section %}
+            {{ page.section }}
+        {% endif %} 
+
+</div>
+{% include theme_path ~ "/templates/footer.html.twig" %}               
+

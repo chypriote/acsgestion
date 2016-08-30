@@ -1,0 +1,33 @@
+<div id="footer">
+    <div class="wrap-column">
+        <div id="footer-widget-container">
+            <div class="footer-column">
+                {% if page.footer_column_1 %}
+                    {{ page.footer_column_1 }}
+                {% endif %}
+            </div>
+            <div class="footer-column">
+                {% if page.footer_column_2 %}
+                    {{ page.footer_column_2 }}
+                {% endif %}
+            </div>
+            <div class="footer-column">
+                {% if page.footer_column_3 %}
+                    {{ page.footer_column_3 }}
+                {% endif %}
+            </div>
+            <div class="cleared"></div>
+        </div>
+        <!-- End Footer Widget Container--> 
+    </div>
+</div>
+<!-- End Footer -->
+
+{% if page.footer %}
+    <div id="footer-bottom" >
+        {{ page.footer }}
+    </div>
+{% endif %}
+
+<!-- End Footer Bottom --> 
+</div>

@@ -1,0 +1,25 @@
+{% include theme_path ~ "/templates/header.html.twig" %}
+
+<!-- end Header -->
+<div class="cleared"></div>
+<!-- BEGIN CONTENT -->
+<div id="body" class="error404 content-page">
+    <div class="wrap">
+        <div class="full-column content search-form ">
+
+            {% if page.section %}
+                {{ page.section }}
+            {% endif %} 
+
+
+            {% if page.content %}
+                {{ page.content }}
+            {% endif %}  
+            {% if page.page_404_content %}
+                {{ page.page_404_content }}
+            {% endif %} 
+        </div>
+    </div>
+</div>
+{% include theme_path ~ "/templates/footer.html.twig" %}               
+

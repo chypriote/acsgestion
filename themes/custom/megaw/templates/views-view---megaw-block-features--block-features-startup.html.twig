@@ -1,0 +1,25 @@
+<div class="section-half-column">
+    {% if footer %}                     
+        {{ footer }}
+    {% endif %}
+    <div class="section-column-content">
+        {% if header %}
+            {{ header }}
+        {% endif %}
+
+        <div class="cleared"></div>
+        <div class="widget-entry">
+            {% if rows %}
+                <div class="column1">
+                    {{ rows }}
+                </div>
+            {% endif %}
+
+            <!-- end icon box -->
+            <div class="cleared"></div>
+            <div class="cleared"></div>
+        </div>
+        <!-- end widget entry --> 
+    </div>
+</div>
+

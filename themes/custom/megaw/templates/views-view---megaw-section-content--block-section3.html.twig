@@ -1,0 +1,32 @@
+{% if header %}
+    {{ header }}
+{% endif %}
+
+{% for row in rows %}
+    <div class="wrap-column">
+        <div class="content-column3_2">
+            <div class="widget-entry">
+                <div class="icon-box">              
+                    {{ row }}
+                </div>
+                <!-- end icon box -->
+                <div class="cleared"></div>
+            </div>
+            <!-- end widget entry --> </div>
+        <div class="content-column3_1">
+            <div class="widget-entry">
+                <div class="column1">
+                    {% if footer %}
+                        {{ footer }}
+                    {% endif %}
+                </div>
+                <!-- end icon box -->
+                <div class="cleared"></div>
+                <div class="cleared"></div>
+            </div>
+            <!-- end widget entry --> </div>
+        <div class="cleared"></div>
+    </div>
+{% endfor %}
+
+

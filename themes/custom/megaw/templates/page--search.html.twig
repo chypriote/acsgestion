@@ -1,0 +1,29 @@
+{% include theme_path ~ "/templates/header.html.twig" %}
+
+<!-- end Header -->
+<div class="cleared"></div>
+<!-- BEGIN CONTENT -->
+<div id="body" class="content-page">
+    <div class="wrap">
+
+        {% if page.section %}
+            {{ page.section }}
+        {% endif %} 
+
+        {% if page.content %}
+            <div class="big-column left">
+                <div class="post-entry-single">
+                {{ page.content }}
+                </div>
+            </div>
+        {% endif %} 
+        {% if page.sidebar %}
+            <div class="small-column right">
+                {{ page.sidebar }}
+            </div>
+        {% endif %}
+        <div class="cleared"></div>
+    </div>
+</div>
+{% include theme_path ~ "/templates/footer.html.twig" %}               
+

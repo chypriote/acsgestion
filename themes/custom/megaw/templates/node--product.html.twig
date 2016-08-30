@@ -1,0 +1,120 @@
+
+{% if not page %}
+    {#{content.dimensions}#}
+    {#{content.model}#}
+    {#{content.price}#}
+
+
+
+    {#{kint(content)}#}
+    <!-- content.add_to_cart: display add to cart
+     content.price: display price-->
+
+    <li class=" post-1040 product type-product status-publish has-post-thumbnail product_cat-outerwear product_tag-blazers shipping-taxable purchasable product-type-simple product-cat-outerwear product-tag-blazers instock"> 
+        <a href="{{ url }}">
+            <img src="{{shop_img_uri_576_529.0}}" class="attachment-shop_catalog size-shop_catalog" alt="{{node.getTitle()|t}}" sizes="(max-width: 700px) 100vw, 700px" />
+        </a>
+        {{content.add_to_cart}}
+        <a href="{{ url }}" class="button yith-wcqv-button" data-product_id="1040">{{'Quick View'|t}}</a>
+
+        <span class="price"><span class="amount">{{content.price}}</span></span>
+
+        <h3><a href="{{ url }}">{{node.getTitle()|t}}</a></h3>
+        <div class="product-brand">{{content.field_product_tags}}</div>
+    </li>
+{% else %}
+    {#node.display_price : gia san pham#}
+
+    <div itemscope class="product type-product status-publish has-post-thumbnail  sale featured shipping-taxable purchasable product-type-simple ">
+        <div class="images">
+
+            {#{content.uc_product_image}#}
+            <a href="{{shop_img_uri_576_529.0}}" itemprop="image" class="woocommerce-main-image zoom" title="{{node.getTitle()|t}}" data-rel="prettyPhoto[product-gallery]">
+                <img src="{{shop_img_uri_576_529.0}}" class="attachment-shop_single size-shop_single" alt="{{node.getTitle()|t}}" title="{{node.getTitle()|t}}"  /></a>
+            <div class="thumbnails columns-3">
+                {% for image in shop_img_uri_576_529|slice(1,4) %}
+                    <a href="{{image}}" class="zoom " title="{{node.getTitle()|t}}" data-rel="prettyPhoto[product-gallery]">
+                        <img width="700" height="643" src="{{image}}" class="attachment-shop_thumbnail size-shop_thumbnail" alt="{{node.getTitle()|t}}" title="{{node.getTitle()|t}}"   /></a>
+
+                {% endfor %}
+            </div> 
+        </div>
+        <div class="summary entry-summary">
+            <h1 itemprop="name" class="product_title entry-title">{{node.getTitle()|t}}</h1>
+            <div class="product-brand">{{content.field_product_tags}}</div>
+
+            <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <p class="price">{{content.price}}</p>
+
+            </div>
+            <div itemprop="description">
+                <p>{{ node.body.summary|length > 292 ? node.body.summary|slice(0,292) ~ '...' : node.body.summary }}</p>
+            </div>
+            {{content.add_to_cart}}
+            <div class="yith-wcwl-add-to-wishlist add-to-wishlist-1022">
+
+                <div style="clear:both"></div>
+                <div class="yith-wcwl-wishlistaddresponse"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="product_meta"> <span class="posted_in">{{'Category: '|t}}{{content.taxonomy_catalog}}</span> <span class="tagged_as">{{'Tags: '|t}} {{content.field_product_tags}}</span> </div>
+        </div>
+        <!-- .summary -->
+
+        <div class="woocommerce-tabs wc-tabs-wrapper">
+            <ul class="tabs wc-tabs">
+                <li class="description_tab active"> <a rel="tab-description" href="#tab-description">{{'Description'|t}}</a> </li>
+                <li class="additional_information_tab"> <a href="#tab-additional_information" rel="tab-additional_information">{{'Additional Information'|t}}</a> </li>
+                <li class="reviews_tab"> <a href="#tab-reviews" rel="tab-reviews">{{ 'Reviews ('|t~ comment_count ~')'|t}}</a> </li>
+            </ul>
+            <div class="panel entry-content wc-tab" id="tab-description">
+                <h2>{{'Product Description'|t}}</h2>
+                {{ content.body}}
+            </div>
+            <div class="panel entry-content wc-tab" id="tab-additional_information">
+                <h2>{{'Additional Information'|t}}</h2>
+                <table class="shop_attributes">
+                    <tr class="">
+                        <th>{{'Size'|t}}</th>
+                        <td><p>{{content.field_size}}</p></td>
+                    </tr>
+                    <tr class="alt">
+                        <th>{{'Colour'|t}}</th>
+                        <td><p>{{content.field_color}}</p></td>
+                    </tr>
+                    <tr class="">
+                        <th>{{'Weight'|t}}</th>
+                        <td><p>{{content.weight}}</p></td>
+                    </tr>
+                    <tr class="alt">
+                        <th>{{'Fabric'|t}}</th>
+                        <td><p>{{content.field_fabric}}</p></td>
+                    </tr>
+
+
+
+                </table>
+            </div>
+            <div class="panel entry-content wc-tab" id="tab-reviews">
+                <div id="reviews">
+                    {{ content.comment }}
+
+
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        {% if related_products|length>=1 %}
+            <div class="related products">
+                <h2>{{'Related Products'|t}}</h2>
+                 <ul class="products">
+                {% for i in related_products|slice(0,3) %}
+                    {{i|raw}}
+                   
+                {% endfor %}
+                 </ul>
+            </div>
+       
+    {% endif %}
+     </div>
+{% endif %}

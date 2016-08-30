@@ -1,0 +1,114 @@
+{% if node.field_background_breadcrumb.0.entity.uri.value %}
+    {% set imageoneURL = file_url(node.field_background_breadcrumb.0.entity.uri.value) %}
+    {% set class_header = 'header-text-white header-transparent heading-align-center' %}
+    {% set class_title ='heading-transparent heading-align-center'%}
+    {% set style_header = 'style=background-image:url(' ~ imageoneURL ~ ')' %}
+    {% set add_style_bg='style='~'opacity:0.5;background-color:#2e2e2e;'~''%}
+{% else %}
+    {% set class_header = 'header-white header-text-black'%}
+    {% set class_title ='heading-gray heading-align-left'%}
+    {% set style_header= ''%}
+    {% set  add_style_bg=''%}
+{% endif %}
+<div id="scroll-header" >
+    <div id="scroll-header-content">
+        <div class="wrap" >
+            <div class="left-header">
+                <div class="site-logo">
+                    <a class="logo-image" href="{{ front_page }}">
+                     
+                            <img  class="logo-normal" alt="{{ site_name|t }}" src="{{ scroll_logo }}" /> 
+                      
+                        <img class="logo-retina"   alt="{{ site_name|t }}" src=" {{ scroll_logo_retina }}" /> 
+                    </a> 
+                </div>
+            </div>
+            <div class="right-header">
+                <div class="main-menu">
+                
+                        {% if page.main_menu %}
+                            {{ page.main_menu }}
+                        {% endif %}
+                  </div> 
+                <!-- End Main Menu --> 
+            </div>
+            <div class="cleared"></div>
+        </div>
+    </div>
+</div>
+
+<div id="page" >
+    <div id="header" class="{{class_header }}" {{style_header}}>
+         <div class='header_bg' {{ add_style_bg }}></div>
+        <div class="header_content">
+            <div id="top-bar">
+                <div class="wrap">
+                    <div class="left-top-bar">
+                        {% if page.left_top_bar %}
+                            {{ page.left_top_bar }}
+                        {% endif %}
+                    </div>
+                    <div class="right-top-bar">
+                        {% if page.right_top_bar %}
+                            {{ page.right_top_bar }}
+                        {% endif %}
+                        {% if page.search %}
+                                {{ page.search }}
+                     
+                        {% endif %}
+
+                    </div>
+                    <div class="cleared"></div>
+                </div>
+            </div>
+            <div id="top-bar-open">
+                <div class="wrap">
+                    <div id="topbar-open"><i class="fa fa-angle-down"></i></div>
+                </div>
+            </div>
+            <div class="wrap">
+               {% if page.header %}
+                   {{ page.header }}
+               {% endif %}
+                <div class="right-header">
+                    <div class="main-menu">
+                        
+                            {% if page.main_menu %}
+                                {{ page.main_menu }}
+                            {% endif %}
+                       </div>
+                    <!-- End Main Menu --> 
+                </div>
+                <div class="cleared"></div>
+                <div id="toggle-menu-button"><i class="fa fa-align-justify"></i></div>
+                <div class="toggle-menu">
+                    <div class="menu-toggle-menu-container">
+                            {% if page.toggle_menu %}
+                                {{ page.toggle_menu }}
+                            {% endif %}
+
+                    </div>
+                </div>
+            </div>
+            <!-- End Header Wrap --> 
+
+            
+                    <div id="page-heading" class="{{ class_title}}">
+                        <div class="wrap">
+                            {% if title %}
+                            <div id="page-heading-left">
+                                <h1 id="page-title"> {{title}} </h1>
+                            </div>
+                             {% endif %}
+                            <div id="breadcrumb"> {{ page.breadcrumb }} </div>
+                            <div class="cleared"></div>
+                        </div>
+                    </div>
+      
+
+            <!-- End Header --> 
+        </div>
+        <!-- End Header Content --> 
+    </div>
+    <!-- end Header -->
+    <div class="cleared"></div>

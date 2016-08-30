@@ -1,0 +1,13 @@
+{% if header %}
+    {{ header }}
+{% endif %}
+
+{% for row in rows %}
+    <div class="wrap-column">
+        {{ row }}
+        <div class="cleared"></div>
+    </div>
+    <!-- end wrap-column no-wrap --> 
+{% endfor %}
+
+

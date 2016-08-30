@@ -1,0 +1,26 @@
+
+    <div class="section-bg-overlay" style="opacity:0.5; background-color:#0a0a0a;;"></div>
+    {% if header %}
+        {{ header }}
+    {% endif %}
+
+    {% for row in rows %}
+
+        <div class="no-wrap">
+            <div class="content-column1">
+                <div class="widget-entry">
+                    <div class="milestones-box">
+                        {{ row }}
+                        <div class="cleared"></div>
+                        <div class="cleared"></div>
+                    </div>
+
+                    <div class="cleared"></div>
+                </div>
+            </div>
+            <div class="cleared"></div>
+        </div>
+    {% endfor %}
+
+
+

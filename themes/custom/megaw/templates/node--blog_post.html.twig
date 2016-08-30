@@ -1,0 +1,99 @@
+{#{kint(content)}#}
+
+
+    {%if node.field_image.0.entity.uri.value %}
+    {% set oneimage=node.field_image.0.entity.uri.value %}
+        {# display image url file_url(oneimage) #}
+{% endif %}
+{% if not page %}
+
+    {%block nodeheader %}
+        {% if blog_style ==''%}
+           {% set blog_style= 'standard'%}
+        {% endif %}
+            
+        {% if  blog_style == 'medium'%}
+        <div class="post-entry">
+          <div class="post-39 post type-post status-publish format-standard has-post-thumbnail hentry category-design category-technology category-work tag-modern tag-work">
+              <div class="post-entry-body">
+                  <div class="post-entry-media"> <a href="{{ url }}">{% if img_uri_768_456 !=""%}<img src="{{img_uri_768_456}}" class="attachment-post-thumbnail size-post-thumbnail" alt="{{title}}" />{% endif %}</a> </div>
+                  <div class="post-entry-detail">
+                      <div class="post-entry-heading">
+                          <div class="post-entry-meta"> {{ node.created.value|date('F d, Y') }}	| {{ content.field_blog_categories }}  </div>
+                          <div class="post-entry-title">
+                              <h2><a href="{{ url }}">{{node.getTitle}}</a></h2>
+                          </div>
+                          <div class="section-line {% if  blog_style != 'center'%}section-line-left {% endif %}"> <span class="section-line1"></span><br>
+                              <span class="section-line2"></span> </div>
+                      </div>
+                      <div class="post-entry-content content">
+                          <p> {{ node.body.summary|length > 292 ? node.body.summary|slice(0,292) ~ '...' : node.body.summary }}</p>
+                      </div>
+                  </div>
+                  <div class="cleared"></div>
+              </div>
+          </div>
+      </div>
+        {% else %}
+          <div class="post-entry">
+                <div class="post-39 post type-post status-publish format-standard has-post-thumbnail hentry category-design category-technology category-work tag-modern tag-work">
+                    <div class="post-entry-body">
+                        <div class="post-entry-heading">
+                            <div class="post-entry-meta"> {{ node.created.value|date('F d, Y') }}|{{ content.field_blog_categories }}  | {{comment_count}} Comments   </div>
+                            <div class="post-entry-title">
+                                <h2><a href="{{url}}">{{ node.getTitle }}</a></h2>
+                            </div>
+                            <div class="section-line {% if  blog_style != 'center'%}section-line-left {% endif %}"> <span class="section-line1"></span><br>
+                                <span class="section-line2"></span> </div>
+                        </div>
+                        <div class="post-entry-media"> <a href="{{url}}">{% if img_uri_768_456 !=""%}<img src="{{img_uri_768_456}}" class="attachment-post-thumbnail size-post-thumbnail " alt="{{ title }}" />{% endif %}</a> </div>
+                        <div class="post-entry-content content">
+                            <p>   {{ node.body.summary|length > 292 ? node.body.summary|slice(0,292) ~ '...' : node.body.summary }}<br />
+                                <span id="more-56"></span></p>
+                        </div>
+                        <div class="cleared"></div>
+                        <div class="post-entry-more-shares">
+                            <div class="post-entry-button content"> <a class="button normal-button" href="{{url}}" >{{'continue reading'|t}}</a> </div>
+                            <div class="cleared"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         {% endif %}
+    {% endblock%}
+{% else %}{# single #}
+   <div class="post-39 post type-post status-publish format-standard has-post-thumbnail hentry category-design category-technology category-work tag-modern tag-work" id="post-39">
+        <div class="post-entry-single">
+            <div class="post-entry-heading">
+                <div class="post-entry-meta"> {{ node.created.value|date('F d, Y') }}| {{ content.field_blog_categories }}  | {{comment_count}} Comments </div>
+                <div class="post-entry-title">
+                    <h2>{{title}}</h2>
+                </div>
+                <div class="section-line section-line-left"> <span class="section-line1"></span><br>
+                    <span class="section-line2"></span> </div>
+            </div>
+            <div class="post-entry-media"> <a href="{{url}}">{% if img_uri_768_456 !=""%}<img src="{{img_uri_768_456}}" class="attachment-post-thumbnail size-post-thumbnail" alt="{{title}}" />{% endif %}</a> </div>
+            <div class="post-entry-body">
+                <div class="post-entry-content content">
+                   {{ content.body }}
+                   <div class="cleared"></div>
+                </div>
+                <div class="post-entry-tags"> {{'Tags:'|t}} {{ content.field_blog_tags }}<br />
+                </div>
+            </div>
+        </div>
+        <!-- End Post Entry -->
+    {% if related_blog|length>=1 %}
+         <div class="post-relative">
+            <div class="post-section-title">{{'Related Posts'|t}} </div>
+            {% for i in related_blog|slice(0,3) %}
+             {{i|raw}}
+            {% endfor %}
+            <div class="cleared"></div>
+            <div class="cleared"></div>
+        </div>
+    {% endif %}
+    </div>
+ {{ content.field_blog_comments }}
+    
+{% endif %}

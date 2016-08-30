@@ -1,0 +1,403 @@
+<?php
+
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+
+function megaw_preprocess_breadcrumb(&$variables) {
+    if (($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']) {
+        $variables['breadcrumb'][] = array(
+            'text' => $node->getTitle(),
+        );
+    }
+}
+
+/**
+ * Implements template_preprocess_page().
+ */
+function megaw_preprocess_page(&$variables) {
+//     kint($variables); 
+    if (isset($_GET['style'])) {
+        $variables['blog_style'] = $_GET['style'];
+    } else {
+        $variables['blog_style'] = theme_get_setting('blog_style', 'megaw');
+    }
+    if (isset($_GET['sidebar'])) {
+        $variables['blog_sidebar'] = $_GET['sidebar'];
+    } else {
+        $variables['blog_sidebar'] = theme_get_setting('blog_sidebar', 'megaw');
+    }
+
+
+    global $base_root;
+
+    $theme = \Drupal::theme()->getActiveTheme()->getName();
+    $variables['theme_path'] = drupal_get_path('theme', $theme);
+    $variables['base_path'] = base_path();
+
+
+    $variables['site_name'] =isset($variables['site_name']) ? $variables['site_name'] : \Drupal::config('system.site')->get('name');
+
+
+    $request = \Drupal::request();
+    if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+        $variables['title'] = \Drupal::service('title_resolver')->getTitle($request, $route);
+    }
+
+    if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+        $term_id = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
+        $term = taxonomy_term_load($term_id);
+        $variables['current_term'] = $term;
+    }
+    
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $variables['type'] = $node->getType();
+    }
+
+    global $base_url;
+    if (!empty(theme_get_setting('second_logo_file', 'megaw'))) {
+        $variables['logo_retina'] = $base_url . theme_get_setting('second_logo_file', 'megaw');
+    } else {
+        $variables['logo_retina'] = '';
+    }
+
+    if (!empty(theme_get_setting('second_logo_file', 'megaw'))) {
+        $variables['scroll_logo'] = $base_url . theme_get_setting('scroll_logo_file', 'megaw');
+    } else {
+        $variables['scroll_logo'] = '';
+    }
+
+    if (!empty(theme_get_setting('scroll_logo_retina_file', 'megaw'))) {
+        $variables['scroll_logo_retina'] = $base_url . theme_get_setting('scroll_logo_retina_file', 'megaw');
+    } else {
+        $variables['scroll_logo_retina'] = '';
+    }
+}
+
+function megaw_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $suggestions[] = 'page__node__' . $node->getType();
+    }
+}
+
+function megaw_preprocess_block(&$variables) {
+
+   global $base_url;
+	switch ($variables['base_plugin_id']) {
+	    case 'system_branding_block':
+	      $variables['site_logo'] = '';
+	      if ($variables['content']['site_logo']['#access'] && $variables['content']['site_logo']['#uri']) {
+	        $variables['site_logo'] = str_replace('.svg', '.png', $variables['content']['site_logo']['#uri']);
+	      }
+	    break;
+
+  	}
+        
+        if (!empty(theme_get_setting('second_logo_file', 'megaw'))) {
+        $variables['logo_retina'] = $base_url . theme_get_setting('second_logo_file', 'megaw');
+    } else {
+        $variables['logo_retina'] = '';
+    }
+	if(isset($variables['elements']['#id']) && !empty($variables['elements']['#id'])){
+		$block_id = $variables['elements']['#id'];
+	  	$block = \Drupal\block\Entity\Block::load($block_id);
+	  	if($block->getRegion()){
+	  		$region = $block->getRegion();
+	  		$variables['region'] = $region;
+	  	}
+	//config as context module
+	}else{
+		$variables['region'] = $variables['elements']['#configuration']['region'];            
+	}
+}
+
+function megaw_preprocess_node(&$vars) {
+
+    $current_path = \Drupal::request()->getRequestUri();
+    global $base_root;
+    $vars['base_root'] = $base_root;
+// style=standard or center or medium
+    if (isset($_GET['style'])) {
+        $vars['blog_style'] = $_GET['style'];
+    } else {
+        $vars['blog_style'] = theme_get_setting('blog_style', 'megaw');
+    }
+
+    if (isset($_GET['sidebar'])) {
+        $vars['blog_sidebar'] = $_GET['sidebar'];
+    } else {
+        $vars['blog_sidebar'] = theme_get_setting('blog_sidebar', 'megaw');
+    }
+
+    $site_name = \Drupal::config('system.site')->get('name');
+    $vars['site_name'] = $site_name;
+    $request = \Drupal::request();
+    if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+        $vars['title'] = \Drupal::service('title_resolver')->getTitle($request, $route);
+    }
+
+    if (isset($vars['node']->field_image) && !empty($vars['node']->field_image->getValue()[0]['target_id'])) {
+        $fid = $vars['node']->field_image->getValue()[0]['target_id'];
+        $file = File::load($fid);
+        $image_uri = ImageStyle::load('image768x456')->buildUrl($file->getFileUri());
+        $image_uri4_4 = ImageStyle::load('image400x400')->buildUrl($file->getFileUri());
+       
+  foreach ($node_value= $vars['node']->field_image->getValue() as $k => $v) {
+        $fid = $node_value[$k]['target_id'];
+        $file = File::load($fid);
+        $image_uri720_625 = ImageStyle::load('image720x625')->buildUrl($file->getFileUri());
+        $vars['img_uri_720_625'][$k] = $image_uri720_625;
+        }
+        $vars['img_uri_768_456'] = $image_uri;
+        $vars['img_uri_400'] = $image_uri4_4;
+    } else {
+        $vars['img_uri_720_625'][0] = '';
+        $vars['img_uri_768_456'] = '';
+        $vars['img_uri_400'] = '';
+    }
+
+    if (isset($vars['node']->uc_product_image) && !empty($vars['node']->uc_product_image->getValue())) {
+        foreach ( $node_value=$vars['node']->uc_product_image->getValue() as $k => $v) {
+         
+            $fid = $node_value[$k]['target_id'];
+            $file = File::load($fid);
+            $image_uri = ImageStyle::load('image576x529')->buildUrl($file->getFileUri());
+            $vars['shop_img_uri_576_529'][$k] = $image_uri;
+        }
+    } else {
+        $vars['shop_img_uri_576_529'][0] = '';
+    }
+
+    $nid = $vars['node']->nid->value;
+    $num_comment = db_query('SELECT comment_count FROM {comment_entity_statistics} WHERE entity_id = ' . $nid)->fetchAssoc();
+    $vars['comment_count'] = $num_comment['comment_count'];
+
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+
+        $ntype = $node->getType();
+        if ($ntype == 'blog_post' || $ntype == 'article') {
+//kint($node->taxonomy_catalog->getValue());
+            $tids = array();
+            foreach ($node->field_blog_categories->getValue() as $k => $tarr) {
+                $tids[$k] = $tarr['target_id'];
+            }
+            $storage = \Drupal::entityManager()->getStorage('node');
+            $nids = $storage->getQuery()
+                    ->condition('type', 'blog_post')
+                    ->condition('status', 1)
+                    ->condition('nid', $node->nid->value, '!=')
+                    ->condition('field_blog_categories.entity.tid', $tids, 'IN')
+//->range(0,3)
+                    ->execute();
+
+//            $random_pds = array_rand($nids, 4);
+            $arr_blog = array();
+
+            foreach (entity_load_multiple('node', $nids) as $k => $v) {
+//  kint($v->field_tags); 
+                $fid = $v->field_image->getValue()[0]['target_id'];
+
+                $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $v->nid->getValue()[0]['value']);
+                $node_url = $GLOBALS['base_url'] . $path_alias;
+
+                $file = File::load($fid);
+                $image_uri = ImageStyle::load('image576x529')->buildUrl($file->getFileUri());
+//print($url);
+                $arr_blog[$k] = '<div class="column1_3 ">
+                                        <div class="post-relative-entry">
+                                            <div class="post-relative-thumb"> <a href="' . $node_url . '"><img src="' . $image_uri . '" class="attachment-wope-thumb-grid size-wope-thumb-grid" alt="' . $v->getTitle() . '" /> <span class="post-relative-bg"></span>
+                                                    <h2 class="post-relative-title">' . $v->getTitle() . '</h2>
+                                                </a> </div>
+                                        </div>
+                                    </div>';
+            }
+            $vars['related_blog'] = $arr_blog;
+//print_r ($vars['related_products']);
+        } elseif ($ntype == 'product') {
+//kint($node->taxonomy_catalog->getValue());
+            $tids = array();
+            foreach ($node->taxonomy_catalog->getValue() as $k => $tarr) {
+                $tids[$k] = $tarr['target_id'];
+            }
+            $storage = \Drupal::entityManager()->getStorage('node');
+            $nids = $storage->getQuery()
+                    ->condition('type', 'product')
+                    ->condition('status', 1)
+                    ->condition('nid', $node->nid->value, '!=')
+                    ->condition('taxonomy_catalog.entity.tid', $tids, 'IN')
+//->range(0,3)
+                    ->execute();
+
+//            $random_pds = array_rand($nids, 1);
+//print_r($nids);
+//$vars['related_products'] = $storage->loadMultiple($random_pds);
+            $arr_products = array();
+            $config = \Drupal::config('uc_store.settings');
+            $sign_currency = $config->get('currency.symbol');
+            $posi = $config->get('currency.symbol_after');
+
+            foreach (entity_load_multiple('node', $nids) as $k => $v) {
+                if ($posi == 1) {
+//$uc_price = $v->price->getValue()[0]['value'].$sign_currency;
+                    $uc_price = (float) $v->price->getValue()[0]['value'];
+                    $uc_price_fm = number_format($uc_price, 2) . $sign_currency;
+                } else {
+
+                    $uc_price = (float) $v->price->getValue()[0]['value'];
+                    $uc_price_fm = $sign_currency . number_format($uc_price, 2);
+                }
+                
+//                get term name 
+                if (isset($v->field_product_tags->getValue()[0]['target_id'])) {
+                    $term_id = ($v->field_product_tags->getValue()[0]['target_id']);
+                    $term_object = \Drupal\taxonomy\Entity\Term::load($term_id);
+                    $term_name = $term_object->get('name')->value;
+                    $term_name = '<div class="product-brand">' . $term_name . '</div>';
+                } else {
+                    $term_name = "";
+                }
+//                
+
+//kint($v->price);
+                $fid = $v->uc_product_image->getValue()[0]['target_id'];
+//print(file_create_url(file_load($aaa)->uri->value));
+/////////////////////////////////////////////////////////
+                $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $v->nid->getValue()[0]['value']);
+//$node_url = ltrim($path_alias,'/');
+                $node_url = $GLOBALS['base_url'] . $path_alias;
+//$node_url = url('node/'.$v->nid->getValue()[0]['value']);
+//print $node_url;
+                $uri = file_load($fid)->uri->value;
+                $url = file_create_url($uri);
+//print($url);
+                $arr_products[$k] = '<li class=" product type-product status-publish has-post-thumbnail ">
+                                                        <a href="' . $node_url . '"><img src="' . $url . '" class="attachment-shop_catalog size-shop_catalog" alt="SLIP-ON-SNEAKER"  sizes="(max-width: 700px) 100vw, 700px" /></a>
+                                                       
+                                                        <span class="price"><span class="amount">' . $uc_price_fm . '</span></span>
+                                                        <h3><a href="' . $node_url . '">' . $v->getTitle() . '</a></h3>'
+                        . $term_name .
+                        '</li>';
+            }
+            $vars['related_products'] = $arr_products;
+        } elseif ($ntype == 'portfolios') {
+//kint($node->taxonomy_catalog->getValue());
+            $tids = array();
+            foreach ($node->field_portfolios_categories->getValue() as $k => $tarr) {
+                $tids[$k] = $tarr['target_id'];
+            }
+            $storage = \Drupal::entityManager()->getStorage('node');
+            $nids = $storage->getQuery()
+                    ->condition('type', 'portfolios')
+                    ->condition('status', 1)
+                    ->condition('nid', $node->nid->value, '!=')
+                    ->condition('field_portfolios_categories.entity.tid', $tids, 'IN')
+//->range(0,3)
+                    ->execute();
+
+//            $random_pds = array_rand($nids, 1);
+//print_r($nids);
+//$vars['related_products'] = $storage->loadMultiple($random_pds);
+            $arr_portfolios = array();
+
+
+            foreach (entity_load_multiple('node', $nids) as $k => $v) {
+                if (isset($v->field_portfolios_categories->getValue()[0]['target_id'])) {
+                    $term_id = ($v->field_portfolios_categories->getValue()[0]['target_id']);
+                    $term_object = \Drupal\taxonomy\Entity\Term::load($term_id);
+                    $term_name = $term_object->get('name')->value;
+                    $term_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/taxonomy/term/' . $term_id); // Gets pathauto term alias
+                    $term_url = $GLOBALS['base_url'] . $term_alias;
+                    $term_name = '<div class="portfolio-cell-categories"><a href="' . $term_url . '">' . $term_name . '</a></div>';
+                } else {
+                    $term_name = '';
+                }
+                $fid = $v->field_image->getValue()[0]['target_id'];
+//print(file_create_url(file_load($aaa)->uri->value));
+/////////////////////////////////////////////////////////
+                $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $v->nid->getValue()[0]['value']);
+                $node_url = $GLOBALS['base_url'] . $path_alias;
+
+//				$uri = file_load($fid)->uri->value;
+//				$url = file_create_url($uri);
+                $file = File::load($fid);
+                $image_uri = ImageStyle::load('image374x344')->buildUrl($file->getFileUri());
+//print($url);
+                $arr_portfolios[$k] = '<div class="column3_1 ">
+                                                        <div class="portfolio-cell">
+                                                            <div class="portfolio-cell-thumb">
+                                                                <div class="portfolio-cell-bg"></div>
+                                                                <a class="portfolio-cell-view" href="' . $node_url . '"><i class="pe-7s-search"></i></a> <a href="' . $node_url . '"> <img src="' . $image_uri . '" class="attachment-wope-thumb-grid-portfolio size-wope-thumb-grid-portfolio" alt="' . $v->getTitle() . '" /> </a> </div>
+                                                            <div class="portfolio-cell-data">
+                                                                <div class="portfolio-cell-title"> <a href="' . $node_url . '">' . $v->getTitle() . '</a> </div>'
+                        . $term_name .
+                        '</div>
+                                                        </div>
+                                                    </div>';
+            }
+            $vars['related_portfolios'] = $arr_portfolios;
+        }
+    }
+}
+
+function megaw_form_contact_message_contact_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+// Name
+    $form['name']['#prefix'] = '<div class="row"><div class="column2_1">';
+    $form['name']['#suffix'] = '</div>';
+    $form['name']['#attributes']['placeholder'][] = $form['name']['#title'] . '*';
+    $form['name']['#attributes']['class'][] = 'form-control';
+    unset($form['name']['#title']);
+
+// Mail
+    $form['mail']['#prefix'] = '<div class="column2_1">';
+    $form['mail']['#suffix'] = '</div>';
+    $form['mail']['#attributes']['placeholder'][] = $form['mail']['#title'] . '*';
+    $form['mail']['#attributes']['class'][] = 'form-control';
+    unset($form['mail']['#title']);
+
+
+// Subject
+    $form['subject']['widget'][0]['value']['#attributes']['class'][] = 'form-control';
+    $form['subject']['widget'][0]['value']['#attributes']['placeholder'][] = $form['subject']['widget'][0]['#title'] . '*';
+    $form['subject']['widget'][0]['#title'] = '';
+    unset($form['subject']['widget'][0]['value']['#title']);
+    $form['subject']['widget'][0]['#prefix'] = '<div class="cleared"></div><div class="column1">';
+    $form['subject']['widget'][0]['#suffix'] = '</div>';
+
+// Message
+    $form['message']['widget'][0]['value']['#attributes']['class'][] = 'form-control';
+    $form['message']['widget'][0]['value']['#attributes']['placeholder'][] = $form['message']['widget'][0]['#title'] . '*';
+    $form['message']['widget'][0]['#title'] = '';
+    unset($form['message']['widget'][0]['value']['#title']);
+    $form['message']['widget'][0]['#prefix'] = '<div class="column1">';
+    $form['message']['widget'][0]['#suffix'] = '</div>';
+
+// Submit
+    $form['actions']['#prefix'] = '<div class="clearfix">';
+    $form['actions']['#suffix'] = '</div></div>';
+    $form['actions']['submit']['#attributes']['class'][] = 'normal-button';
+    $form['actions']['preview']['#attributes']['class'][] = 'normal-button';
+}
+
+function megaw_preprocess_container(&$variables) {
+    $variables['container_type'] = $variables['element']['#type'];
+}
+
+function megaw_preprocess_html(&$variables) {
+     $theme = \Drupal::theme()->getActiveTheme()->getName();
+    $variables['attributes']['class'][] = 'ltr';
+    $variables['general_setting_tracking_code'] = theme_get_setting('general_setting_tracking_code', $theme);
+    $variables['custom_css'] = theme_get_setting('custom_css', $theme);
+    
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $ntype = $node->getType();
+        if ($ntype == 'product') {
+            $variables['class_body'] = "single single-product woocommerce woocommerce-page";
+        } else {
+            $variables['class_body'] = 'home page pageemplate-default';
+        }
+    } else {
+        $variables['class_body'] = 'home page pageemplate-default';
+    }
+}
+
+

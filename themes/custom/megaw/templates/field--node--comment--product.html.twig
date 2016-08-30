@@ -1,0 +1,19 @@
+
+<div id="comments">
+   
+    <ol class="commentlist">
+       {{ comments }}
+        <!-- #comment-## -->
+    </ol>
+</div>
+{% if comment_form %}
+    <div id="review_form_wrapper">
+        <div id="review_form">
+            <div id="respond" class="comment-respond">
+                <h3 id="reply-title" class="comment-reply-title">{{'Add a review'|t}} </h3>
+                {{ comment_form }}
+            </div>
+            <!-- #respond --> 
+        </div>
+    </div>
+{% endif %}

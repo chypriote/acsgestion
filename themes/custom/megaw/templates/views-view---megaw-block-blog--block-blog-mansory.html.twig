@@ -1,0 +1,25 @@
+
+{% if header %}
+    {{ header }}
+{% endif %}
+{% for row in rows %}
+    <div class="wrap-column">
+        <div class="content-column1">
+            <div class="widget-entry">
+                <div class="blog">    
+                    <div class="grid-blog">
+                        {{ row }}
+
+                    </div>
+                    <div class="cleared"></div>
+                </div>
+                <div class="cleared"></div>
+                <div class="cleared"></div>
+            </div>
+        </div>
+
+        <div class="cleared"></div>
+    </div>
+{% endfor %}
+
+

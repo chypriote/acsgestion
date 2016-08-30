@@ -1,0 +1,40 @@
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul id="mega-menu-main-menu" {{attributes.addClass('mega-menu mega-menu-horizontal mega-no-js')}} data-event="hover" data-effect="disabled" data-second-click="close" data-breakpoint="600">
+    {% else %}
+      <ul class="mega-sub-menu">
+    {% endif %}
+    {% for item in items %}
+        {# expanded: co chiren leve; collaped: #}
+    {% if menu_level ==0 %}
+         {%
+        set classes = [
+          'mega-menu-item mega-menu-item-type-custom  mega-menu-item-has-children mega-align-bottom-left',
+          item.is_expanded ? 'menu-item--expanded',
+          item.is_collapsed ? 'menu-item--collapsed',
+          item.in_active_trail ? 'mega-current-menu-item',
+        ]
+      %}
+      <li{{ item.attributes.addClass(classes) }}>
+       {% else %}
+            <li{{ item.attributes.addClass('mega-menu-item') }}>
+            {% endif %}
+          {{ link(item.title, item.url) }}
+          {% if item.below %}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

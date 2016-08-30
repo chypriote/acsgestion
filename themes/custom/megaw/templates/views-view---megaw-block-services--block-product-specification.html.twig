@@ -1,0 +1,32 @@
+{% if header %}
+    {{ header }}
+{% endif %}
+
+
+{% for row in rows %}
+    <div class="wrap-column">
+        <div class="content-column1">
+            <div class="widget-entry">
+                <div class="column1">
+                    <div class="tab-vertical">
+                        <div class="tab-vertical-top" style="width:30%;">
+                            {{ row }}
+                        </div>
+                        {% if footer %}
+                            <div class="tab-vertical-bottom" style="width:70%;">
+                                {{ footer }}
+                            </div>
+                        {% endif %}
+                        <div class="cleared"></div>
+                    </div>
+                </div>
+                <div class="cleared"></div>
+                <div class="cleared"></div>
+            </div>
+        </div>
+        <div class="cleared"></div>
+    </div>
+{% endfor %}
+
+
+

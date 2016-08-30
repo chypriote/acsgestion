@@ -1,0 +1,18 @@
+<li itemprop="review" itemscope  class="comment byuser comment-author-admin bypostauthor even thread-even depth-1">
+    <div  class="comment_container">
+        {% if user_picture %}
+            {{ user_picture }}
+        {% else %}
+            <img alt='avatar' src='http://1.gravatar.com/avatar/aece11b5f0702d29c61ca65f5c460e21?s=60&#038;d=mm&#038;r=g' class='avatar avatar-60 photo' height='60' width='60' />
+        {% endif %}   
+        <div class="comment-text">
+           
+            <p class="meta"> <strong itemprop="author">{{ author }}</strong> &ndash;
+               {{ created }}
+                : </p>
+            <div itemprop="description" class="description">
+               {{ content.comment_body }}
+            </div>
+        </div>
+    </div>
+</li>
