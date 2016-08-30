@@ -40,3 +40,4 @@ sites/simpletest
 *.zip
 *.rar
 error_log
+.idea
