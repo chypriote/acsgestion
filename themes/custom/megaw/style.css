@@ -417,41 +417,6 @@ HEADER SECTIONS
 
 
 
-/* Header Options */
-
-
-
-
-
-
-.left-header{
-	float: left;
-}
-
-.right-header{
-	float: right;
-}
-
-.left-header .main-menu{
-	float: left;
-	margin-left: 40px;
-}
-
-.right-header .main-menu{
-	float: right;
-	margin-right: 40px;
-}
-
-.left-header div:first-child{
-	margin-left: 0px;
-}
-
-.right-header div:first-child{
-	margin-right: 0px;
-}
-
-
-
 
 
 /* Site Logo */
@@ -529,11 +494,6 @@ only screen and (min-device-pixel-ratio: 1.5) {
 }
 
 
-#scroll-header .main-menu ul li{
-	padding:20px 0px 17px 0px !important; 
-}
-
-
 #scroll-header .main-menu ul li li:last-child{
 	padding-bottom:0px !important;
 }
@@ -556,8 +516,8 @@ only screen and (min-device-pixel-ratio: 1.5) {
 .main-menu ul li{
 	display:inline-block;
 	position: relative;
-	padding: 52px 0px 50px 0px !important;
-	margin-left: 40px !important;
+	padding: 52px 0px 50px 0px;
+	margin-left: 40px;
 }
 
 .main-menu ul li:first-child{
@@ -2248,16 +2208,16 @@ ul.custom-list.icon-square-bold i{
 	vertical-align:-3px;
 }
 
-.milestone-number:before{
-	position:absolute;
-	width:25px;
-	height:1px;
-	content:'';
-	left:50%;
-	margin-left:-12px;
-	top:60px;
-	background-color:#4c4c4c;
-}
+// .milestone-number:before{
+// 	position:absolute;
+// 	width:25px;
+// 	height:1px;
+// 	content:'';
+// 	left:50%;
+// 	margin-left:-12px;
+// 	top:60px;
+// 	background-color:#4c4c4c;
+// }
 
 
 

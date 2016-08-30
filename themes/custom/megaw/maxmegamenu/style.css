@@ -124,11 +124,6 @@
 #mega-menu-wrap-main-menu #mega-menu-main-menu > li.mega-menu-megamenu.mega-menu-item {
   position: static;
 }
-#mega-menu-wrap-main-menu #mega-menu-main-menu > li.mega-menu-item {
-  margin: 0 0px 0 0;
-  display: inline-block;
-  height: auto;
-}
 #mega-menu-wrap-main-menu #mega-menu-main-menu > li.mega-menu-item.mega-item-align-right {
   float: right;
   margin: 0 0 0 0px;

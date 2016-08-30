@@ -208,13 +208,12 @@ opacity: 1;
 	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
 } /* Main menu */
 .main-menu ul li a {
-	color: #2e2e2e !important;
-	border-bottom: 1px solid transparent !important;
+	border-bottom: 1px solid transparent;
 	background-color: transparent !important;
 }
 .main-menu ul li a:hover, .main-menu ul li.current-menu-item a, .main-menu ul li.current-menu-ancestor a, .main-menu ul li.mega-current-menu-item a, .main-menu ul li.mega-current-menu-ancestor a, .main-menu ul li.current-menu-item a:hover, .main-menu ul li.current-menu-ancestor a:hover {
-	color: #2e2e2e !important;
-	border-bottom: 1px solid #2e2e2e !important;
+	color: #f9bf3b !important;
+	border-bottom: 1px solid #f9bf3b !important;
 }
 .header-text-white .main-menu ul li a {
 	color: white !important;

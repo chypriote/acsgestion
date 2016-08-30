@@ -4,6 +4,243 @@
 ** Main yellow: #ecbf5a
 */
 
-.single-icon-black-style .icon-box-icon i {
-	color: #ecbf5a;
+#scroll-header {
+	background-color: #272525;
+	height: auto;
+}
+
+#header .header_content .wrap,
+#scroll-header #scroll-header-content .wrap {
+	display: flex;
+}
+.right-header {
+	align-self: center;
+}
+#mega-menu-wrap-main-menu #mega-menu-main-menu {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#mega-menu-wrap-main-menu #mega-menu-main-menu li {
+	color: #fff;
+	flex: 0;
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+}
+#mega-menu-wrap-main-menu #mega-menu-main-menu > li.mega-menu-item > a,
+#mega-menu-wrap-main-menu #mega-menu-main-menu li a {
+	text-align: center;
+	border-bottom: 1px solid transparent;
+}
+#mega-menu-wrap-main-menu #mega-menu-main-menu li a:hover {
+	border-bottom: 1px solid #fff;
+}
+#mega-menu-wrap-main-menu #mega-menu-main-menu li {
+	color: #fff;
+}
+
+.content-section-title {
+	color: #f9bf3b;
+}
+.content-section-title:before {
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 2px;
+	width: 200px;
+	background-color: #f9bf3b;
+}
+.content-section-title:after {
+	display: none;
+}
+
+/*! Bloc valeurs ajoutées */
+#block-views-block-megaw-block-features-block-features-1 {
+	background-color: #464040;
+}
+
+#block-views-block-megaw-block-features-block-features-1 .content-column3_1 {
+	width: 25%;
+}
+
+#block-views-block-megaw-block-features-block-features-1 .icon-box-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+#block-views-block-megaw-block-features-block-features-1 .icon-box-detail {
+	margin: 0;
+}
+
+#block-views-block-megaw-block-features-block-features-1 .icon-box-icon i {
+	color: #f0be5b;
+}
+
+#block-views-block-megaw-block-features-block-features-1 .icon-box-title {
+	color: #fff;
+}
+
+#block-views-block-megaw-block-features-block-features-1 .icon-box-content {
+	color: #fff;
+}
+
+#block-megawblockhtmlsection3index {
+	background-color: #353232;
+}
+
+/*! Bloc nos métiers */
+#block-megawblockhtmlsection3index .icon-box-item {
+	background-color: #fff;
+}
+
+#block-megawblockhtmlsection3index .icon-box-title {
+	text-align: center;
+	padding-bottom: 15px;
+	color: #032c54;
+}
+
+/*! Bloc solutions investissement */
+#block-views-block-megaw-portfolios-block-block-latest-projects1 {
+	background-color: #464040;
+}
+
+#block-views-block-megaw-portfolios-block-block-latest-projects1 .portfolio-style-2 .portfolio-cell-data {
+	bottom: -97px;
+}
+
+/*! Bloc en chiffres */
+#block-views-block-megaw-milestones-box-block-milestones-1-4 {
+	background-color: #353232;
+}
+
+#block-views-block-megaw-milestones-box-block-milestones-1-4 .content-section-heading {
+	margin-bottom: 40px;
+}
+
+#block-views-block-megaw-milestones-box-block-milestones-1-4 .content-section-subtitle {
+	text-align: center;
+	margin-bottom: 55px;
+	font-size: 25px;
+	color: #fff;
+}
+
+#block-views-block-megaw-milestones-box-block-milestones-1-4 .milestone-number {
+	color: #fff;
+	margin-bottom: 15px;
+}
+
+#block-views-block-megaw-milestones-box-block-milestones-1-4 .milestone-number i {
+	display: none;
+}
+
+#block-views-block-megaw-milestones-box-block-milestones-1-4 .milestone-number:after {
+	position: absolute;
+    width: 25px;
+    content: '';
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50px;
+	height: 3px;
+	background-color: #f9bf3b;
+}
+
+#block-views-block-megaw-milestones-box-block-milestones-1-4 .milestone-number:before {
+	content: '+';
+	margin-right: -8px;
+	font-size: 25px;
+}
+
+#block-views-block-megaw-milestones-box-block-milestones-1-4 .milestone-name {
+	color: #fff;
+}
+
+/*! Bloc partenaires */
+#block-views-block-megaw-logo-client-block-client1 {
+	background: #fff;
+}
+
+#block-views-block-megaw-logo-client-block-client1 .content-section-title {
+	color: #032c53;
+}
+
+#block-views-block-megaw-logo-client-block-client1 .content-section-title:before {
+	background-color: #032c53;
+}
+
+#block-views-block-megaw-logo-client-block-client1 .logo-client {
+	display: flex;
+    align-items: center;
+}
+
+#block-views-block-megaw-logo-client-block-client1 .logo_column6 {
+	width: auto;
+    margin: 0;
+    float: none;
+    flex: 1;
+}
+
+#block-views-block-megaw-logo-client-block-client1 .logo-client-item {
+	border: none;
+	padding: 0 15px;
+	-webkit-filter: grayscale(1);
+			filter: greyscale(1);
+}
+#block-views-block-megaw-logo-client-block-client1 .logo-client-item img {
+	opacity: 1;
+}
+
+#block-views-block-megaw-logo-client-block-client1 .logo-client-item:hover {
+	-webkit-filter: grayscale(0);
+			filter: greyscale(0);
+}
+
+/*! Footer */
+#footer {display: none;}
+#footer-bottom {
+	padding: 0;
+	background-color: #353232;
+}
+
+#block-footercontact #content-section1 {
+	background-color: #e1e4e9;
+}
+#block-footercontact .google-map-container {
+	height: 450px;
+}
+
+#block-footercontact .content-section-subtitle {
+	color: #032c53;
+	text-align: left;
+	padding: 0 20px 30px;
+	font-size: 24px;
+}
+
+#block-footercontact .gmap-footer .content-section-subtitle {
+	padding: 0 0 10px;
+}
+
+#block-footercontact .contact-form input,
+#block-footercontact .contact-form textarea {
+	background-color: #d1d4d9;
+}
+
+#block-footercontact .contact-form input[type="submit"] {
+	background-color: #2e2e2e;
+}
+
+#block-footercontact .contact-form input[type="submit"]:hover {
+	background-color: transparent;
+}
+
+#block-footercontact .contact-button {
+	text-align: right;
+}
+
+
+#block-megawblockhtmlfooter .footer-copyright {
+	padding: 20px 0;
 }
