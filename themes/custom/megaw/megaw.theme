@@ -15,7 +15,7 @@ function megaw_preprocess_breadcrumb(&$variables) {
  * Implements template_preprocess_page().
  */
 function megaw_preprocess_page(&$variables) {
-//     kint($variables); 
+//     kint($variables);
     if (isset($_GET['style'])) {
         $variables['blog_style'] = $_GET['style'];
     } else {
@@ -48,7 +48,7 @@ function megaw_preprocess_page(&$variables) {
         $term = taxonomy_term_load($term_id);
         $variables['current_term'] = $term;
     }
-    
+
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
         $variables['type'] = $node->getType();
     }
@@ -91,7 +91,7 @@ function megaw_preprocess_block(&$variables) {
 	    break;
 
   	}
-        
+
         if (!empty(theme_get_setting('second_logo_file', 'megaw'))) {
         $variables['logo_retina'] = $base_url . theme_get_setting('second_logo_file', 'megaw');
     } else {
@@ -106,7 +106,7 @@ function megaw_preprocess_block(&$variables) {
 	  	}
 	//config as context module
 	}else{
-		$variables['region'] = $variables['elements']['#configuration']['region'];            
+		$variables['region'] = $variables['elements']['#configuration']['region'];
 	}
 }
 
@@ -140,7 +140,7 @@ function megaw_preprocess_node(&$vars) {
         $file = File::load($fid);
         $image_uri = ImageStyle::load('image768x456')->buildUrl($file->getFileUri());
         $image_uri4_4 = ImageStyle::load('image400x400')->buildUrl($file->getFileUri());
-       
+
   foreach ($node_value= $vars['node']->field_image->getValue() as $k => $v) {
         $fid = $node_value[$k]['target_id'];
         $file = File::load($fid);
@@ -157,7 +157,7 @@ function megaw_preprocess_node(&$vars) {
 
     if (isset($vars['node']->uc_product_image) && !empty($vars['node']->uc_product_image->getValue())) {
         foreach ( $node_value=$vars['node']->uc_product_image->getValue() as $k => $v) {
-         
+
             $fid = $node_value[$k]['target_id'];
             $file = File::load($fid);
             $image_uri = ImageStyle::load('image576x529')->buildUrl($file->getFileUri());
@@ -193,7 +193,7 @@ function megaw_preprocess_node(&$vars) {
             $arr_blog = array();
 
             foreach (entity_load_multiple('node', $nids) as $k => $v) {
-//  kint($v->field_tags); 
+//  kint($v->field_tags);
                 $fid = $v->field_image->getValue()[0]['target_id'];
 
                 $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $v->nid->getValue()[0]['value']);
@@ -203,12 +203,15 @@ function megaw_preprocess_node(&$vars) {
                 $image_uri = ImageStyle::load('image576x529')->buildUrl($file->getFileUri());
 //print($url);
                 $arr_blog[$k] = '<div class="column1_3 ">
-                                        <div class="post-relative-entry">
-                                            <div class="post-relative-thumb"> <a href="' . $node_url . '"><img src="' . $image_uri . '" class="attachment-wope-thumb-grid size-wope-thumb-grid" alt="' . $v->getTitle() . '" /> <span class="post-relative-bg"></span>
-                                                    <h2 class="post-relative-title">' . $v->getTitle() . '</h2>
-                                                </a> </div>
+                                    <div class="post-relative-entry">
+                                        <div class="post-relative-thumb">
+                                            <a href="' . $node_url . '">
+                                                <img src="' . $image_uri . '" class="attachment-wope-thumb-grid size-wope-thumb-grid" alt="' . $v->getTitle() . '" /> <span class="post-relative-bg"></span>
+                                                <h2 class="post-relative-title">' . $v->getTitle() . '</h2>
+                                            </a>
                                         </div>
-                                    </div>';
+                                    </div>
+                                </div>';
             }
             $vars['related_blog'] = $arr_blog;
 //print_r ($vars['related_products']);
@@ -245,8 +248,8 @@ function megaw_preprocess_node(&$vars) {
                     $uc_price = (float) $v->price->getValue()[0]['value'];
                     $uc_price_fm = $sign_currency . number_format($uc_price, 2);
                 }
-                
-//                get term name 
+
+//                get term name
                 if (isset($v->field_product_tags->getValue()[0]['target_id'])) {
                     $term_id = ($v->field_product_tags->getValue()[0]['target_id']);
                     $term_object = \Drupal\taxonomy\Entity\Term::load($term_id);
@@ -255,7 +258,7 @@ function megaw_preprocess_node(&$vars) {
                 } else {
                     $term_name = "";
                 }
-//                
+//
 
 //kint($v->price);
                 $fid = $v->uc_product_image->getValue()[0]['target_id'];
@@ -270,10 +273,9 @@ function megaw_preprocess_node(&$vars) {
                 $url = file_create_url($uri);
 //print($url);
                 $arr_products[$k] = '<li class=" product type-product status-publish has-post-thumbnail ">
-                                                        <a href="' . $node_url . '"><img src="' . $url . '" class="attachment-shop_catalog size-shop_catalog" alt="SLIP-ON-SNEAKER"  sizes="(max-width: 700px) 100vw, 700px" /></a>
-                                                       
-                                                        <span class="price"><span class="amount">' . $uc_price_fm . '</span></span>
-                                                        <h3><a href="' . $node_url . '">' . $v->getTitle() . '</a></h3>'
+                                        <a href="' . $node_url . '"><img src="' . $url . '" class="attachment-shop_catalog size-shop_catalog" alt="SLIP-ON-SNEAKER"  sizes="(max-width: 700px) 100vw, 700px" /></a>
+                                        <span class="price"><span class="amount">' . $uc_price_fm . '</span></span>
+                                        <h3><a href="' . $node_url . '">' . $v->getTitle() . '</a></h3>'
                         . $term_name .
                         '</li>';
             }
@@ -322,16 +324,22 @@ function megaw_preprocess_node(&$vars) {
                 $image_uri = ImageStyle::load('image374x344')->buildUrl($file->getFileUri());
 //print($url);
                 $arr_portfolios[$k] = '<div class="column3_1 ">
-                                                        <div class="portfolio-cell">
-                                                            <div class="portfolio-cell-thumb">
-                                                                <div class="portfolio-cell-bg"></div>
-                                                                <a class="portfolio-cell-view" href="' . $node_url . '"><i class="pe-7s-search"></i></a> <a href="' . $node_url . '"> <img src="' . $image_uri . '" class="attachment-wope-thumb-grid-portfolio size-wope-thumb-grid-portfolio" alt="' . $v->getTitle() . '" /> </a> </div>
-                                                            <div class="portfolio-cell-data">
-                                                                <div class="portfolio-cell-title"> <a href="' . $node_url . '">' . $v->getTitle() . '</a> </div>'
-                        . $term_name .
-                        '</div>
-                                                        </div>
-                                                    </div>';
+                                            <div class="portfolio-cell">
+                                                <div class="portfolio-cell-thumb">
+                                                    <div class="portfolio-cell-bg"></div>
+                                                    <a class="portfolio-cell-view" href="' . $node_url . '">
+                                                        <i class="pe-7s-search"></i></a> <a href="' . $node_url . '">
+                                                        <img src="' . $image_uri . '" class="attachment-wope-thumb-grid-portfolio size-wope-thumb-grid-portfolio" alt="' . $v->getTitle() . '" />
+                                                    </a>
+                                                </div>
+                                                <div class="portfolio-cell-data">
+                                                    <div class="portfolio-cell-title">
+                                                        <a href="' . $node_url . '">' . $v->getTitle() . '</a>
+                                                    </div>'
+                                                    . $term_name .
+                                                '</div>
+                                            </div>
+                                        </div>';
             }
             $vars['related_portfolios'] = $arr_portfolios;
         }
@@ -387,7 +395,7 @@ function megaw_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'ltr';
     $variables['general_setting_tracking_code'] = theme_get_setting('general_setting_tracking_code', $theme);
     $variables['custom_css'] = theme_get_setting('custom_css', $theme);
-    
+
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
         $ntype = $node->getType();
         if ($ntype == 'product') {

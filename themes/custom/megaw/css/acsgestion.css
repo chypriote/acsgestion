@@ -109,6 +109,13 @@
 
 #block-views-block-megaw-portfolios-block-block-latest-projects1 .portfolio-style-2 .portfolio-cell-data {
 	bottom: -97px;
+	padding: 23px 0;
+}
+#block-views-block-megaw-portfolios-block-block-latest-projects1 .portfolio-cell:hover .portfolio-cell-data {
+	bottom: 0;
+}
+#block-views-block-megaw-portfolios-block-block-latest-projects1 .portfolio-cell-categories {
+	display: none;
 }
 
 /*! Bloc en chiffres */
