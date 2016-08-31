@@ -19,7 +19,7 @@ class Box extends DrupalSqlBase {
   public function query() {
     $query = $this->select('boxes', 'b')
       ->fields('b', array('bid', 'body', 'info', 'format'));
-    $query->orderBy('b.bid');
+    $query->orderBy('bid');
 
     return $query;
   }

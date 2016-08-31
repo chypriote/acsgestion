@@ -60,5 +60,4 @@ class Batch extends DatabaseQueue {
     }
     return $result;
   }
-
 }

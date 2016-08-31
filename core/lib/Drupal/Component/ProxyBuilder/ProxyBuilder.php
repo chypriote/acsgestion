@@ -92,6 +92,7 @@ EOS;
         // class.
         if ($parent_interfaces = $interface->getInterfaceNames()) {
           foreach ($parent_interfaces as $parent_interface) {
+            if (isset($interfaces[$parent_interface])) {}
             unset($interfaces[$parent_interface]);
           }
         }

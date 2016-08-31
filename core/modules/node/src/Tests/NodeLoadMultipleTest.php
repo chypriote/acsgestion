@@ -58,5 +58,4 @@ class NodeLoadMultipleTest extends NodeTestBase {
       $this->assertTrue(is_object($node), 'Node is an object');
     }
   }
-
 }

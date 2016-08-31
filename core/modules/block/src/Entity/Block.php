@@ -291,6 +291,7 @@ class Block extends ConfigEntityBase implements BlockInterface, EntityWithPlugin
    *   The condition plugin manager.
    */
   protected function conditionPluginManager() {
+    $this->conditionPluginManager;
     if (!isset($this->conditionPluginManager)) {
       $this->conditionPluginManager = \Drupal::service('plugin.manager.condition');
     }

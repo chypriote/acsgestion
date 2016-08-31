@@ -80,5 +80,4 @@ class DeleteTruncateTest extends DatabaseTestBase {
     $num_records_after = db_query('SELECT COUNT(*) FROM {test_special_columns}')->fetchField();
     $this->assertEqual($num_records_before, $num_records_after + $num_deleted, 'Deletion adds up.');
   }
-
 }

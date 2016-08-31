@@ -32,5 +32,4 @@ abstract class FileUsageBase implements FileUsageInterface {
       $file->save();
     }
   }
-
 }

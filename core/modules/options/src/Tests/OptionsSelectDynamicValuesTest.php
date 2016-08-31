@@ -30,5 +30,4 @@ class OptionsSelectDynamicValuesTest extends OptionsDynamicValuesTestBase {
       }
     }
   }
-
 }

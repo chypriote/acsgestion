@@ -164,7 +164,7 @@ class SearchPageCacheTagsTest extends SearchTestBase {
     $this->container->get('plugin.manager.search')->createInstance('node_search')->updateIndex();
     search_update_totals();
 
-    // Log in with searching user again.
+    // Login with searching user again.
     $this->drupalLogin($this->searchingUser);
 
     // Default search cache tags.

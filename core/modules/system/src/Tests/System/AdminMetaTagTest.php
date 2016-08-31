@@ -19,5 +19,4 @@ class AdminMetaTagTest extends WebTestBase {
     $this->drupalGet('node');
     $this->assertRaw($string, 'Fingerprinting meta tag generated correctly.', 'System');
   }
-
 }

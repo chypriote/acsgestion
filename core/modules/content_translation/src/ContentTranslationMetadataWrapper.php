@@ -146,5 +146,4 @@ class ContentTranslationMetadataWrapper implements ContentTranslationMetadataWra
       $this->translation->set($field_name, $value);
     }
   }
-
 }

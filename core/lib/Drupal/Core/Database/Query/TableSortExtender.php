@@ -96,5 +96,4 @@ class TableSortExtender extends SelectExtender {
   protected function order() {
     return tablesort_get_order($this->header);
   }
-
 }

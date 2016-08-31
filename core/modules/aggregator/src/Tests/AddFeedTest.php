@@ -91,5 +91,4 @@ class AddFeedTest extends AggregatorTestBase {
     $this->deleteFeed($feed);
     $this->deleteFeed($feed_2);
   }
-
 }

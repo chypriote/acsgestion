@@ -62,7 +62,7 @@ class FieldInstancePerFormDisplay extends DrupalSqlBase {
         'module',
       ));
     $query->join('content_node_field', 'cnf', 'cnfi.field_name = cnf.field_name');
-    $query->orderBy('cnfi.weight');
+    $query->orderBy('weight');
 
     return $query;
   }

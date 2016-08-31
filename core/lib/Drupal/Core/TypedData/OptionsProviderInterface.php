@@ -95,5 +95,4 @@ interface OptionsProviderInterface {
    *   label). Note that labels should NOT be sanitized.
    */
   public function getSettableOptions(AccountInterface $account = NULL);
-
 }

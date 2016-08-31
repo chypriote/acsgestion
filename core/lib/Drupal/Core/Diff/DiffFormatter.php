@@ -211,5 +211,4 @@ class DiffFormatter extends DiffFormatterBase {
       $this->rows[] = array_merge($this->emptyLine(), $this->addedLine($line));
     }
   }
-
 }

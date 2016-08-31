@@ -18,13 +18,13 @@ class NumericArgument extends ArgumentPluginBase {
    * The operator used for the query: or|and.
    * @var string
    */
-  public $operator;
+  var $operator;
 
   /**
    * The actual value which is used for querying.
    * @var array
    */
-  public $value;
+  var $value;
 
   protected function defineOptions() {
     $options = parent::defineOptions();

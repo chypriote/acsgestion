@@ -12,5 +12,4 @@ class Select extends QuerySelect {
     // SQLite does not support FOR UPDATE so nothing to do.
     return $this;
   }
-
 }

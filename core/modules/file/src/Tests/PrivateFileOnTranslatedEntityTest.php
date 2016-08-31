@@ -37,7 +37,7 @@ class PrivateFileOnTranslatedEntityTest extends FileFieldTestBase {
     $this->fieldName = strtolower($this->randomMachineName());
     $this->createFileField($this->fieldName, 'node', 'page', array('uri_scheme' => 'private'));
 
-    // Create and log in user.
+    // Create and login user.
     $permissions = array(
       'access administration pages',
       'administer content translation',

@@ -85,5 +85,4 @@ class HistoryTimestampTest extends ViewTestBase {
     $this->executeView($view);
 
   }
-
 }

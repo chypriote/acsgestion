@@ -43,9 +43,11 @@ class Radio extends FormElement {
    * @param array $element
    *   An associative array containing the properties of the element.
    *   Properties used: #required, #return_value, #value, #attributes, #title,
-   *   #description. The #name property will be sanitized before output. This is
-   *   currently done by initializing Drupal\Core\Template\Attribute with all
-   *   the attributes.
+   *   #description.
+   *
+   * Note: The input "name" attribute needs to be sanitized before output, which
+   *       is currently done by initializing Drupal\Core\Template\Attribute with
+   *       all the attributes.
    *
    * @return array
    *   The $element with prepared variables ready for input.html.twig.

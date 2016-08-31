@@ -18,7 +18,7 @@ use Drupal\Core\Form\FormStateInterface;
  * @code
  * $form['weight'] = array(
  *   '#type' => 'weight',
- *   '#title' => $this->t('Weight'),
+ *   '#title' => t('Weight'),
  *   '#default_value' => $edit['weight'],
  *   '#delta' => 10,
  * );

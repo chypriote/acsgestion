@@ -39,5 +39,4 @@ class UserEditedOwnAccountTest extends WebTestBase {
     $account->name = $edit['name'];
     $this->drupalLogin($account);
   }
-
 }

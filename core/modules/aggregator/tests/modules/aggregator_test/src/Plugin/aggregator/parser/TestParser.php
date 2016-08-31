@@ -27,5 +27,4 @@ class TestParser extends DefaultParser implements ParserInterface {
   public function parse(FeedInterface $feed) {
     return parent::parse($feed);
   }
-
 }

@@ -20,14 +20,19 @@ class CssOptimizer implements AssetOptimizerInterface {
    * {@inheritdoc}
    */
   public function optimize(array $css_asset) {
-    if ($css_asset['type'] != 'file') {
-      throw new \Exception('Only file CSS assets can be optimized.');
+    if (!in_array($css_asset['type'], array('file', 'inline'))) {
+      throw new \Exception('Only file or inline CSS assets can be optimized.');
     }
-    if (!$css_asset['preprocess']) {
+    if ($css_asset['type'] === 'file' && !$css_asset['preprocess']) {
       throw new \Exception('Only file CSS assets with preprocessing enabled can be optimized.');
     }
 
-    return $this->processFile($css_asset);
+    if ($css_asset['type'] === 'file') {
+      return $this->processFile($css_asset);
+    }
+    else {
+      return $this->processCss($css_asset['data'], $css_asset['preprocess']);
+    }
   }
 
   /**
@@ -163,7 +168,7 @@ class CssOptimizer implements AssetOptimizerInterface {
     $directory = dirname($filename);
     // If the file is in the current directory, make sure '.' doesn't appear in
     // the url() path.
-    $directory = $directory == '.' ? '' : $directory . '/';
+    $directory = $directory == '.' ? '' : $directory .'/';
 
     // Alter all internal url() paths. Leave external paths alone. We don't need
     // to normalize absolute paths here because that will be done later.
@@ -236,13 +241,13 @@ class CssOptimizer implements AssetOptimizerInterface {
   /**
    * Prefixes all paths within a CSS file for processFile().
    *
-   * Note: the only reason this method is public is so color.module can call it;
-   * it is not on the AssetOptimizerInterface, so future refactorings can make
-   * it protected.
-   *
    * @param array $matches
    *   An array of matches by a preg_replace_callback() call that scans for
    *   url() references in CSS files, except for external or absolute ones.
+   *
+   * Note: the only reason this method is public is so color.module can call it;
+   * it is not on the AssetOptimizerInterface, so future refactorings can make
+   * it protected.
    *
    * @return string
    *   The file path.

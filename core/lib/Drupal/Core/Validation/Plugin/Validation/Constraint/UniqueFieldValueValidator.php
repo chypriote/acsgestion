@@ -40,5 +40,4 @@ class UniqueFieldValueValidator extends ConstraintValidator {
       ]);
     }
   }
-
 }

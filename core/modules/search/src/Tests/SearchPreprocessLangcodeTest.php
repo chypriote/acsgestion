@@ -95,5 +95,4 @@ class SearchPreprocessLangcodeTest extends SearchTestBase {
     $this->assertText('Search results');
     $this->assertText('we are testing');
   }
-
 }

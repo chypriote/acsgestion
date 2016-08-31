@@ -52,5 +52,4 @@ class ShutdownFunctionsTest extends WebTestBase {
       $this->assertRaw('Drupal is &lt;blink&gt;awesome&lt;/blink&gt;.');
     }
   }
-
 }

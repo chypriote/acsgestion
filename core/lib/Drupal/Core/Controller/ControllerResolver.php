@@ -46,6 +46,7 @@ class ControllerResolver extends BaseControllerResolver implements ControllerRes
    *
    * @param \Symfony\Bridge\PsrHttpMessage\HttpMessageFactoryInterface $http_message_factory
    *   The PSR-7 converter.
+   *
    * @param \Drupal\Core\DependencyInjection\ClassResolverInterface $class_resolver
    *   The class resolver.
    */
@@ -67,7 +68,7 @@ class ControllerResolver extends BaseControllerResolver implements ControllerRes
         return $controller;
       }
       elseif (method_exists($controller, '__invoke')) {
-        return new $controller();
+        return new $controller;
       }
     }
 

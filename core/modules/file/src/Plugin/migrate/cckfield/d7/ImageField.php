@@ -7,8 +7,7 @@ use Drupal\migrate_drupal\Plugin\migrate\cckfield\CckFieldPluginBase;
 
 /**
  * @MigrateCckField(
- *   id = "image",
- *   core = {7}
+ *   id = "image"
  * )
  */
 class ImageField extends CckFieldPluginBase {

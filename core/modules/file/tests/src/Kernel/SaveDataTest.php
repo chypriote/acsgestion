@@ -130,5 +130,4 @@ class SaveDataTest extends FileManagedUnitTestBase {
     // Ensure that the existing file wasn't overwritten.
     $this->assertFileUnchanged($existing, File::load($existing->id()));
   }
-
 }

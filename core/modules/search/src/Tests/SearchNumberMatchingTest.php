@@ -95,5 +95,4 @@ class SearchNumberMatchingTest extends SearchTestBase {
     }
 
   }
-
 }

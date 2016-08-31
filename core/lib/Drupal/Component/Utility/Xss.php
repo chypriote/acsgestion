@@ -116,6 +116,7 @@ class Xss {
    * @ingroup sanitization
    *
    * @see \Drupal\Component\Utility\Xss::getAdminTagList()
+   *
    */
   public static function filterAdmin($string) {
     return static::filter($string, static::$adminTags);
@@ -343,5 +344,4 @@ class Xss {
   public static function getHtmlTagList() {
     return static::$htmlTags;
   }
-
 }

@@ -31,3 +31,4 @@ filters:
     status: true
     weight: 0
     settings: {  }
+langcode: en

@@ -28,5 +28,4 @@ class Term extends Entity {
       }
     }
   }
-
 }

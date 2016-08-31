@@ -46,5 +46,4 @@ class OrderByTest extends UnitTestCase {
     $sql = $this->query->__toString();
     $this->assertStringEndsWith('ORDER BY xDROPtablenode ASC', $sql, 'Order by field is escaped correctly.');
   }
-
 }

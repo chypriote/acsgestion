@@ -407,5 +407,4 @@ class Updater {
   public function postUpdateTasks() {
     return array();
   }
-
 }

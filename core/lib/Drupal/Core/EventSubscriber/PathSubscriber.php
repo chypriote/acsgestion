@@ -75,5 +75,4 @@ class PathSubscriber implements EventSubscriberInterface {
     $events[KernelEvents::TERMINATE][] = array('onKernelTerminate', 200);
     return $events;
   }
-
 }

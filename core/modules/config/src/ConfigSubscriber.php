@@ -33,5 +33,4 @@ class ConfigSubscriber extends ConfigImportValidateEventSubscriberBase {
     $events[ConfigEvents::IMPORT_VALIDATE][] = array('onConfigImporterValidate', 20);
     return $events;
   }
-
 }

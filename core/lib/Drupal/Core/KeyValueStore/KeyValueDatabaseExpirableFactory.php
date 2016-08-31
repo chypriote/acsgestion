@@ -62,5 +62,4 @@ class KeyValueDatabaseExpirableFactory implements KeyValueExpirableFactoryInterf
       ->condition('expire', REQUEST_TIME, '<')
       ->execute();
   }
-
 }

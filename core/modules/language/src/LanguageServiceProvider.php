@@ -100,5 +100,4 @@ class LanguageServiceProvider extends ServiceProviderBase {
     }
     return FALSE;
   }
-
 }

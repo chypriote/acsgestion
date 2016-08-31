@@ -141,5 +141,4 @@ class SelectionTest extends WebTestBase {
     $result = $handler->getReferenceableEntities();
     $this->assertResults($result);
   }
-
 }

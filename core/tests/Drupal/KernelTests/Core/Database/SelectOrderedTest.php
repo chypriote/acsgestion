@@ -81,5 +81,4 @@ class SelectOrderedTest extends DatabaseTestBase {
 
     $this->assertEqual($num_records, 4, 'Returned the correct number of rows.');
   }
-
 }

@@ -26,5 +26,4 @@ interface EntityDisplayModeInterface extends ConfigEntityInterface {
    * @return $this
    */
   public function setTargetType($target_entity_type);
-
 }

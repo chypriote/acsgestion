@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\aggregator\Kernel\Migrate;
+namespace Drupal\tests\aggregator\Kernel\Migrate;
 
 use Drupal\migrate\MigrateException;
 use Drupal\Tests\migrate_drupal\Kernel\MigrateDrupalTestBase;

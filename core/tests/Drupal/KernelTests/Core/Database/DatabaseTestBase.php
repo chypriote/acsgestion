@@ -143,5 +143,4 @@ abstract class DatabaseTestBase extends KernelTestBase {
       ))
       ->execute();
   }
-
 }

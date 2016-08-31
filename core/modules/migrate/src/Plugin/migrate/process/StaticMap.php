@@ -35,7 +35,7 @@ class StaticMap extends ProcessPluginBase {
     }
     $new_value = NestedArray::getValue($this->configuration['map'], $new_value, $key_exists);
     if (!$key_exists) {
-      if (array_key_exists('default_value', $this->configuration)) {
+      if (isset($this->configuration['default_value'])) {
         if (!empty($this->configuration['bypass'])) {
           throw new MigrateException('Setting both default_value and bypass is invalid.');
         }

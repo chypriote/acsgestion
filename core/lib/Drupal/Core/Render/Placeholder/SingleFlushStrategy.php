@@ -18,5 +18,4 @@ class SingleFlushStrategy implements PlaceholderStrategyInterface {
     // Return all placeholders as is; they should be rendered directly.
     return $placeholders;
   }
-
 }

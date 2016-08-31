@@ -36,7 +36,7 @@ class ImageOnTranslatedEntityTest extends ImageFieldTestBase {
     $this->fieldName = strtolower($this->randomMachineName());
     $this->createImageField($this->fieldName, 'basicpage', [], ['title_field' => 1]);
 
-    // Create and log in user.
+    // Create and login user.
     $permissions = array(
       'access administration pages',
       'administer content translation',

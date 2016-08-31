@@ -154,5 +154,4 @@ class Graph {
     // topological order if the graph is acyclic.
     $state['last_visit_order'][] = $start;
   }
-
 }

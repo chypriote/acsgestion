@@ -16,7 +16,7 @@ use Drupal\Core\Render\Element;
  * @code
  * $form['homepage'] = array(
  *   '#type' => 'url',
- *   '#title' => $this->t('Home Page'),
+ *   '#title' => t('Home Page'),
  *   '#size' => 30,
  *   ...
  * );

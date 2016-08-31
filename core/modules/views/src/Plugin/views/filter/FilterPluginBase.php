@@ -48,17 +48,17 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
    * Contains the actual value of the field,either configured in the views ui
    * or entered in the exposed filters.
    */
-  public $value = NULL;
+  var $value = NULL;
 
   /**
    * Contains the operator which is used on the query.
    */
-  public $operator = '=';
+  var $operator = '=';
 
   /**
    * Contains the information of the selected item in a grouped filter.
    */
-  public $group_info = NULL;
+  var $group_info = NULL;
 
   /**
    * @var bool
@@ -70,13 +70,13 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
    * @var bool
    * Disable the possibility to use operators.
    */
-  public $no_operator = FALSE;
+  var $no_operator = FALSE;
 
   /**
    * @var bool
    * Disable the possibility to allow a exposed input to be optional.
    */
-  public $always_required = FALSE;
+  var $always_required = FALSE;
 
   /**
    * Overrides \Drupal\views\Plugin\views\HandlerBase::init().
@@ -1227,7 +1227,7 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
     );
   }
 
-  /**
+  /*
    * Transform the input from a grouped filter into a standard filter.
    *
    * When a filter is a group, find the set of operator and values

@@ -67,5 +67,4 @@ class LockUnitTest extends KernelTestBase {
     $is_free = $this->lock->lockMayBeAvailable('lock_b');
     $this->assertTrue($is_free, 'Second lock has been released.');
   }
-
 }

@@ -6,5 +6,4 @@ class SomeClass {
   function testMethod() {
     return 'Drupal\\module_autoload_test\\SomeClass::testMethod() was invoked.';
   }
-
 }

@@ -83,5 +83,4 @@ class NameMungingTest extends FileTestBase {
     $unmunged_name = file_unmunge_filename($munged_name);
     $this->assertIdentical($unmunged_name, $this->name, format_string('The unmunged (%unmunged) filename matches the original (%original)', array('%unmunged' => $unmunged_name, '%original' => $this->name)));
   }
-
 }

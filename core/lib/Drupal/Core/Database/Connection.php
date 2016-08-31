@@ -753,11 +753,14 @@ abstract class Connection {
    */
   public function getDriverClass($class) {
     if (empty($this->driverClasses[$class])) {
-      if (empty($this->connectionOptions['namespace'])) {
-        // Fallback for Drupal 7 settings.php and the test runner script.
-        $this->connectionOptions['namespace'] = (new \ReflectionObject($this))->getNamespaceName();
+      $driver = $this->driver();
+      if (!empty($this->connectionOptions['namespace'])) {
+        $driver_class  = $this->connectionOptions['namespace'] . '\\' . $class;
       }
-      $driver_class = $this->connectionOptions['namespace'] . '\\' . $class;
+      else {
+        // Fallback for Drupal 7 settings.php.
+        $driver_class = "Drupal\\Core\\Database\\Driver\\{$driver}\\{$class}";
+      }
       $this->driverClasses[$class] = class_exists($driver_class) ? $driver_class : $class;
     }
     return $this->driverClasses[$class];

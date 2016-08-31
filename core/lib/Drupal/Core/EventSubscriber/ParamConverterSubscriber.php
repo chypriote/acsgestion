@@ -48,5 +48,4 @@ class ParamConverterSubscriber implements EventSubscriberInterface {
     $events[RoutingEvents::ALTER][] = array('onRoutingRouteAlterSetParameterConverters', -220);
     return $events;
   }
-
 }

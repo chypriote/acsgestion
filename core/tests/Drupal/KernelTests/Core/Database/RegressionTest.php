@@ -56,5 +56,4 @@ class RegressionTest extends DatabaseTestBase {
     $this->assertIdentical(TRUE, db_index_exists('test', 'ages'), 'Returns true for existent index.');
     $this->assertIdentical(FALSE, db_index_exists('test', 'nosuchindex'), 'Returns false for nonexistent index.');
   }
-
 }

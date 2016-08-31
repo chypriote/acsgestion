@@ -431,5 +431,4 @@ class EditorSecurityTest extends WebTestBase {
     $dom_node = $this->xpath('//textarea[@id="edit-body-0-value"]');
     $this->assertIdentical(self::$sampleContent, (string) $dom_node[0], 'The value was filtered by the Insecure text editor XSS filter.');
   }
-
 }

@@ -87,5 +87,4 @@ class LocaleTranslatedSchemaDefinitionTest extends WebTestBase {
     $this->assertRaw('messages--status', 'No pending updates.');
     $this->assertNoLinkByHref('fr/update.php/run', 'No link to run updates.');
   }
-
 }

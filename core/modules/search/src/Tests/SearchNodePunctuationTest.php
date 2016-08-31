@@ -59,5 +59,4 @@ class SearchNodePunctuationTest extends SearchTestBase {
     $this->assertNoRaw('<strong>&</strong>amp;');
     $this->assertText('You must include at least one keyword');
   }
-
 }

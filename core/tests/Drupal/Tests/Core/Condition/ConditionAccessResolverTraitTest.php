@@ -88,5 +88,4 @@ class TestConditionAccessResolverTrait {
   use \Drupal\Core\Condition\ConditionAccessResolverTrait {
     resolveConditions as public;
   }
-
 }

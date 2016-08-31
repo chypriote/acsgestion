@@ -33,7 +33,7 @@ class LanguageUrlRewritingTest extends WebTestBase {
   protected function setUp() {
     parent::setUp();
 
-    // Create and log in user.
+    // Create and login user.
     $this->webUser = $this->drupalCreateUser(array('administer languages', 'access administration pages'));
     $this->drupalLogin($this->webUser);
 

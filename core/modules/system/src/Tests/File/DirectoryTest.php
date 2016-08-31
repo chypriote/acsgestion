@@ -159,5 +159,4 @@ class DirectoryTest extends FileTestBase {
     $this->assertEqual(empty($tmp_directory), FALSE, 'file_directory_temp() returned a non-empty value.');
     $this->assertEqual($config->get('path.temporary'), $tmp_directory);
   }
-
 }

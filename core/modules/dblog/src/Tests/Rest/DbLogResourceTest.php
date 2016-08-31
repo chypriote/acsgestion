@@ -61,5 +61,4 @@ class DbLogResourceTest extends RESTTestBase {
     $decoded = Json::decode($response);
     $this->assertEqual($decoded['error'], 'No log entry ID was provided', 'Response message is correct.');
   }
-
 }

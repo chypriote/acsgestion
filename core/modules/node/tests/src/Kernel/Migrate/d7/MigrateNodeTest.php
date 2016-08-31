@@ -13,7 +13,7 @@ use Drupal\node\NodeInterface;
  */
 class MigrateNodeTest extends MigrateDrupal7TestBase {
 
-  public static $modules = array(
+  static $modules = array(
     'comment',
     'datetime',
     'filter',
@@ -44,7 +44,6 @@ class MigrateNodeTest extends MigrateDrupal7TestBase {
       'd7_user',
       'd7_node_type',
       'd7_comment_type',
-      'd7_taxonomy_vocabulary',
       'd7_field',
       'd7_field_instance',
       'd7_node:test_content_type',
@@ -140,13 +139,9 @@ class MigrateNodeTest extends MigrateDrupal7TestBase {
     $this->assertIdentical('title text', $node->field_images->title);
     $this->assertIdentical('93', $node->field_images->width);
     $this->assertIdentical('93', $node->field_images->height);
-    $this->assertIdentical('http://google.com', $node->field_link->uri);
-    $this->assertIdentical('Click Here', $node->field_link->title);
 
     $node = Node::load(2);
     $this->assertIdentical("...is that it's the absolute best show ever. Trust me, I would know.", $node->body->value);
-    $this->assertIdentical('internal:/', $node->field_link->uri);
-    $this->assertIdentical('Home', $node->field_link->title);
   }
 
 }

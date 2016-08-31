@@ -738,7 +738,7 @@ class FormBuilderTest extends FormTestBase {
    */
   public function testValueCallableIsSafe($callback, $expected) {
     $method = new \ReflectionMethod(FormBuilder::class, 'valueCallableIsSafe');
-    $method->setAccessible(TRUE);
+    $method->setAccessible(true);
     $is_safe = $method->invoke($this->formBuilder, $callback);
     $this->assertSame($expected, $is_safe);
   }
@@ -886,13 +886,11 @@ class TestForm implements FormInterface {
   }
   public function validateForm(array &$form, FormStateInterface $form_state) { }
   public function submitForm(array &$form, FormStateInterface $form_state) { }
-
 }
 class TestFormInjected extends TestForm implements ContainerInjectionInterface {
   public static function create(ContainerInterface $container) {
     return new static();
   }
-
 }
 
 

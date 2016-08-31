@@ -43,6 +43,7 @@ class MenuLinkContentDeriver extends DeriverBase implements ContainerDeriverInte
    *
    * @param \Drupal\Core\Entity\Query\QueryFactory $query_factory
    *   The query factory.
+   *
    * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
    *   The entity manager.
    * @param \Drupal\Core\Menu\MenuLinkManagerInterface $menu_link_manager

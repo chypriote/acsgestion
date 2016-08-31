@@ -113,6 +113,7 @@ abstract class FormTestBase extends UnitTestCase {
   protected $elementInfo;
 
   /**
+   *
    * The event dispatcher.
    *
    * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface|\PHPUnit_Framework_MockObject_MockObject

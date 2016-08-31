@@ -169,5 +169,4 @@ class EntityQueryRelationshipTest extends EntityKernelTestBase {
       $this->assertEqual($this->queryResults[$id], $id);
     }
   }
-
 }

@@ -130,5 +130,4 @@ class TranslationWebTest extends FieldTestBase {
       $this->assertTrue($passed, format_string('The @language translation for revision @revision was correctly stored', array('@language' => $langcode, '@revision' => $entity->getRevisionId())));
     }
   }
-
 }

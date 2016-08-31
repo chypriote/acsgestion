@@ -74,5 +74,4 @@ class TranslationLanguageRenderer extends EntityTranslationRendererBase {
   public function getCacheContexts() {
     return ['languages:' . LanguageInterface::TYPE_CONTENT];
   }
-
 }

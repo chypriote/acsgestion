@@ -90,11 +90,4 @@ class PathItem extends FieldItemBase {
     return $values;
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public static function mainPropertyName() {
-    return 'alias';
-  }
-
 }

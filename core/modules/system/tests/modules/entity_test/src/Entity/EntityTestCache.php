@@ -15,7 +15,7 @@ namespace Drupal\entity_test\Entity;
  *     },
  *     "translation" = "Drupal\content_translation\ContentTranslationHandler"
  *   },
- *   base_table = "entity_test_cache",
+ *   base_table = "entity_test",
  *   entity_keys = {
  *     "id" = "id",
  *     "uuid" = "uuid",

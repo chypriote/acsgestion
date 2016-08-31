@@ -46,5 +46,4 @@ class DummyStreamWrapper extends LocalStream {
   function getExternalUrl() {
     return '/dummy/example.txt';
   }
-
 }

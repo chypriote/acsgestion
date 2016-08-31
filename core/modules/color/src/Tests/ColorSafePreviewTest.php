@@ -54,4 +54,5 @@ class ColorSafePreviewTest extends WebTestBase {
     $this->assertRaw('<h2>TEST COLOR PREVIEW</h2>');
   }
 
+
 }

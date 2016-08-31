@@ -9,12 +9,12 @@ namespace Drupal\Core\Render\Element;
  * @code
  * $form['author'] = array(
  *   '#type' => 'fieldset',
- *   '#title' => $this->t('Author'),
+ *   '#title' => 'Author',
  * );
  *
  * $form['author']['name'] = array(
  *   '#type' => 'textfield',
- *   '#title' => $this->t('Name'),
+ *   '#title' => t('Name'),
  * );
  * @endcode
  *

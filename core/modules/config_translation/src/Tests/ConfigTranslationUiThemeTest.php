@@ -42,7 +42,7 @@ class ConfigTranslationUiThemeTest extends WebTestBase {
       'administer site configuration',
       'translate configuration',
     ];
-    // Create and log in user.
+    // Create and login user.
     $this->adminUser = $this->drupalCreateUser($admin_permissions);
 
     // Add languages.

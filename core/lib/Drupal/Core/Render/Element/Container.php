@@ -15,7 +15,7 @@ use Drupal\Core\Form\FormStateInterface;
  * @code
  * $form['needs_accommodation'] = array(
  *   '#type' => 'checkbox',
- *   '#title' => $this->t('Need Special Accommodations?'),
+ *   '#title' => 'Need Special Accommodations?',
  * );
  *
  * $form['accommodation'] = array(
@@ -32,7 +32,7 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * $form['accommodation']['diet'] = array(
  *   '#type' => 'textfield',
- *   '#title' => $this->t('Dietary Restrictions'),
+ *   '#title' => t('Dietary Restrictions'),
  * );
  * @endcode
  *

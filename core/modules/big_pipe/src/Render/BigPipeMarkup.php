@@ -20,5 +20,4 @@ use Drupal\Component\Render\MarkupTrait;
  */
 final class BigPipeMarkup implements MarkupInterface, \Countable {
   use MarkupTrait;
-
 }

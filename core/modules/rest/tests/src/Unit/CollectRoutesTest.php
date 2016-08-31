@@ -133,5 +133,4 @@ class CollectRoutesTest extends UnitTestCase {
     $this->assertEquals(count($requirements_1), 0, 'First route has no requirement.');
     $this->assertEquals(count($requirements_2), 2, 'Views route with rest export had the format and method requirements added.');
   }
-
 }

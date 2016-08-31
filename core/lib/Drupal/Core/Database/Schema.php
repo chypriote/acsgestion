@@ -655,5 +655,4 @@ abstract class Schema implements PlaceholderInterface {
     }
     return is_string($value) ? $this->connection->quote($value) : $value;
   }
-
 }

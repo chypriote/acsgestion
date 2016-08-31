@@ -175,5 +175,4 @@ class SelectSubqueryTest extends DatabaseTestBase {
     $people = $query->execute()->fetchCol();
     $this->assertEqual(count($people), 3, 'NOT EXISTS query returned the correct results.');
   }
-
 }

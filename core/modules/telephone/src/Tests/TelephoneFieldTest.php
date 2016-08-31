@@ -98,5 +98,4 @@ class TelephoneFieldTest extends WebTestBase {
     $this->drupalPostForm('node/add/article', $edit, t('Save'));
     $this->assertRaw('<a href="tel:123456789">', 'Telephone link is output with whitespace removed.');
   }
-
 }

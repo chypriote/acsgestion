@@ -17,5 +17,4 @@ class ChangedFieldItemList extends FieldItemList {
     // It is not possible to edit the changed field.
     return AccessResult::allowedIf($operation !== 'edit');
   }
-
 }

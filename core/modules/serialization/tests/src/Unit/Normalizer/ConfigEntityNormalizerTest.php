@@ -31,3 +31,4 @@ class ConfigEntityNormalizerTest extends UnitTestCase {
   }
 
 }
+

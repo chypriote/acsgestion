@@ -56,9 +56,7 @@
       }
     }
     // Offset the dialog center to be at the center of Drupal.displace.offsets.
-    if (!event.data.settings.modal) {
-      adjustedOptions = resetPosition(adjustedOptions);
-    }
+    adjustedOptions = resetPosition(adjustedOptions);
     event.data.$element
       .dialog('option', adjustedOptions)
       .trigger('dialogContentResize');

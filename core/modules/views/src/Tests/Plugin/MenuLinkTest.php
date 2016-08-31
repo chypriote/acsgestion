@@ -94,5 +94,4 @@ class MenuLinkTest extends ViewTestBase {
     $this->assertText('Primary level node');
     $this->assertText('Secondary level view page');
   }
-
 }

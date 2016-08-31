@@ -34,5 +34,4 @@ class RemoteFileScanDirectoryTest extends ScanDirectoryTest {
     parent::setUp();
     $this->config('system.file')->set('default_scheme', 'dummy-remote')->save();
   }
-
 }

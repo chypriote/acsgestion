@@ -107,5 +107,4 @@ class ListDataDefinition extends DataDefinition implements ListDataDefinitionInt
     $this->itemDefinition = $definition;
     return $this;
   }
-
 }

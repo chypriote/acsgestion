@@ -420,12 +420,8 @@ class Schema extends DatabaseSchema {
    *
    * @param $table
    *   Name of the table.
-   *
    * @return
    *   An array representing the schema, from drupal_get_schema().
-   *
-   * @throws \Exception
-   *   If a column of the table could not be parsed.
    */
   protected function introspectSchema($table) {
     $mapped_fields = array_flip($this->getFieldTypeMap());
@@ -463,7 +459,7 @@ class Schema extends DatabaseSchema {
         }
       }
       else {
-        throw new \Exception("Unable to parse the column type " . $row->type);
+        new \Exception("Unable to parse the column type " . $row->type);
       }
     }
     $indexes = array();
@@ -714,7 +710,7 @@ class Schema extends DatabaseSchema {
       // Can't use query placeholders for the schema because the query would
       // have to be :prefixsqlite_master, which does not work. We also need to
       // ignore the internal SQLite tables.
-      $result = $this->connection->query("SELECT name FROM " . $schema . ".sqlite_master WHERE type = :type AND name LIKE :table_name AND name NOT LIKE :pattern", array(
+      $result = db_query("SELECT name FROM " . $schema . ".sqlite_master WHERE type = :type AND name LIKE :table_name AND name NOT LIKE :pattern", array(
         ':type' => 'table',
         ':table_name' => $table_expression,
         ':pattern' => 'sqlite_%',

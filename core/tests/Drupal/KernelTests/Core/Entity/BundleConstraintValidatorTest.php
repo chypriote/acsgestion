@@ -68,5 +68,4 @@ class BundleConstraintValidatorTest extends KernelTestBase {
     $this->assertEqual($violation->getRoot(), $typed_data, 'Violation root is correct.');
     $this->assertEqual($violation->getInvalidValue(), $page_node, 'The invalid value is set correctly in the violation.');
   }
-
 }

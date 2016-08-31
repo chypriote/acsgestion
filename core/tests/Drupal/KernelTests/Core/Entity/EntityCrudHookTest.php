@@ -556,5 +556,4 @@ class EntityCrudHookTest extends EntityKernelTestBase {
       $this->assertFalse(empty($ids), 'Transactions not supported, and entity found in database.');
     }
   }
-
 }

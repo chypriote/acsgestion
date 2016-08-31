@@ -24,5 +24,4 @@ class FloatData extends PrimitiveBase implements FloatInterface {
   public function getCastedValue() {
     return (float) $this->value;
   }
-
 }

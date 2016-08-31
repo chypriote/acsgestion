@@ -125,5 +125,4 @@ class EntityReferenceFileUploadTest extends WebTestBase {
     $this->drupalPostForm(NULL, $edit, 'Save');
     $this->assertResponse(200);
   }
-
 }

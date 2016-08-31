@@ -141,5 +141,4 @@ class CopyTest extends FileManagedUnitTestBase {
     $this->assertFileUnchanged($source, File::load($source->id()));
     $this->assertFileUnchanged($target, File::load($target->id()));
   }
-
 }

@@ -16,9 +16,9 @@ use Drupal\Component\Utility\Html as HtmlUtility;
  * @code
  * $form['settings']['active'] = array(
  *   '#type' => 'radios',
- *   '#title' => $this->t('Poll status'),
+ *   '#title' => t('Poll status'),
  *   '#default_value' => 1,
- *   '#options' => array(0 => $this->t('Closed'), 1 => $this->t('Active')),
+ *   '#options' => array(0 => t('Closed'), 1 => t('Active')),
  * );
  * @endcode
  *

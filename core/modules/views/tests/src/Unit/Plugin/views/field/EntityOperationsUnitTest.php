@@ -163,7 +163,6 @@ class EntityOperationsUnitTest extends UnitTestCase {
     $build = $this->plugin->render($result);
     $this->assertSame($expected_build, $build);
   }
-
 }
 
 }

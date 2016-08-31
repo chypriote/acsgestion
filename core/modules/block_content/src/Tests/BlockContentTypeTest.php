@@ -46,7 +46,7 @@ class BlockContentTypeTest extends BlockContentTestBase {
    * Tests creating a block type programmatically and via a form.
    */
   public function testBlockContentTypeCreation() {
-    // Log in a test user.
+    // Login a test user.
     $this->drupalLogin($this->adminUser);
 
     // Test the page with no block-types.

@@ -65,5 +65,4 @@ class SizeUnitTest extends KernelTestBase {
       );
     }
   }
-
 }

@@ -51,5 +51,4 @@ class UpdatesWith7xTest extends WebTestBase {
     $this->clickLink(t('Continue'));
     $this->assertText(t('Some of the pending updates cannot be applied because their dependencies were not met.'));
   }
-
 }

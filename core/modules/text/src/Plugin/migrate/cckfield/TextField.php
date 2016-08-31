@@ -8,13 +8,7 @@ use Drupal\migrate_drupal\Plugin\migrate\cckfield\CckFieldPluginBase;
 
 /**
  * @MigrateCckField(
- *   id = "text",
- *   type_map = {
- *     "text" = "text",
- *     "text_long" = "text_long",
- *     "text_with_summary" = "text_with_summary"
- *   },
- *   core = {6,7}
+ *   id = "text"
  * )
  */
 class TextField extends CckFieldPluginBase {
@@ -119,7 +113,6 @@ class TextField extends CckFieldPluginBase {
         case 'text_textarea':
           return 'text_long';
         default:
-          return parent::getFieldType($row);
           break;
       }
     }

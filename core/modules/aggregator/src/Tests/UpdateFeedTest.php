@@ -42,5 +42,4 @@ class UpdateFeedTest extends AggregatorTestBase {
       $this->deleteFeed($feed);
     }
   }
-
 }

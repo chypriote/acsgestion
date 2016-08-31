@@ -57,5 +57,4 @@ class GetFilenameUnitTest extends KernelTestBase {
     // Restore the original error handler.
     restore_error_handler();
   }
-
 }

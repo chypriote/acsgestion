@@ -7,11 +7,7 @@ use Drupal\migrate_drupal\Plugin\migrate\cckfield\CckFieldPluginBase;
 
 /**
  * @MigrateCckField(
- *   id = "taxonomy_term_reference",
- *   type_map = {
- *     "taxonomy_term_reference" = "entity_reference"
- *   },
- *   core = {6,7}
+ *   id = "taxonomy_term_reference"
  * )
  */
 class TaxonomyTermReference extends CckFieldPluginBase {

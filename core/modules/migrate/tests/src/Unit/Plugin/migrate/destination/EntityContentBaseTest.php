@@ -8,7 +8,6 @@
 namespace Drupal\Tests\migrate\Unit\Plugin\migrate\destination;
 
 use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\Core\Entity\ContentEntityType;
 use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\FieldTypePluginManagerInterface;
@@ -98,33 +97,6 @@ class EntityContentBaseTest extends UnitTestCase {
     $destination->import(new Row([], []));
   }
 
-  /**
-   * Test that translation destination fails for untranslatable entities.
-   *
-   * @expectedException \Drupal\migrate\MigrateException
-   * @expectedExceptionMessage This entity type does not support translation
-   */
-  public function testUntranslatable() {
-    // An entity type without a language.
-    $entity_type = $this->prophesize(ContentEntityType::class);
-    $entity_type->getKey('langcode')->willReturn('');
-    $entity_type->getKey('id')->willReturn('id');
-
-    $this->storage->getEntityType()->willReturn($entity_type->reveal());
-
-    $destination = new EntityTestDestination(
-      [ 'translations' => TRUE ],
-      '',
-      [],
-      $this->migration->reveal(),
-      $this->storage->reveal(),
-      [],
-      $this->entityManager->reveal(),
-      $this->prophesize(FieldTypePluginManagerInterface::class)->reveal()
-    );
-    $destination->getIds();
-  }
-
 }
 
 /**
@@ -143,5 +115,4 @@ class EntityTestDestination extends EntityContentBase {
   protected function getEntity(Row $row, array $old_destination_id_values) {
     return $this->entity;
   }
-
 }

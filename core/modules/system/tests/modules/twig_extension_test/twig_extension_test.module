@@ -20,3 +20,4 @@ function twig_extension_test_theme($existing, $type, $theme, $path) {
     ),
   );
 }
+

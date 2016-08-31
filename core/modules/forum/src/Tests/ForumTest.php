@@ -153,7 +153,7 @@ class ForumTest extends WebTestBase {
 
     $this->generateForumTopics();
 
-    // Log in an unprivileged user to view the forum topics and generate an
+    // Login an unprivileged user to view the forum topics and generate an
     // active forum topics list.
     $this->drupalLogin($this->webUser);
     // Verify that this user is shown a message that they may not post content.
@@ -180,7 +180,7 @@ class ForumTest extends WebTestBase {
     $this->drupalGet('forum/' . $this->forum['tid']);
     $this->assertLink(t('Add new Forum topic'));
 
-    // Log in a user with permission to edit any forum content.
+    // Login a user with permission to edit any forum content.
     $this->drupalLogin($this->editAnyTopicsUser);
     // Verify that this user can edit forum content authored by another user.
     $this->verifyForums($own_topics_user_node, TRUE);
@@ -281,7 +281,7 @@ class ForumTest extends WebTestBase {
    *   The logged-in user.
    */
   private function doAdminTests($user) {
-    // Log in the user.
+    // Login the user.
     $this->drupalLogin($user);
 
     // Add forum to the Tools menu.
@@ -467,7 +467,7 @@ class ForumTest extends WebTestBase {
    *   User has 'access administration pages' privilege.
    */
   private function doBasicTests($user, $admin) {
-    // Log in the user.
+    // Login the user.
     $this->drupalLogin($user);
     // Attempt to create forum topic under a container.
     $this->createForumTopic($this->forumContainer, TRUE);
@@ -481,7 +481,7 @@ class ForumTest extends WebTestBase {
    * Tests a forum with a new post displays properly.
    */
   function testForumWithNewPost() {
-    // Log in as the first user.
+    // Login as the first user.
     $this->drupalLogin($this->adminUser);
     // Create a forum container.
     $this->forumContainer = $this->createForum('container');
@@ -490,7 +490,7 @@ class ForumTest extends WebTestBase {
     // Create a topic.
     $node = $this->createForumTopic($this->forum, FALSE);
 
-    // Log in as a second user.
+    // Login as a second user.
     $this->drupalLogin($this->postCommentUser);
     // Post a reply to the topic.
     $edit = array();
@@ -504,7 +504,7 @@ class ForumTest extends WebTestBase {
     $this->assertResponse(200);
     $this->assertFieldByName('comment_body[0][value]');
 
-    // Log in as the first user.
+    // Login as the first user.
     $this->drupalLogin($this->adminUser);
     // Check that forum renders properly.
     $this->drupalGet("forum/{$this->forum['tid']}");
@@ -678,5 +678,4 @@ class ForumTest extends WebTestBase {
       $this->nids[] = $node->id();
     }
   }
-
 }

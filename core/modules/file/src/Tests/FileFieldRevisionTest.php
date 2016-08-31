@@ -138,5 +138,4 @@ class FileFieldRevisionTest extends FileFieldTestBase {
     $this->assertFileNotExists($node_file_r1, 'Original file is deleted after deleting the entire node with two revisions remaining.');
     $this->assertFileEntryNotExists($node_file_r1, 'Original file entry is deleted after deleting the entire node with two revisions remaining.');
   }
-
 }

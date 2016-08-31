@@ -157,7 +157,6 @@ class MigrationPluginManager extends DefaultPluginManager implements MigrationPl
     // current migration.
     $dependency_graph = [];
     $required_dependency_graph = [];
-    $have_optional = FALSE;
     foreach ($migrations as $migration) {
       /** @var \Drupal\migrate\Plugin\MigrationInterface $migration */
       $id = $migration->id();
@@ -173,15 +172,14 @@ class MigrationPluginManager extends DefaultPluginManager implements MigrationPl
           $this->addDependency($dependency_graph, $id, $dependency, $dynamic_ids);
         }
       }
-      if (!empty($migration_dependencies['optional'])) {
+      if (isset($migration_dependencies['optional'])) {
         foreach ($migration_dependencies['optional'] as $dependency) {
           $this->addDependency($dependency_graph, $id, $dependency, $dynamic_ids);
         }
-        $have_optional = TRUE;
       }
     }
     $dependency_graph = (new Graph($dependency_graph))->searchAndSort();
-    if ($have_optional) {
+    if (!empty($migration_dependencies['optional'])) {
       $required_dependency_graph = (new Graph($required_dependency_graph))->searchAndSort();
     }
     else {

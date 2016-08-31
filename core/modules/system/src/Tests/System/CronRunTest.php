@@ -125,5 +125,4 @@ class CronRunTest extends WebTestBase {
     $this->assertResponse(200);
     $this->assertText(t('Cron ran successfully.'));
   }
-
 }

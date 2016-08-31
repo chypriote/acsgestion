@@ -111,5 +111,4 @@ class PhpMail implements MailInterface {
 
     return $mail_result;
   }
-
 }

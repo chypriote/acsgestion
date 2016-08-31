@@ -36,5 +36,4 @@ class TestFieldApplicableFormatter extends FormatterBase {
   public function viewElements(FieldItemListInterface $items, $langcode) {
     return array('#markup' => 'Nothing to see here');
   }
-
 }

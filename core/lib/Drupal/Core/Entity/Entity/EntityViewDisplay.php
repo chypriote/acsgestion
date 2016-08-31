@@ -277,7 +277,7 @@ class EntityViewDisplay extends EntityDisplayBase implements EntityViewDisplayIn
         'view_mode' => $this->originalMode,
         'display' => $this,
       );
-      \Drupal::moduleHandler()->alter('entity_display_build', $build_list[$id], $context);
+      \Drupal::moduleHandler()->alter('entity_display_build', $build_list[$key], $context);
     }
 
     return $build_list;
@@ -301,5 +301,4 @@ class EntityViewDisplay extends EntityDisplayBase implements EntityViewDisplayIn
       'formatters' => new EntityDisplayPluginCollection($this->pluginManager, $configurations)
     );
   }
-
 }

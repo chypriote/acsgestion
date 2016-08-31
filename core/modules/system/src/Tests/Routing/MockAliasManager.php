@@ -40,11 +40,11 @@ class MockAliasManager implements AliasManagerInterface {
   /**
    * Adds an alias to the in-memory alias table for this object.
    *
-   * @param string $path
+   * @param type $path
    *   The system path of the alias.
-   * @param string $alias
+   * @param type $alias
    *   The alias of the system path.
-   * @param string $path_language
+   * @param type $path_language
    *   The language of this alias.
    */
   public function addAlias($path, $alias, $path_language = NULL) {
@@ -76,10 +76,6 @@ class MockAliasManager implements AliasManagerInterface {
    * @return
    */
   public function getAliasByPath($path, $langcode = NULL) {
-    if ($path[0] !== '/') {
-      throw new \InvalidArgumentException(sprintf('Source path %s has to start with a slash.', $path));
-    }
-
     $langcode = $langcode ?: $this->defaultLanguage;
     $this->lookedUp[$path] = 1;
     return $this->aliases[$path][$langcode];
@@ -91,5 +87,4 @@ class MockAliasManager implements AliasManagerInterface {
   public function cacheClear($source = NULL) {
     // Not needed.
   }
-
 }

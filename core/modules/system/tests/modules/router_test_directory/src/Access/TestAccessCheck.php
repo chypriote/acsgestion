@@ -21,5 +21,4 @@ class TestAccessCheck implements AccessInterface {
     // allowed or not.
     return AccessResult::neutral();
   }
-
 }

@@ -208,5 +208,4 @@ interface StatementInterface extends \Traversable {
    *   An associative array, or an empty array if there is no result set.
    */
   public function fetchAllAssoc($key, $fetch = NULL);
-
 }

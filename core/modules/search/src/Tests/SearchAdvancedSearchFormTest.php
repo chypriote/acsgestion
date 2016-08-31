@@ -18,7 +18,7 @@ class SearchAdvancedSearchFormTest extends SearchTestBase {
 
   protected function setUp() {
     parent::setUp();
-    // Create and log in user.
+    // Create and login user.
     $test_user = $this->drupalCreateUser(array('access content', 'search content', 'use advanced search', 'administer nodes'));
     $this->drupalLogin($test_user);
 

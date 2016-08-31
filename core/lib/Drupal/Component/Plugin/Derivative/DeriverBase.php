@@ -31,5 +31,4 @@ abstract class DeriverBase implements DeriverInterface {
   public function getDerivativeDefinitions($base_plugin_definition) {
     return $this->derivatives;
   }
-
 }

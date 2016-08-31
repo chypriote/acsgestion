@@ -24,5 +24,4 @@ class TrackerUserTab extends ControllerBase {
   public function getTitle(UserInterface $user) {
     return $user->getUsername();
   }
-
 }

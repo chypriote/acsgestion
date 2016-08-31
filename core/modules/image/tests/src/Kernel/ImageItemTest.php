@@ -53,9 +53,6 @@ class ImageItemTest extends FieldKernelTestBase {
       'entity_type' => 'entity_test',
       'field_name' => 'image_test',
       'bundle' => 'entity_test',
-      'settings' => [
-        'file_extensions' => 'jpg',
-      ],
     ])->save();
     file_unmanaged_copy(\Drupal::root() . '/core/misc/druplicon.png', 'public://example.jpg');
     $this->image = File::create([
@@ -126,7 +123,6 @@ class ImageItemTest extends FieldKernelTestBase {
     $entity = EntityTest::create();
     $entity->image_test->generateSampleItems();
     $this->entityValidateAndSave($entity);
-    $this->assertEqual($entity->image_test->entity->get('filemime')->value, 'image/jpeg');
   }
 
 }

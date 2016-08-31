@@ -26,8 +26,8 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
  * Usage example:
  * @code
  * $header = [
- *   'first_name' => $this->t('First Name'),
- *   'last_name' => $this->t('Last Name'),
+ *   'first_name' => t('First Name'),
+ *   'last_name' => t('Last Name'),
  * ];
  *
  * $options = [
@@ -40,7 +40,7 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
  *   '#type' => 'tableselect',
  *   '#header' => $header,
  *   '#options' => $options,
- *   '#empty' => $this->t('No users found'),
+ *   '#empty' => t('No users found'),
  * );
  * @endcode
  *
@@ -118,28 +118,28 @@ class Tableselect extends Table {
    *   @code
    *     $options = array(
    *       array(
-   *         'title' => $this->t('How to Learn Drupal'),
-   *         'content_type' => $this->t('Article'),
+   *         'title' => 'How to Learn Drupal',
+   *         'content_type' => 'Article',
    *         'status' => 'published',
    *         '#attributes' => array('class' => array('article-row')),
    *       ),
    *       array(
-   *         'title' => $this->t('Privacy Policy'),
-   *         'content_type' => $this->t('Page'),
+   *         'title' => 'Privacy Policy',
+   *         'content_type' => 'Page',
    *         'status' => 'published',
    *         '#attributes' => array('class' => array('page-row')),
    *       ),
    *     );
    *     $header = array(
-   *       'title' => $this->t('Title'),
-   *       'content_type' => $this->t('Content type'),
-   *       'status' => $this->t('Status'),
+   *       'title' => t('Title'),
+   *       'content_type' => t('Content type'),
+   *       'status' => t('Status'),
    *     );
    *     $form['table'] = array(
    *       '#type' => 'tableselect',
    *       '#header' => $header,
    *       '#options' => $options,
-   *       '#empty' => $this->t('No content available.'),
+   *       '#empty' => t('No content available.'),
    *     );
    *   @endcode
    *

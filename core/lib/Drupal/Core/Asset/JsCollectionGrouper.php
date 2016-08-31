@@ -12,7 +12,8 @@ class JsCollectionGrouper implements AssetCollectionGrouperInterface {
    *
    * Puts multiple items into the same group if they are groupable and if they
    * are for the same browsers. Items of the 'file' type are groupable if their
-   * 'preprocess' flag is TRUE. Items of the 'external' type are not groupable.
+   * 'preprocess' flag is TRUE. Items of the 'inline', 'settings', or 'external'
+   * type are not groupable.
    *
    * Also ensures that the process of grouping items does not change their
    * relative order. This requirement may result in multiple groups for the same
@@ -42,7 +43,9 @@ class JsCollectionGrouper implements AssetCollectionGrouperInterface {
           break;
 
         case 'external':
-          // Do not group external items.
+        case 'setting':
+        case 'inline':
+          // Do not group external, settings, and inline items.
           $group_keys = FALSE;
           break;
       }

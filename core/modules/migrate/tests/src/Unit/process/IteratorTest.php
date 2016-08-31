@@ -78,5 +78,4 @@ class IteratorTest extends MigrateTestCase {
     $this->assertSame($new_value[42]['foo'], 'test');
     $this->assertSame($new_value[42]['id'], 42);
   }
-
 }

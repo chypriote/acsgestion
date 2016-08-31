@@ -143,5 +143,4 @@ class TestEntityListBuilder extends EntityTestListBuilder {
   public function buildOperations(EntityInterface $entity) {
     return array();
   }
-
 }

@@ -222,5 +222,4 @@ class NodeAccessBaseTableTest extends NodeTestBase {
       }
     }
   }
-
 }

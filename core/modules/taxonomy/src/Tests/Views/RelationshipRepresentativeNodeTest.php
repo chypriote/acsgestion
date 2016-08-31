@@ -37,5 +37,4 @@ class RelationshipRepresentativeNodeTest extends TaxonomyTestBase {
     );
     $this->assertIdenticalResultset($view, $expected_result, $map);
   }
-
 }

@@ -27,5 +27,4 @@ class CountConstraint extends Count {
   public function validatedBy() {
     return '\Symfony\Component\Validator\Constraints\CountValidator';
   }
-
 }

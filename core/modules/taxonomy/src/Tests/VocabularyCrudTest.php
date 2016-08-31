@@ -178,5 +178,4 @@ class VocabularyCrudTest extends TaxonomyTestBase {
     FieldStorageConfig::create($storage_definition)->save();
     FieldConfig::create($field_definition)->save();
   }
-
 }

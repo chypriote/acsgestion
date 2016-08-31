@@ -63,5 +63,4 @@ class TestPerComponentEntityFormDisplay extends PerComponentEntityFormDisplay {
   public function getTestValues() {
     return $this->testValues;
   }
-
 }

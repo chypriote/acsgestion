@@ -37,5 +37,4 @@ class LanguageListModuleInstallTest extends WebTestBase {
     $this->rebuildContainer();
     $this->assertTrue(\Drupal::moduleHandler()->moduleExists('language'), 'Language module is enabled');
   }
-
 }

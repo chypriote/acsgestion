@@ -229,5 +229,4 @@ class SafeMarkupTestString {
  */
 class SafeMarkupTestMarkup implements MarkupInterface {
   use MarkupTrait;
-
 }

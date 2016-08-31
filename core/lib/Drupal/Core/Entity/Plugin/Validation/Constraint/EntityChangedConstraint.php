@@ -16,5 +16,4 @@ use Symfony\Component\Validator\Constraint;
 class EntityChangedConstraint extends Constraint {
 
   public $message = 'The content has either been modified by another user, or you have already submitted modifications. As a result, your changes cannot be saved.';
-
 }

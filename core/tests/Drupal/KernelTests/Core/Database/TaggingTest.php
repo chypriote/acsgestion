@@ -124,5 +124,4 @@ class TaggingTest extends DatabaseTestBase {
     $return = $query->getMetaData('nothere');
     $this->assertNull($return, 'Non-existent key returned NULL.');
   }
-
 }

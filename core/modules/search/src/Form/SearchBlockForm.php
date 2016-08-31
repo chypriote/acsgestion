@@ -115,5 +115,4 @@ class SearchBlockForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // This form submits to the search page, so processing happens there.
   }
-
 }

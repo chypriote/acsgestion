@@ -160,7 +160,7 @@ class PoItem {
   /**
    * Set the comment of this translation.
    *
-   * @param string $comment
+   * @param String $comment
    */
   function setComment($comment) {
     $this->_comment = $comment;
@@ -181,7 +181,7 @@ class PoItem {
     if (isset($values['translation'])) {
       $this->setTranslation($values['translation']);
     }
-    if (isset($values['comment'])) {
+    if (isset($values['comment'])){
       $this->setComment($values['comment']);
     }
     if (isset($this->_source) &&

@@ -24,5 +24,4 @@ class NewTopicsBlock extends ForumBlockBase {
       ->orderBy('f.created', 'DESC')
       ->range(0, $this->configuration['block_count']);
   }
-
 }

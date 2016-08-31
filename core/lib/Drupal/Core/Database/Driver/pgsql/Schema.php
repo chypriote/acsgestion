@@ -844,7 +844,6 @@ class Schema extends DatabaseSchema {
     // Modify the hash so it's safe to use in PostgreSQL identifiers.
     return strtr($hash, array('+' => '_', '/' => '_', '=' => ''));
   }
-
 }
 
 /**

@@ -13,5 +13,4 @@ class KeyValueNullExpirableFactory implements KeyValueExpirableFactoryInterface 
   public function get($collection) {
     return new NullStorageExpirable($collection);
   }
-
 }

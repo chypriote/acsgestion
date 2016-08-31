@@ -267,5 +267,4 @@ class RedirectResponseSubscriberTest extends UnitTestCase {
 
     return $data;
   }
-
 }

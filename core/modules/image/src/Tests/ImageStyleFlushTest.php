@@ -106,5 +106,4 @@ class ImageStyleFlushTest extends ImageFieldTestBase {
     // Post flush, expected no image in the 'private' wrapper.
     $this->assertEqual($this->getImageCount($style, 'private'), 0, format_string('Image style %style flushed correctly for %wrapper wrapper.', array('%style' => $style->label(), '%wrapper' => 'private')));
   }
-
 }

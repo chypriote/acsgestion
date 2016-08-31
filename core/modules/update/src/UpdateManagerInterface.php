@@ -98,5 +98,4 @@ interface UpdateManagerInterface {
    *   array when the storage is cleared.
    */
   public function projectStorage($key);
-
 }

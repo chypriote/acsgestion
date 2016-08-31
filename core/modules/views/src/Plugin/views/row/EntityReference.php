@@ -53,5 +53,4 @@ class EntityReference extends Fields {
 
     return parent::preRender($row);
   }
-
 }

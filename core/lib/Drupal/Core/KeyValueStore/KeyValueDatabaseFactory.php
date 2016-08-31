@@ -43,5 +43,4 @@ class KeyValueDatabaseFactory implements KeyValueFactoryInterface {
   public function get($collection) {
     return new DatabaseStorage($collection, $this->serializer, $this->connection);
   }
-
 }

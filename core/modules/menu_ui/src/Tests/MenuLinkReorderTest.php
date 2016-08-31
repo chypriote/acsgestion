@@ -63,5 +63,4 @@ class MenuLinkReorderTest extends WebTestBase {
     $this->assertLink('Home');
 
   }
-
 }

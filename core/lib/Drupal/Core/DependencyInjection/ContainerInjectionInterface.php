@@ -24,5 +24,4 @@ interface ContainerInjectionInterface {
    *   The service container this instance should use.
    */
   public static function create(ContainerInterface $container);
-
 }

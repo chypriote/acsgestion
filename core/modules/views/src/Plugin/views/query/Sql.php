@@ -5,7 +5,6 @@ namespace Drupal\views\Plugin\views\query;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Database\Database;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\display\DisplayPluginBase;
 use Drupal\Core\Database\DatabaseExceptionWrapper;
@@ -14,7 +13,6 @@ use Drupal\views\Plugin\views\HandlerBase;
 use Drupal\views\ResultRow;
 use Drupal\views\ViewExecutable;
 use Drupal\views\Views;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Views query plugin for an SQL query.
@@ -37,26 +35,26 @@ class Sql extends QueryPluginBase {
   /**
    * Holds an array of tables and counts added so that we can create aliases
    */
-  public $tables = array();
+  var $tables = array();
 
   /**
    * Holds an array of relationships, which are aliases of the primary
    * table that represent different ways to join the same table in.
    */
-  public $relationships = array();
+  var $relationships = array();
 
   /**
    * An array of sections of the WHERE query. Each section is in itself
    * an array of pieces and a flag as to whether or not it should be AND
    * or OR.
    */
-  public $where = array();
+  var $where = array();
   /**
    * An array of sections of the HAVING query. Each section is in itself
    * an array of pieces and a flag as to whether or not it should be AND
    * or OR.
    */
-  public $having = array();
+  var $having = array();
   /**
    * The default operator to use when connecting the WHERE groups. May be
    * AND or OR.
@@ -66,23 +64,23 @@ class Sql extends QueryPluginBase {
   /**
    * A simple array of order by clauses.
    */
-  public $orderby = array();
+  var $orderby = array();
 
   /**
    * A simple array of group by clauses.
    */
-  public $groupby = array();
+  var $groupby = array();
 
 
   /**
    * An array of fields.
    */
-  public $fields = array();
+  var $fields = array();
 
   /**
    * A flag as to whether or not to make the primary field distinct.
    */
-  public $distinct = FALSE;
+  var $distinct = FALSE;
 
   protected $hasAggregate = FALSE;
 
@@ -99,7 +97,7 @@ class Sql extends QueryPluginBase {
   /**
    * Query tags which will be passed over to the dbtng query object.
    */
-  public $tags = array();
+  var $tags = array();
 
   /**
    * Is the view marked as not distinct.
@@ -107,40 +105,6 @@ class Sql extends QueryPluginBase {
    * @var bool
    */
   protected $noDistinct;
-
-  /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
-
-  /**
-   * Constructs a Sql object.
-   *
-   * @param array $configuration
-   *   A configuration array containing information about the plugin instance.
-   * @param string $plugin_id
-   *   The plugin_id for the plugin instance.
-   * @param mixed $plugin_definition
-   *   The plugin implementation definition.
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   *   The entity type manager.
-   */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-
-    $this->entityTypeManager = $entity_type_manager;
-  }
-
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('entity_type.manager')
-    );
-  }
 
   /**
    * {@inheritdoc}
@@ -373,7 +337,7 @@ class Sql extends QueryPluginBase {
    * @param $alias
    *   A specific alias to use, rather than the default alias.
    *
-   * @return string
+   * @return $alias
    *   The alias of the table; this alias can be used to access information
    *   about the table and should always be used to refer to the table when
    *   adding parts to the query. Or FALSE if the table was not able to be
@@ -412,7 +376,7 @@ class Sql extends QueryPluginBase {
    * @param $alias
    *   A specific alias to use, rather than the default alias.
    *
-   * @return string
+   * @return $alias
    *   The alias of the table; this alias can be used to access information
    *   about the table and should always be used to refer to the table when
    *   adding parts to the query. Or FALSE if the table was not able to be
@@ -759,7 +723,7 @@ class Sql extends QueryPluginBase {
    *   - aggregate: Set to TRUE to indicate that this value should be
    *     aggregated in a GROUP BY.
    *
-   * @return string
+   * @return $name
    *   The name that this field can be referred to as. Usually this is the alias.
    */
   public function addField($table, $field, $alias = '', $params = array()) {
@@ -825,17 +789,6 @@ class Sql extends QueryPluginBase {
    * ensuring that all fields are fully qualified (TABLE.FIELD) and that
    * the table already exists in the query.
    *
-   * The $field, $value and $operator arguments can also be passed in with a
-   * single DatabaseCondition object, like this:
-   * @code
-   * $this->query->addWhere(
-   *   $this->options['group'],
-   *   db_or()
-   *     ->condition($field, $value, 'NOT IN')
-   *     ->condition($field, $value, 'IS NULL')
-   * );
-   * @endcode
-   *
    * @param $group
    *   The WHERE group to add these to; groups are used to create AND/OR
    *   sections. Groups cannot be nested. Use 0 as the default group.
@@ -850,6 +803,17 @@ class Sql extends QueryPluginBase {
    *   The comparison operator, such as =, <, or >=. It also accepts more
    *   complex options such as IN, LIKE, LIKE BINARY, or BETWEEN. Defaults to =.
    *   If $field is a string you have to use 'formula' here.
+   *
+   * The $field, $value and $operator arguments can also be passed in with a
+   * single DatabaseCondition object, like this:
+   * @code
+   *   $this->query->addWhere(
+   *     $this->options['group'],
+   *     db_or()
+   *       ->condition($field, $value, 'NOT IN')
+   *       ->condition($field, $value, 'IS NULL')
+   *   );
+   * @endcode
    *
    * @see \Drupal\Core\Database\Query\ConditionInterface::condition()
    * @see \Drupal\Core\Database\Query\Condition
@@ -1029,7 +993,7 @@ class Sql extends QueryPluginBase {
   /**
    * Generates a unique placeholder used in the db query.
    */
-  public function placeholder($base = 'views') {
+  function placeholder($base = 'views') {
     static $placeholders = array();
     if (!isset($placeholders[$base])) {
       $placeholders[$base] = 0;
@@ -1368,14 +1332,14 @@ class Sql extends QueryPluginBase {
   /**
    * Let modules modify the query just prior to finalizing it.
    */
-  public function alter(ViewExecutable $view) {
+  function alter(ViewExecutable $view) {
     \Drupal::moduleHandler()->invokeAll('views_query_alter', array($view, $this));
   }
 
   /**
    * Builds the necessary info to execute the query.
    */
-  public function build(ViewExecutable $view) {
+  function build(ViewExecutable $view) {
     // Make the query distinct if the option was set.
     if (!empty($this->options['distinct'])) {
       $this->setDistinct(TRUE);
@@ -1400,7 +1364,7 @@ class Sql extends QueryPluginBase {
    * Values to set: $view->result, $view->total_rows, $view->execute_time,
    * $view->current_page.
    */
-  public function execute(ViewExecutable $view) {
+  function execute(ViewExecutable $view) {
     $query = $view->build_info['query'];
     $count_query = $view->build_info['count_query'];
 
@@ -1518,97 +1482,63 @@ class Sql extends QueryPluginBase {
     foreach ($entity_information as $info) {
       $entity_type = $info['entity_type'];
       if (!isset($entity_types[$entity_type])) {
-        $entity_types[$entity_type] = $this->entityTypeManager->getDefinition($entity_type);
+        $entity_types[$entity_type] = \Drupal::entityManager()->getDefinition($entity_type);
       }
     }
 
     // Assemble a list of entities to load.
-    $entity_ids_by_type = [];
-    $revision_ids_by_type = [];
+    $ids_by_type = array();
     foreach ($entity_information as $info) {
       $relationship_id = $info['relationship_id'];
       $entity_type = $info['entity_type'];
-      /** @var \Drupal\Core\Entity\EntityTypeInterface $entity_info */
       $entity_info = $entity_types[$entity_type];
-      $revision = $info['revision'];
-      $id_key = !$revision ? $entity_info->getKey('id') : $entity_info->getKey('revision');
+      $id_key = !$info['revision'] ? $entity_info->getKey('id') : $entity_info->getKey('revision');
       $id_alias = $this->getFieldAlias($info['alias'], $id_key);
 
       foreach ($results as $index => $result) {
         // Store the entity id if it was found.
         if (isset($result->{$id_alias}) && $result->{$id_alias} != '') {
-          if ($revision) {
-            $revision_ids_by_type[$entity_type][$index][$relationship_id] = $result->$id_alias;
-          }
-          else {
-            $entity_ids_by_type[$entity_type][$index][$relationship_id] = $result->$id_alias;
-          }
+          $ids_by_type[$entity_type][$index][$relationship_id] = $result->$id_alias;
         }
       }
     }
 
     // Load all entities and assign them to the correct result row.
-    foreach ($entity_ids_by_type as $entity_type => $ids) {
-      $entity_storage = $this->entityTypeManager->getStorage($entity_type);
+    foreach ($ids_by_type as $entity_type => $ids) {
       $flat_ids = iterator_to_array(new \RecursiveIteratorIterator(new \RecursiveArrayIterator($ids)), FALSE);
 
-      $entities = $entity_storage->loadMultiple(array_unique($flat_ids));
-      $results = $this->_assignEntitiesToResult($ids, $entities, $results);
-    }
-
-    // Now load all revisions.
-    foreach ($revision_ids_by_type as $entity_type => $revision_ids) {
-      $entity_storage = $this->entityTypeManager->getStorage($entity_type);
-      $entities = [];
-
-      foreach ($revision_ids as $index => $revision_id_by_relationship) {
-        foreach ($revision_id_by_relationship as $revision => $revision_id) {
-          // Drupal core currently has no way to load multiple revisions.
-          $entity = $entity_storage->loadRevision($revision_id);
-          $entities[$revision_id] = $entity;
+      // Drupal core currently has no way to load multiple revisions. Sad.
+      if (isset($entity_information[$entity_type]['revision']) && $entity_information[$entity_type]['revision'] === TRUE) {
+        $entities = array();
+        foreach ($flat_ids as $revision_id) {
+          $entity = entity_revision_load($entity_type, $revision_id);
+          if ($entity) {
+            $entities[$revision_id] = $entity;
+          }
         }
       }
+      else {
+        $entities = entity_load_multiple($entity_type, $flat_ids);
+      }
 
-      $results = $this->_assignEntitiesToResult($revision_ids, $entities, $results);
-    }
-  }
+      foreach ($ids as $index => $relationships) {
+        foreach ($relationships as $relationship_id => $entity_id) {
+          if (isset($entities[$entity_id])) {
+            $entity = $entities[$entity_id];
+          }
+          else {
+            $entity = NULL;
+          }
 
-  /**
-   * Sets entities onto the view result row objects.
-   *
-   * This method takes into account the relationship in which the entity was
-   * needed in the first place.
-   *
-   * @param mixed[][] $ids
-   *   A two dimensional array of identifiers (entity ID / revision ID) keyed by
-   *   relationship.
-   * @param \Drupal\Core\Entity\EntityInterface[] $entities
-   *   An array of entities keyed by their identified (entity ID / revision ID).
-   * @param \Drupal\views\ResultRow[] $results
-   *   The entire views result.
-   *
-   * @return \Drupal\views\ResultRow[]
-   *   The changed views results.
-   */
-  protected function _assignEntitiesToResult($ids, array $entities, array $results) {
-    foreach ($ids as $index => $relationships) {
-      foreach ($relationships as $relationship_id => $id) {
-        if (isset($entities[$id])) {
-          $entity = $entities[$id];
-        }
-        else {
-          $entity = NULL;
-        }
-
-        if ($relationship_id == 'none') {
-          $results[$index]->_entity = $entity;
-        }
-        else {
-          $results[$index]->_relationship_entities[$relationship_id] = $entity;
+          if ($relationship_id == 'none') {
+            $results[$index]->_entity = $entity;
+          }
+          else {
+            $results[$index]->_relationship_entities[$relationship_id] = $entity;
+          }
         }
       }
     }
-    return $results;
   }
 
   /**

@@ -247,11 +247,10 @@ function update_authorize_update_batch_finished($success, $results) {
   }
   // Since we're doing an update of existing code, always add a task for
   // running update.php.
-  $url = Url::fromRoute('system.db_update');
   $results['tasks'][] = t('Your modules have been downloaded and updated.');
   $results['tasks'][] = [
     '#type' => 'link',
-    '#url' => $url,
+    '#url' => Url::fromRoute('system.db_update'),
     '#title' => t('Run database updates'),
     // Since this is being called outsite of the primary front controller,
     // the base_url needs to be set explicitly to ensure that links are
@@ -261,7 +260,6 @@ function update_authorize_update_batch_finished($success, $results) {
       'absolute' => TRUE,
       'base_url' => $GLOBALS['base_url'],
     ],
-    '#access' => $url->access(\Drupal::currentUser())
   ];
 
   // Unset the variable since it is no longer needed.

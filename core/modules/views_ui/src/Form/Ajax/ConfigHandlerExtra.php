@@ -53,7 +53,7 @@ class ConfigHandlerExtra extends ViewsFormBase {
 
     $form = array(
       'options' => array(
-        '#tree' => TRUE,
+        '#tree' => true,
         '#theme_wrappers' => array('container'),
         '#attributes' => array('class' => array('scroll'), 'data-drupal-views-scroll' => TRUE),
       ),

@@ -49,5 +49,4 @@ class DBLogResource extends ResourceBase {
 
     throw new BadRequestHttpException(t('No log entry ID was provided'));
   }
-
 }

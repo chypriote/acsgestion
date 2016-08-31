@@ -97,5 +97,4 @@ class StringFieldTest extends WebTestBase {
     $this->setRawContent(\Drupal::service('renderer')->renderRoot($content));
     $this->assertText($value, 'Filtered tags are not displayed');
   }
-
 }

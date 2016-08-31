@@ -16,5 +16,4 @@ interface CommandInterface {
    * Return an array to be run through json_encode and sent to the client.
    */
   public function render();
-
 }

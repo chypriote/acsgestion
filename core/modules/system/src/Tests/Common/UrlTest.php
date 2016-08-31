@@ -316,5 +316,4 @@ class UrlTest extends WebTestBase {
     $result = Url::fromUri($url, array('query' => $query))->toString();
     $this->assertEqual($url . '&' . http_build_query($query, '', '&'), $result);
   }
-
 }

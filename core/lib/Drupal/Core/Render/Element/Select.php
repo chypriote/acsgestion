@@ -21,14 +21,14 @@ use Drupal\Core\Render\Element;
  * @code
  * $form['example_select'] = [
  *   '#type' => 'select',
- *   '#title' => $this->t('Select element'),
+ *   '#title' => t('Select element'),
  *   '#options' => [
- *     '1' => $this->t('One'),
+ *     '1' => t('One'),
  *     '2' => [
- *       '2.1' => $this->t('Two point one'),
- *       '2.2' => $this->t('Two point two'),
+ *       '2.1' => t('Two point one'),
+ *       '2.2' => t('Two point two'),
  *     ],
- *     '3' => $this->t('Three'),
+ *     '3' => t('Three'),
  *   ],
  * ];
  * @endcode

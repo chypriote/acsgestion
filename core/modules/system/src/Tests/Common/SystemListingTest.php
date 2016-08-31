@@ -50,5 +50,4 @@ class SystemListingTest extends KernelTestBase {
       )));
     }
   }
-
 }

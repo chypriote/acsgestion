@@ -39,5 +39,4 @@ interface ModuleUninstallValidatorInterface {
    * @see template_preprocess_system_modules_uninstall()
    */
   public function validate($module);
-
 }

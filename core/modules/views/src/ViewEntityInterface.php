@@ -66,4 +66,5 @@ interface ViewEntityInterface extends ConfigEntityInterface {
    */
   public function addDisplay($plugin_id = 'page', $title = NULL, $id = NULL);
 
+
 }

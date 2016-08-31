@@ -222,9 +222,7 @@ abstract class Entity implements EntityInterface {
       ->setOption('entity', $this);
 
     // Display links by default based on the current language.
-    // Link relations that do not require an existing entity should not be
-    // affected by this entity's language, however.
-    if (!in_array($rel, ['collection', 'add-page', 'add-form'], TRUE)) {
+    if ($rel !== 'collection') {
       $options += ['language' => $this->language()];
     }
 
@@ -304,15 +302,11 @@ abstract class Entity implements EntityInterface {
   protected function urlRouteParameters($rel) {
     $uri_route_parameters = [];
 
-    if (!in_array($rel, ['collection', 'add-page', 'add-form'], TRUE)) {
+    if ($rel != 'collection') {
       // The entity ID is needed as a route parameter.
       $uri_route_parameters[$this->getEntityTypeId()] = $this->id();
     }
-    if ($rel === 'add-form' && ($this->getEntityType()->hasKey('bundle'))) {
-      $parameter_name = $this->getEntityType()->getBundleEntityType() ?: $this->getEntityType()->getKey('bundle');
-      $uri_route_parameters[$parameter_name] = $this->bundle();
-    }
-    if ($rel === 'revision' && $this instanceof RevisionableInterface) {
+    if ($rel === 'revision') {
       $uri_route_parameters[$this->getEntityTypeId() . '_revision'] = $this->getRevisionId();
     }
 

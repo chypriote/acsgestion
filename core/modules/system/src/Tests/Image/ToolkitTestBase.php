@@ -150,5 +150,4 @@ abstract class ToolkitTestBase extends WebTestBase {
   function imageTestGetAllCalls() {
     return \Drupal::state()->get('image_test.results') ?: array();
   }
-
 }

@@ -114,5 +114,4 @@ class TestGet extends Get {
   public function setSource($source) {
     $this->configuration['source'] = $source;
   }
-
 }

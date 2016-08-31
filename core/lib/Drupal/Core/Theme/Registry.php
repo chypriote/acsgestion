@@ -13,13 +13,6 @@ use Drupal\Core\Utility\ThemeRegistry;
 /**
  * Defines the theme registry service.
  *
- * @internal
- *
- * Theme registry is expected to be used only internally since every
- * hook_theme() implementation depends on the way this class is built. This
- * class may get new features in minor releases so this class should be
- * considered internal.
- *
  * @todo Replace local $registry variables in methods with $this->registry.
  */
 class Registry implements DestructableInterface {
@@ -771,5 +764,4 @@ class Registry implements DestructableInterface {
   protected function getPath($module) {
     return drupal_get_path('module', $module);
   }
-
 }

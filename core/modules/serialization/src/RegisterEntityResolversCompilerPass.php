@@ -58,5 +58,4 @@ class RegisterEntityResolversCompilerPass implements CompilerPassInterface {
 
     return $sorted;
   }
-
 }

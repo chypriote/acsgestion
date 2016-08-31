@@ -30,5 +30,4 @@ class MigrateCommentVariableEntityDisplayTest extends MigrateCommentVariableDisp
       $this->assertIdentical(20, $component['weight']);
     }
   }
-
 }

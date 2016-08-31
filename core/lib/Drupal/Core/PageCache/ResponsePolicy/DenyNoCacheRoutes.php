@@ -42,3 +42,4 @@ class DenyNoCacheRoutes implements ResponsePolicyInterface {
   }
 
 }
+

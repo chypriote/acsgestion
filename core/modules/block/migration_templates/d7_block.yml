@@ -19,9 +19,6 @@ process:
         - module
         - delta
       delimiter: _
-    -
-      plugin: machine_name
-      field: id
   plugin:
     -
       plugin: static_map

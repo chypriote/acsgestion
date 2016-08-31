@@ -41,7 +41,7 @@ class Connection extends DatabaseConnection {
    *
    * @var bool
    */
-  public $tableDropped = FALSE;
+  var $tableDropped = FALSE;
 
   /**
    * Constructs a \Drupal\Core\Database\Driver\sqlite\Connection object.

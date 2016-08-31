@@ -8,7 +8,7 @@ namespace Drupal\Component\Diff\Engine;
  * @subpackage DifferenceEngine
  */
 class DiffOpAdd extends DiffOp {
-  public $type = 'add';
+  var $type = 'add';
 
   public function __construct($lines) {
     $this->closing = $lines;
@@ -18,5 +18,4 @@ class DiffOpAdd extends DiffOp {
   public function reverse() {
     return new DiffOpDelete($this->closing);
   }
-
 }

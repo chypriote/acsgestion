@@ -20,3 +20,4 @@ $connection->update('config')
 $connection->insert('key_value')
   ->fields(['collection' => 'system.schema', 'name' => 'update_script_test', 'value' => serialize(8000)])
   ->execute();
+

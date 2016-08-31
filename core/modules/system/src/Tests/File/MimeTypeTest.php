@@ -20,7 +20,7 @@ class MimeTypeTest extends FileTestBase {
    * Test mapping of mimetypes from filenames.
    */
   public function testFileMimeTypeDetection() {
-    $prefixes = ['public://', 'private://', 'temporary://', 'dummy-remote://'];
+    $prefix = 'public://';
 
     $test_case = array(
       'test.jar' => 'application/java-archive',
@@ -43,10 +43,8 @@ class MimeTypeTest extends FileTestBase {
     // Test using default mappings.
     foreach ($test_case as $input => $expected) {
       // Test stream [URI].
-      foreach ($prefixes as $prefix) {
-        $output = $guesser->guess($prefix . $input);
-        $this->assertIdentical($output, $expected, format_string('Mimetype for %input is %output (expected: %expected).', array('%input' => $prefix . $input, '%output' => $output, '%expected' => $expected)));
-      }
+      $output = $guesser->guess($prefix . $input);
+      $this->assertIdentical($output, $expected, format_string('Mimetype for %input is %output (expected: %expected).', array('%input' => $input, '%output' => $output, '%expected' => $expected)));
 
       // Test normal path equivalent
       $output = $guesser->guess($input);
@@ -88,5 +86,4 @@ class MimeTypeTest extends FileTestBase {
       $this->assertIdentical($output, $expected, format_string('Mimetype (using passed-in mappings) for %input is %output (expected: %expected).', array('%input' => $input, '%output' => $output, '%expected' => $expected)));
     }
   }
-
 }

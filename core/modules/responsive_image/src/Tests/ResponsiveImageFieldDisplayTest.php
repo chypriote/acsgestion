@@ -514,5 +514,4 @@ class ResponsiveImageFieldDisplayTest extends ImageFieldTestBase {
         break;
     }
   }
-
 }

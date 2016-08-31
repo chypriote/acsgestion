@@ -68,5 +68,4 @@ class NodeFormSaveChangedTimeTest extends WebTestBase {
     $node = entity_load('node', 1, TRUE);
     $this->assertNotEqual($changed_timestamp, $node->getChangedTime(), "The entity's changed time was updated after form save without changes.");
   }
-
 }

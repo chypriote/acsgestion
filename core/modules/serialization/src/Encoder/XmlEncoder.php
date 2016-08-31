@@ -78,5 +78,4 @@ class XmlEncoder implements EncoderInterface, DecoderInterface {
   public function supportsDecoding($format) {
     return in_array($format, static::$format);
   }
-
 }

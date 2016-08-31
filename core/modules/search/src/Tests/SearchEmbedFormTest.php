@@ -81,5 +81,4 @@ class SearchEmbedFormTest extends SearchTestBase {
     $this->assertEqual($this->submitCount, $count, 'Form submission count is correct');
     $this->submitCount = $count;
   }
-
 }

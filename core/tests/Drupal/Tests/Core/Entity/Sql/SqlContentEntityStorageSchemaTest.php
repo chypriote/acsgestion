@@ -545,7 +545,7 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
           'default_langcode' => array(
             'type' => 'int',
             'size' => 'tiny',
-            'not null' => TRUE,
+            'not null' => true,
           ),
         ),
         'primary key' => array('id', 'langcode'),
@@ -712,7 +712,7 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
           'default_langcode' => array(
             'type' => 'int',
             'size' => 'tiny',
-            'not null' => TRUE,
+            'not null' => true,
           ),
         ),
         'primary key' => array('id', 'langcode'),
@@ -750,7 +750,7 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
           'default_langcode' => array(
             'type' => 'int',
             'size' => 'tiny',
-            'not null' => TRUE,
+            'not null' => true,
           ),
         ),
         'primary key' => array('revision_id', 'langcode'),
@@ -820,16 +820,6 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
           'length' => 32,
           'not null' => FALSE,
         ),
-        'area' => array(
-          'type' => 'int',
-          'unsigned' => TRUE,
-          'not null' => TRUE,
-        ),
-        'depth' => array(
-          'type' => 'int',
-          'unsigned' => TRUE,
-          'not null' => TRUE,
-        ),
       ),
       'foreign keys' => array(
         'color' => array(
@@ -839,14 +829,8 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
           ),
         ),
       ),
-      'unique keys' => array(
-        'area' => array('area'),
-        'shape' => array(array('shape', 10)),
-      ),
-      'indexes' => array(
-        'depth' => array('depth'),
-        'color' => array(array('color', 3)),
-      ),
+      'unique keys' => array(),
+      'indexes' => array(),
     ));
 
     $field_storage = $this->storageDefinitions[$field_name];
@@ -875,73 +859,57 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
           'bundle' => array(
             'type' => 'varchar_ascii',
             'length' => 128,
-            'not null' => TRUE,
+            'not null' => true,
             'default' => '',
             'description' => 'The field instance bundle to which this row belongs, used when deleting a field instance',
           ),
           'deleted' => array(
             'type' => 'int',
             'size' => 'tiny',
-            'not null' => TRUE,
+            'not null' => true,
             'default' => 0,
             'description' => 'A boolean indicating whether this data item has been deleted',
           ),
           'entity_id' => array(
             'type' => 'int',
-            'unsigned' => TRUE,
-            'not null' => TRUE,
+            'unsigned' => true,
+            'not null' => true,
             'description' => 'The entity id this data is attached to',
           ),
           'revision_id' => array(
             'type' => 'int',
-            'unsigned' => TRUE,
-            'not null' => TRUE,
+            'unsigned' => true,
+            'not null' => true,
             'description' => 'The entity revision id this data is attached to, which for an unversioned entity type is the same as the entity id',
           ),
           'langcode' => array(
             'type' => 'varchar_ascii',
             'length' => 32,
-            'not null' => TRUE,
+            'not null' => true,
             'default' => '',
             'description' => 'The language code for this data item.',
           ),
           'delta' => array(
             'type' => 'int',
-            'unsigned' => TRUE,
-            'not null' => TRUE,
+            'unsigned' => true,
+            'not null' => true,
             'description' => 'The sequence number for this data item, used for multi-value fields',
           ),
           $field_name . '_shape' => array(
             'type' => 'varchar',
             'length' => 32,
-            'not null' => FALSE,
+            'not null' => false,
           ),
           $field_name . '_color' => array(
             'type' => 'varchar',
             'length' => 32,
-            'not null' => FALSE,
-          ),
-          $field_name . '_area' => array(
-            'type' => 'int',
-            'unsigned' => TRUE,
-            'not null' => TRUE,
-          ),
-          $field_name . '_depth' => array(
-            'type' => 'int',
-            'unsigned' => TRUE,
-            'not null' => TRUE,
+            'not null' => false,
           ),
         ),
         'primary key' => array('entity_id', 'deleted', 'delta', 'langcode'),
         'indexes' => array(
           'bundle' => array('bundle'),
           'revision_id' => array('revision_id'),
-          $field_name . '_depth' => array($field_name . '_depth'),
-          $field_name . '_color' => array(array($field_name . '_color', 3)),
-        ),
-        'unique keys' => array(
-           $field_name . '_area' => array($field_name . '_area'),
-           $field_name . '_shape' => array(array($field_name . '_shape', 10)),
         ),
         'foreign keys' => array(
           $field_name . '_color' => array(
@@ -1036,51 +1004,51 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
           'bundle' => array(
             'type' => 'varchar_ascii',
             'length' => 128,
-            'not null' => TRUE,
+            'not null' => true,
             'default' => '',
             'description' => 'The field instance bundle to which this row belongs, used when deleting a field instance',
           ),
           'deleted' => array(
             'type' => 'int',
             'size' => 'tiny',
-            'not null' => TRUE,
+            'not null' => true,
             'default' => 0,
             'description' => 'A boolean indicating whether this data item has been deleted',
           ),
           'entity_id' => array(
             'type' => 'varchar_ascii',
             'length' => 128,
-            'not null' => TRUE,
+            'not null' => true,
             'description' => 'The entity id this data is attached to',
           ),
           'revision_id' => array(
             'type' => 'varchar_ascii',
             'length' => 128,
-            'not null' => TRUE,
+            'not null' => true,
             'description' => 'The entity revision id this data is attached to, which for an unversioned entity type is the same as the entity id',
           ),
           'langcode' => array(
             'type' => 'varchar_ascii',
             'length' => 32,
-            'not null' => TRUE,
+            'not null' => true,
             'default' => '',
             'description' => 'The language code for this data item.',
           ),
           'delta' => array(
             'type' => 'int',
-            'unsigned' => TRUE,
-            'not null' => TRUE,
+            'unsigned' => true,
+            'not null' => true,
             'description' => 'The sequence number for this data item, used for multi-value fields',
           ),
           $field_name . '_shape' => array(
             'type' => 'varchar',
             'length' => 32,
-            'not null' => FALSE,
+            'not null' => false,
           ),
           $field_name . '_color' => array(
             'type' => 'varchar',
             'length' => 32,
-            'not null' => FALSE,
+            'not null' => false,
           ),
         ),
         'primary key' => array('entity_id', 'deleted', 'delta', 'langcode'),

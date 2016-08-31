@@ -13,7 +13,7 @@ use Drupal\Tests\migrate_drupal\Kernel\d7\MigrateDrupal7TestBase;
  */
 class MigrateViewModesTest extends MigrateDrupal7TestBase {
 
-  public static $modules = ['comment', 'node', 'taxonomy'];
+  public static $modules = ['comment', 'node'];
 
   /**
    * {@inheritdoc}
@@ -52,7 +52,6 @@ class MigrateViewModesTest extends MigrateDrupal7TestBase {
     $this->assertEntity('comment.full', 'Full', 'comment');
     $this->assertEntity('node.teaser', 'Teaser', 'node');
     $this->assertEntity('node.full', 'Full', 'node');
-    $this->assertEntity('node.custom', 'custom', 'node');
     $this->assertEntity('user.full', 'Full', 'user');
   }
 

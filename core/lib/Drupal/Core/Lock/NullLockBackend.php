@@ -57,5 +57,4 @@ class NullLockBackend implements LockBackendInterface {
     }
     return $this->lockId;
   }
-
 }

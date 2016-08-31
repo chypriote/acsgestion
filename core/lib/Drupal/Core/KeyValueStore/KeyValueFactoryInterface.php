@@ -19,3 +19,4 @@ interface KeyValueFactoryInterface {
   public function get($collection);
 
 }
+

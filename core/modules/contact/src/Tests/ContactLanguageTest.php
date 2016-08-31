@@ -32,7 +32,7 @@ class ContactLanguageTest extends WebTestBase {
   protected function setUp() {
     parent::setUp();
 
-    // Create and log in administrative user.
+    // Create and login administrative user.
     $admin_user = $this->drupalCreateUser(array(
       'access site-wide contact form',
       'administer languages',

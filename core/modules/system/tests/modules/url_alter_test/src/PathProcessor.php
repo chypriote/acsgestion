@@ -29,5 +29,4 @@ class PathProcessor implements InboundPathProcessorInterface {
     }
     return $path;
   }
-
 }

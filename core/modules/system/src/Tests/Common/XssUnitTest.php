@@ -53,5 +53,4 @@ class XssUnitTest extends KernelTestBase {
     $this->assertIdentical(UrlHelper::stripDangerousProtocols($url), $expected_plain, '\Drupal\Component\Utility\UrlHelper::stripDangerousProtocols() filters a URL and returns plain text.');
 
   }
-
 }

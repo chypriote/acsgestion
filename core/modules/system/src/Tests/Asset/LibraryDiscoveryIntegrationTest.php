@@ -4,7 +4,7 @@ namespace Drupal\system\Tests\Asset;
 
 use Drupal\Core\Asset\Exception\InvalidLibrariesExtendSpecificationException;
 use Drupal\Core\Asset\Exception\InvalidLibrariesOverrideSpecificationException;
-use Drupal\KernelTests\KernelTestBase;
+use Drupal\simpletest\KernelTestBase;
 
 /**
  * Tests the library discovery and library discovery parser.

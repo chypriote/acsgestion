@@ -47,5 +47,4 @@ class ReferenceAccessConstraintValidator extends ConstraintValidator {
       }
     }
   }
-
 }

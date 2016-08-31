@@ -461,8 +461,7 @@
  * caches.
  *
  * Other common cache bins are the following:
- *   - bootstrap: Data needed from the beginning to the end of most requests,
- *     that has a very strict limit on variations and is invalidated rarely.
+ *   - bootstrap: Small caches needed for the bootstrap on every request.
  *   - render: Contains cached HTML strings like cached pages and blocks, can
  *     grow to large size.
  *   - data: Contains data that can vary by path or similar context.
@@ -2096,7 +2095,7 @@ function hook_mail_backend_info_alter(&$info) {
  * @param $countries
  *   The associative array of countries keyed by two-letter country code.
  *
- * @see \Drupal\Core\Locale\CountryManager::getList()
+ * @see \Drupal\Core\Locale\CountryManager::getList().
  */
 function hook_countries_alter(&$countries) {
   // Elbonia is now independent, so add it to the country list.

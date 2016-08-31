@@ -56,5 +56,4 @@ interface UpdateFetcherInterface {
    * @see \Drupal\update\UpdateManager::getProjects()
    */
   public function buildFetchUrl(array $project, $site_key = '');
-
 }

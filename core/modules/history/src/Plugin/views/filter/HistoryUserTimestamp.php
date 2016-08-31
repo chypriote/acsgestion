@@ -18,7 +18,7 @@ use Drupal\views\Plugin\views\filter\FilterPluginBase;
 class HistoryUserTimestamp extends FilterPluginBase {
 
   // Don't display empty space where the operator would be.
-  public $no_operator = TRUE;
+  var $no_operator = TRUE;
 
   /**
    * {@inheritdoc}

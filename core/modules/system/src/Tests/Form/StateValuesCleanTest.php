@@ -54,5 +54,4 @@ class StateValuesCleanTest extends WebTestBase {
     // Verify that actual form values equal resulting form values.
     $this->assertEqual($values, $result, 'Expected form values equal actual form values.');
   }
-
 }

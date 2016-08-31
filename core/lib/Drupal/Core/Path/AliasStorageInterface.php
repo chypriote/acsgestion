@@ -164,5 +164,4 @@ interface AliasStorageInterface {
    *   TRUE if any alias exists, FALSE otherwise.
    */
   public function pathHasMatchingAlias($initial_substring);
-
 }

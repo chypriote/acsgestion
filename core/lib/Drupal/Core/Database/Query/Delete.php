@@ -75,5 +75,4 @@ class Delete extends Query implements ConditionInterface {
 
     return $query;
   }
-
 }

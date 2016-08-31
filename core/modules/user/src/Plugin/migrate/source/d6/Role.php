@@ -27,7 +27,7 @@ class Role extends DrupalSqlBase {
   public function query() {
     $query = $this->select('role', 'r')
       ->fields('r', array('rid', 'name'))
-      ->orderBy('r.rid');
+      ->orderBy('rid');
     return $query;
   }
 

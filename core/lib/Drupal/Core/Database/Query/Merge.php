@@ -403,5 +403,4 @@ class Merge extends Query implements ConditionInterface {
       }
     }
   }
-
 }

@@ -203,7 +203,7 @@ class FormValidatorTest extends UnitTestCase {
       array(
         array(array('test1')),
         array(
-          '#is_button' => TRUE,
+          '#is_button' => true,
           '#value' => 'baz',
           '#name' => 'op',
           '#parents' => array('submit'),

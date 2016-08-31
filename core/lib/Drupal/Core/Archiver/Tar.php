@@ -87,5 +87,4 @@ class Tar implements ArchiverInterface {
   public function getArchive() {
     return $this->tar;
   }
-
 }

@@ -16,7 +16,7 @@ use Drupal\Component\Utility\Color as ColorUtility;
  * @code
  * $form['color'] = array(
  *   '#type' => 'color',
- *   '#title' => $this->t('Color'),
+ *   '#title' => 'Color',
  *   '#default_value' => '#ffffff',
  * );
  * @endcode

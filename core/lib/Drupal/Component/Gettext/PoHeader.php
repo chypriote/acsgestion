@@ -559,5 +559,4 @@ class PoHeader {
     }
     return (int) $element_stack[0];
   }
-
 }

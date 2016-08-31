@@ -242,7 +242,6 @@ class LinkFormatter extends FormatterBase implements ContainerFactoryPluginInter
 
     $settings = $this->getSettings();
     $options = $item->options;
-    $options += $url->getOptions();
 
     // Add optional 'rel' attribute to link options.
     if (!empty($settings['rel'])) {

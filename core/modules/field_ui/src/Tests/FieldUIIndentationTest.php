@@ -37,5 +37,4 @@ class FieldUIIndentationTest extends WebTestBase {
     $this->drupalGet('admin/structure/types/manage/page/display');
     $this->assertRaw('js-indentation indentation');
   }
-
 }

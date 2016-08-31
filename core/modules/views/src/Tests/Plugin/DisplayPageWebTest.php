@@ -152,7 +152,7 @@ class DisplayPageWebTest extends PluginTestBase {
    * @param string $path
    *   Path that will be set as the view page display path.
    *
-   * @return bool
+   * @return boolean
    *   Assertion result.
    */
   public function assertPagePath($path) {

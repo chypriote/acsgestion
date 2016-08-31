@@ -20,5 +20,4 @@ abstract class ConditionBase extends ConditionFundamentals implements ConditionI
 
     return $this;
   }
-
 }

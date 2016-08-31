@@ -11,6 +11,7 @@ use Drupal\Core\Condition\ConditionPluginBase;
  *   id = "baloney_spam",
  *   label = @Translation("Baloney spam"),
  * )
+ *
  */
 class BaloneySpam extends ConditionPluginBase {
 

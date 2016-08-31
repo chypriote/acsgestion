@@ -393,15 +393,7 @@ class GDToolkit extends ImageToolkitBase {
   public static function getSupportedExtensions() {
     $extensions = array();
     foreach (static::supportedTypes() as $image_type) {
-      // @todo Automatically fetch possible extensions for each mime type.
-      // @see https://www.drupal.org/node/2311679
-      $extension = Unicode::strtolower(image_type_to_extension($image_type, FALSE));
-      $extensions[] = $extension;
-      // Add some known similar extensions.
-      if ($extension === 'jpeg') {
-        $extensions[] = 'jpg';
-        $extensions[] = 'jpe';
-      }
+      $extensions[] = Unicode::strtolower(image_type_to_extension($image_type, FALSE));
     }
     return $extensions;
   }
@@ -421,9 +413,6 @@ class GDToolkit extends ImageToolkitBase {
    * @see image_type_to_extension()
    */
   public function extensionToImageType($extension) {
-    if (in_array($extension, ['jpe', 'jpg'])) {
-      $extension = 'jpeg';
-    }
     foreach ($this->supportedTypes() as $type) {
       if (image_type_to_extension($type, FALSE) === $extension) {
         return $type;
@@ -442,5 +431,4 @@ class GDToolkit extends ImageToolkitBase {
   protected static function supportedTypes() {
     return array(IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_GIF);
   }
-
 }

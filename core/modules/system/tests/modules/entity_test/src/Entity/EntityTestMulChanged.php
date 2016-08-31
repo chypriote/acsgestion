@@ -71,5 +71,4 @@ class EntityTestMulChanged extends EntityTestMul implements EntityChangedInterfa
     sleep(1);
     parent::save();
   }
-
 }

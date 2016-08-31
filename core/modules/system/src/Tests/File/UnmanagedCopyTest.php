@@ -85,5 +85,4 @@ class UnmanagedCopyTest extends FileTestBase {
     $this->assertTrue(file_exists($new_filepath), 'Copied file exists after copying onto itself.');
     $this->assertFilePermissions($new_filepath, Settings::get('file_chmod_file', FileSystem::CHMOD_FILE));
   }
-
 }

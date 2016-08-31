@@ -20,7 +20,7 @@ use Drupal\user\UserInterface;
  * @ContentEntityType(
  *   id = "comment",
  *   label = @Translation("Comment"),
- *   bundle_label = @Translation("Comment type"),
+ *   bundle_label = @Translation("Content type"),
  *   handlers = {
  *     "storage" = "Drupal\comment\CommentStorage",
  *     "storage_schema" = "Drupal\comment\CommentStorageSchema",

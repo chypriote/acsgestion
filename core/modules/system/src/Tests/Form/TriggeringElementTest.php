@@ -93,5 +93,4 @@ class TriggeringElementTest extends WebTestBase {
     $this->assertNoText('The clicked button is button1.', '$form_state->getTriggeringElement() not set to a restricted button.');
     $this->assertText('The clicked button is button2.', '$form_state->getTriggeringElement() not set to a restricted button.');
   }
-
 }

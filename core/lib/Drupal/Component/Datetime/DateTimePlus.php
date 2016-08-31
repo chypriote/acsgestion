@@ -104,9 +104,6 @@ class DateTimePlus {
    *   A DateTime object.
    * @param array $settings
    *   @see __construct()
-   *
-   * @return static
-   *   A new DateTimePlus object.
    */
   public static function createFromDateTime(\DateTime $datetime, $settings = array()) {
     return new static($datetime->format(static::FORMAT), $datetime->getTimezone(), $settings);
@@ -119,7 +116,7 @@ class DateTimePlus {
    * date even if some values are missing.
    *
    * @param array $date_parts
-   *   An array of date parts, like ('year' => 2014, 'month' => 4).
+   *   An array of date parts, like ('year' => 2014, 'month => 4).
    * @param mixed $timezone
    *   (optional) \DateTimeZone object, time zone string or NULL. NULL uses the
    *   default system time zone. Defaults to NULL.
@@ -128,10 +125,8 @@ class DateTimePlus {
    *   __construct().
    *
    * @return static
-   *   A new DateTimePlus object.
-   *
-   * @throws \Exception
-   *   If the array date values or value combination is not correct.
+   *   A new \Drupal\Component\DateTimePlus object based on the parameters
+   *   passed in.
    */
   public static function createFromArray(array $date_parts, $timezone = NULL, $settings = array()) {
     $date_parts = static::prepareArray($date_parts, TRUE);
@@ -160,12 +155,6 @@ class DateTimePlus {
    *   @see __construct()
    * @param array $settings
    *   @see __construct()
-   *
-   * @return static
-   *   A new DateTimePlus object.
-   *
-   * @throws \Exception
-   *   If the timestamp is not numeric.
    */
   public static function createFromTimestamp($timestamp, $timezone = NULL, $settings = array()) {
     if (!is_numeric($timestamp)) {
@@ -198,13 +187,6 @@ class DateTimePlus {
    *     from a format string exactly matches the input. This option
    *     indicates the format can be used for validation. Defaults to TRUE.
    *   @see __construct()
-   *
-   * @return static
-   *   A new DateTimePlus object.
-   *
-   * @throws \Exception
-   *   If the a date cannot be created from the given format, or if the
-   *   created date does not match the input value.
    */
   public static function createFromFormat($format, $time, $timezone = NULL, $settings = array()) {
     if (!isset($settings['validate_format'])) {
@@ -313,30 +295,6 @@ class DateTimePlus {
   }
 
   /**
-   * Returns the difference between two DateTimePlus objects.
-   *
-   * @param \Drupal\Component\Datetime\DateTimePlus|\DateTime $datetime2
-   *    The date to compare to.
-   * @param bool $absolute
-   *    Should the interval be forced to be positive?
-   *
-   * @return \DateInterval
-   *    A DateInterval object representing the difference between the two dates.
-   *
-   * @throws \BadMethodCallException
-   *    If the input isn't a DateTime or DateTimePlus object.
-   */
-  public function diff($datetime2, $absolute = FALSE) {
-    if ($datetime2 instanceof DateTimePlus) {
-      $datetime2 = $datetime2->dateTimeObject;
-    }
-    if (!($datetime2 instanceof \DateTime)) {
-      throw new \BadMethodCallException(sprintf('Method %s expects parameter 1 to be a \DateTime or \Drupal\Component\Datetime\DateTimePlus object', __METHOD__));
-    }
-    return $this->dateTimeObject->diff($datetime2, $absolute);
-  }
-
-  /**
    * Implements the magic __callStatic method.
    *
    * Passes through all unknown static calls onto the DateTime object.
@@ -366,9 +324,6 @@ class DateTimePlus {
    * @param mixed $time
    *   An input value, which could be a timestamp, a string,
    *   or an array of date parts.
-   *
-   * @return mixed
-   *   The massaged time.
    */
   protected function prepareTime($time) {
     return $time;
@@ -383,9 +338,6 @@ class DateTimePlus {
    *
    * @param mixed $timezone
    *   Either a timezone name or a timezone object or NULL.
-   *
-   * @return \DateTimeZone
-   *   The massaged time zone.
    */
   protected function prepareTimezone($timezone) {
     // If the input timezone is a valid timezone object, use it.
@@ -418,9 +370,6 @@ class DateTimePlus {
    *
    * @param string $format
    *   A PHP format string.
-   *
-   * @return string
-   *   The massaged PHP format string.
    */
   protected function prepareFormat($format) {
     return $format;
@@ -454,10 +403,6 @@ class DateTimePlus {
 
   /**
    * Detects if there were errors in the processing of this date.
-   *
-   * @return bool
-   *   TRUE if there were errors in the processing of this date, FALSE
-   *   otherwise.
    */
   public function hasErrors() {
     return (boolean) count($this->errors);
@@ -467,9 +412,6 @@ class DateTimePlus {
    * Gets error messages.
    *
    * Public function to return the error messages.
-   *
-   * @return array
-   *   An array of errors encountered when creating this date.
    */
   public function getErrors() {
     return $this->errors;
@@ -650,5 +592,4 @@ class DateTimePlus {
 
     return $value;
   }
-
 }

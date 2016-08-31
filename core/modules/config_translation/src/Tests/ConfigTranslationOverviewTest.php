@@ -55,7 +55,7 @@ class ConfigTranslationOverviewTest extends WebTestBase {
       'access contextual links',
       'administer views',
     );
-    // Create and log in user.
+    // Create and login user.
     $this->drupalLogin($this->drupalCreateUser($permissions));
 
     // Add languages.

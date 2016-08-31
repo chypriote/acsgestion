@@ -21,7 +21,7 @@ interface ModuleInstallerInterface {
    * To install test modules add
    * @code
    * $settings['extension_discovery_scan_tests'] = TRUE;
-   * @endcode
+   * @encode
    * to your settings.php.
    *
    * @param string[] $module_list
@@ -82,3 +82,4 @@ interface ModuleInstallerInterface {
   public function validateUninstall(array $module_list);
 
 }
+

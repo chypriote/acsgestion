@@ -98,7 +98,7 @@ interface FieldItemInterface extends ComplexDataInterface {
   /**
    * Gets the langcode of the field values held in the object.
    *
-   * @return string
+   * @return $langcode
    *   The langcode.
    */
   public function getLangcode();

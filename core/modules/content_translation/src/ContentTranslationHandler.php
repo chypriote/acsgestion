@@ -696,9 +696,6 @@ class ContentTranslationHandler implements ContentTranslationHandlerInterface, E
    *
    * @param \Drupal\Core\Entity\EntityInterface $entity
    *   The entity whose form is being altered.
-   *
-   * @return string|null
-   *   The label of the entity, or NULL if there is no label defined.
    */
   protected function entityFormTitle(EntityInterface $entity) {
     return $entity->label();
@@ -713,5 +710,4 @@ class ContentTranslationHandler implements ContentTranslationHandlerInterface, E
   public static function getDefaultOwnerId() {
     return \Drupal::currentUser()->id();
   }
-
 }

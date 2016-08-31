@@ -7,7 +7,7 @@ namespace Drupal\Component\Render;
  *
  * Output strategies assist in transforming HTML strings into strings that are
  * appropriate for a given context (e.g. plain-text), through performing the
- * relevant formatting. No sanitization is applied.
+ * relevant formatting. No santization is applied.
  */
 interface OutputStrategyInterface {
 

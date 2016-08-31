@@ -120,5 +120,4 @@ class ImportOpmlTest extends AggregatorTestBase {
     $this->validateImportFormFields();
     $this->submitImportForm();
   }
-
 }

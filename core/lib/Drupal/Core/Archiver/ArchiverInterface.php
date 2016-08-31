@@ -56,5 +56,4 @@ interface ArchiverInterface {
    *   An array of file names relative to the root of the archive.
    */
   public function listContents();
-
 }

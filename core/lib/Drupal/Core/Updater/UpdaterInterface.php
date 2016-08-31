@@ -64,5 +64,4 @@ interface UpdaterInterface {
    * Actions to run after an update has occurred.
    */
   public function postUpdate();
-
 }

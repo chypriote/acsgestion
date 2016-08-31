@@ -41,5 +41,4 @@ class Timestamp extends IntegerData implements DateTimeInterface {
       $this->parent->onChange($this->name);
     }
   }
-
 }

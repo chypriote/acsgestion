@@ -51,6 +51,6 @@
     {% endif %}
   </div>
   {# Remove type specific classes. #}
-  {% set attributes = attributes.removeClass(classes) %}
+  {{ attributes.removeClass(classes) }}
 {% endfor %}
 {% endblock messages %}

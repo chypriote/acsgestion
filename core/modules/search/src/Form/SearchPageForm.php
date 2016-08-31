@@ -101,5 +101,4 @@ class SearchPageForm extends EntityForm {
       array('query' => $query)
     );
   }
-
 }

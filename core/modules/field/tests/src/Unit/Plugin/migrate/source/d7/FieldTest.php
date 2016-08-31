@@ -26,28 +26,8 @@ class FieldTest extends MigrateSqlSourceTestCase {
       'type' => 'file',
       'global_settings' => '',
       'storage' => array(
-        'active' => 1,
-        'details' => array(
-          'sql' => array(
-            'FIELD_LOAD_CURRENT' => array(
-              'field_data_field_file' => array(
-                'description' => 'field_file_description',
-                'display' => 'field_file_display',
-                'fid' => 'field_file_fid',
-              ),
-            ),
-            'FIELD_LOAD_REVISION' => array(
-              'field_revision_field_file' => array(
-                'description' => 'field_file_description',
-                'display' => 'field_file_display',
-                'fid' => 'field_file_fid',
-              ),
-            ),
-          ),
-        ),
-        'module' => 'field_sql_storage',
-        'settings' => array(),
         'type' => 'field_sql_storage',
+        'module' => 'field_sql_storage',
       ),
       'module' => 'file',
       'db_columns' => '',
@@ -59,28 +39,8 @@ class FieldTest extends MigrateSqlSourceTestCase {
       'type' => 'file',
       'global_settings' => '',
       'storage' => array(
-        'active' => 1,
-        'details' => array(
-          'sql' => array(
-            'FIELD_LOAD_CURRENT' => array(
-              'field_data_field_file' => array(
-                'description' => 'field_file_description',
-                'display' => 'field_file_display',
-                'fid' => 'field_file_fid',
-              ),
-            ),
-            'FIELD_LOAD_REVISION' => array(
-              'field_revision_field_file' => array(
-                'description' => 'field_file_description',
-                'display' => 'field_file_display',
-                'fid' => 'field_file_fid',
-              ),
-            ),
-          ),
-        ),
-        'module' => 'field_sql_storage',
-        'settings' => array(),
         'type' => 'field_sql_storage',
+        'module' => 'field_sql_storage',
       ),
       'module' => 'file',
       'db_columns' => '',

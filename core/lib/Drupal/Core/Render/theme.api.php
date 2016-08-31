@@ -788,17 +788,17 @@ function hook_render_template($template_file, $variables) {
  * A module may implement this hook in order to alter the element type defaults
  * defined by a module.
  *
- * @param array $info
+ * @param array $types
  *   An associative array with structure identical to that of the return value
  *   of \Drupal\Core\Render\ElementInfoManagerInterface::getInfo().
  *
  * @see \Drupal\Core\Render\ElementInfoManager
  * @see \Drupal\Core\Render\Element\ElementInterface
  */
-function hook_element_info_alter(array &$info) {
+function hook_element_info_alter(array &$types) {
   // Decrease the default size of textfields.
-  if (isset($info['textfield']['#size'])) {
-    $info['textfield']['#size'] = 40;
+  if (isset($types['textfield']['#size'])) {
+    $types['textfield']['#size'] = 40;
   }
 }
 
@@ -1110,8 +1110,7 @@ function hook_page_bottom(array &$page_bottom) {
  *     Template implementations receive each array key as a variable in the
  *     template file (so they must be legal PHP/Twig variable names). Function
  *     implementations are passed the variables in a single $variables function
- *     argument. If you are using these variables in a render array, prefix the
- *     variable names defined here with a #.
+ *     argument.
  *   - render element: Used for render element items only: the name of the
  *     renderable element or element tree to pass to the theme function. This
  *     name is used as the name of the variable that holds the renderable

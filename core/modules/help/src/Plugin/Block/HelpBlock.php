@@ -88,19 +88,14 @@ class HelpBlock extends BlockBase implements ContainerFactoryPluginInterface {
       return [];
     }
 
-    $implementations = $this->moduleHandler->getImplementations('help');
+    $help = $this->moduleHandler->invokeAll('help', array($this->routeMatch->getRouteName(), $this->routeMatch));
     $build = [];
-    $args = [
-      $this->routeMatch->getRouteName(),
-      $this->routeMatch,
-    ];
-    foreach ($implementations as $module) {
-      // Don't add empty strings to $build array.
-      if ($help = $this->moduleHandler->invoke($module, 'help', $args)) {
-        // Convert strings to #markup render arrays so that they will XSS admin
-        // filtered.
-        $build[] = is_array($help) ? $help : ['#markup' => $help];
-      }
+
+    // Remove any empty strings from $help.
+    foreach (array_filter($help) as $item) {
+      // Convert strings to #markup render arrays so that they will XSS admin
+      // filtered.
+      $build[] = is_array($item) ? $item : ['#markup' => $item];
     }
     return $build;
   }

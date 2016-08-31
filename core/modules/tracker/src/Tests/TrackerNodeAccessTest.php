@@ -71,5 +71,4 @@ class TrackerNodeAccessTest extends WebTestBase {
     $this->assertNoText($private_node->getTitle(), 'Private node is not visible to user without private access.');
     $this->assertText($public_node->getTitle(), 'Public node is visible to user without private access.');
   }
-
 }

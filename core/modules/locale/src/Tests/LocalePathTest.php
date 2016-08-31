@@ -147,5 +147,4 @@ class LocalePathTest extends WebTestBase {
     $this->assertText($second_node->label(), 'Custom alias with prefix returns second node.');
 
   }
-
 }

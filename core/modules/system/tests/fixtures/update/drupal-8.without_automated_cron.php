@@ -5,9 +5,7 @@
  * Test fixture.
  */
 
-use Drupal\Core\Database\Database;
-
-$connection = Database::getConnection();
+$connection = Drupal\Core\Database\Database::getConnection();
 $config = $connection;
 
 $connection->merge('config')

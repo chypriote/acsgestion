@@ -50,5 +50,4 @@ abstract class CKEditorPluginBase extends PluginBase implements CKEditorPluginIn
   function getLibraries(Editor $editor) {
     return array();
   }
-
 }

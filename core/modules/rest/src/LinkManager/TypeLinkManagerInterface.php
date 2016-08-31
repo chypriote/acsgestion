@@ -36,5 +36,4 @@ interface TypeLinkManagerInterface extends ConfigurableLinkManagerInterface {
    *   bundle. Otherwise, returns false.
    */
   public function getTypeInternalIds($type_uri, $context = array());
-
 }

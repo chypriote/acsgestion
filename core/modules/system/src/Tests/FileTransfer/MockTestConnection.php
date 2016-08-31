@@ -19,5 +19,4 @@ class MockTestConnection {
     $this->commandsRun = array();
     return $out;
   }
-
 }

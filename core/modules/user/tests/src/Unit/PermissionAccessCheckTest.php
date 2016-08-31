@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 /**
  * @coversDefaultClass \Drupal\user\Access\PermissionAccessCheck
  * @group Routing
- * @group Access
+ * @group AccessF
  */
 class PermissionAccessCheckTest extends UnitTestCase {
 

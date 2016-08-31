@@ -121,5 +121,4 @@ class EntityReference extends DataReferenceBase {
     }
     return '';
   }
-
 }

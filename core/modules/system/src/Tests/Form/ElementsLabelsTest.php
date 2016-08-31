@@ -146,5 +146,4 @@ class ElementsLabelsTest extends WebTestBase {
 
     return $form;
   }
-
 }

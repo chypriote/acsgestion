@@ -8,7 +8,7 @@ namespace Drupal\Component\Diff\Engine;
  * @subpackage DifferenceEngine
  */
 class DiffOpChange extends DiffOp {
-  public $type = 'change';
+  var $type = 'change';
 
   public function __construct($orig, $closing) {
     $this->orig = $orig;
@@ -18,5 +18,4 @@ class DiffOpChange extends DiffOp {
   public function reverse() {
     return new DiffOpChange($this->closing, $this->orig);
   }
-
 }

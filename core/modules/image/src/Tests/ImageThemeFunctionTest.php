@@ -217,5 +217,4 @@ class ImageThemeFunctionTest extends WebTestBase {
     $elements = $this->xpath('//img[contains(@class, class) and contains(@alt, :alt)]', array(":class" => "image-with-attribute-alt", ":alt" => "Attribute alt"));
     $this->assertEqual(count($elements), 1, 'Attribute alt overrides alt property if both set.');
   }
-
 }

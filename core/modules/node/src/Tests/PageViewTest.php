@@ -38,5 +38,4 @@ class PageViewTest extends NodeTestBase {
     $this->drupalGet("node/" . $node->id() . "/edit");
     $this->assertResponse(200);
   }
-
 }

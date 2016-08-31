@@ -58,5 +58,4 @@ class LoadMultipleTest extends TaxonomyTestBase {
     $loaded_term = reset($loaded_terms);
     $this->assertEqual($term->id(), $loaded_term->id(), 'Term loaded by name successfully.');
   }
-
 }

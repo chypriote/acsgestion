@@ -44,5 +44,4 @@ trait AssertButtonsTrait {
       $this->assertNoRaw('dropbutton-wrapper');
     }
   }
-
 }

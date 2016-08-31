@@ -55,5 +55,4 @@ class BundleConstraint extends Constraint {
   public function getRequiredOptions() {
     return array('bundle');
   }
-
 }

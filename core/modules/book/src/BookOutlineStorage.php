@@ -198,5 +198,4 @@ class BookOutlineStorage implements BookOutlineStorageInterface {
     }
     return $query->execute();
   }
-
 }

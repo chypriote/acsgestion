@@ -206,5 +206,4 @@ class InsertTest extends DatabaseTestBase {
     $saved_value = db_query('SELECT "offset" FROM {test_special_columns} WHERE id = :id', array(':id' => 2))->fetchField();
     $this->assertIdentical($saved_value, 'Offset value 2', 'Can retrieve special column name value after inserting.');
   }
-
 }

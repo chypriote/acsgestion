@@ -202,5 +202,4 @@ class UsageTest extends FileManagedUnitTestBase {
     $this->assertTrue(file_exists($perm_old->getFileUri()), 'Old permanent file was correctly ignored.');
     $this->assertTrue(file_exists($perm_new->getFileUri()), 'New permanent file was correctly ignored.');
   }
-
 }

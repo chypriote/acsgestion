@@ -42,5 +42,4 @@ class EntityTypeConstraint extends Constraint {
   public function getRequiredOptions() {
     return array('type');
   }
-
 }

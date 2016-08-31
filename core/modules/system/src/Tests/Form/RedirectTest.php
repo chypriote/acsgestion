@@ -102,5 +102,4 @@ class RedirectTest extends WebTestBase {
     $this->assertResponse(200);
     $this->assertUrl($expected, [], 'Redirected to correct URL/query.');
   }
-
 }

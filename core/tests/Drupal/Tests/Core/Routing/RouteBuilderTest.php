@@ -273,7 +273,6 @@ class RouteBuilderTest extends UnitTestCase {
     // This will not trigger a rebuild.
     $this->assertFalse($this->routeBuilder->rebuildIfNeeded());
   }
-
 }
 
 /**
@@ -321,5 +320,4 @@ class TestRouteSubscriber {
     $collection->add('test_route.2', new Route('/test-route/2'));
     return $collection;
   }
-
 }

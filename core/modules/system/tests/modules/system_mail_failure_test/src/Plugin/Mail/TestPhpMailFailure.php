@@ -29,5 +29,4 @@ class TestPhpMailFailure extends PhpMail implements MailInterface {
     // Simulate a failed mail send by returning FALSE.
     return FALSE;
   }
-
 }

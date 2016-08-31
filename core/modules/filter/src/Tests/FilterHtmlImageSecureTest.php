@@ -154,5 +154,4 @@ class FilterHtmlImageSecureTest extends WebTestBase {
       $this->assertTrue($found, format_string('@image was found.', array('@image' => $image)));
     }
   }
-
 }

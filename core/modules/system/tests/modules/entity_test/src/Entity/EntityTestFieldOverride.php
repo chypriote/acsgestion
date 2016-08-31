@@ -41,5 +41,4 @@ class EntityTestFieldOverride extends EntityTest {
     }
     return $fields;
   }
-
 }

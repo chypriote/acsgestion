@@ -58,5 +58,4 @@ class Insert extends QueryInsert {
 
     return $query;
   }
-
 }

@@ -36,8 +36,6 @@ abstract class FileFieldTestBase extends WebTestBase {
 
   /**
    * Retrieves a sample file of the specified type.
-   *
-   * @return \Drupal\file\FileInterface
    */
   function getTestFile($type_name, $size = NULL) {
     // Get a file to upload.

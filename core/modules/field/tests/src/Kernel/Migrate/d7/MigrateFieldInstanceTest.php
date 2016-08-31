@@ -5,7 +5,6 @@ namespace Drupal\Tests\field\Kernel\Migrate\d7;
 use Drupal\comment\Entity\CommentType;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\FieldConfigInterface;
-use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\migrate_drupal\Kernel\d7\MigrateDrupal7TestBase;
 use Drupal\node\Entity\NodeType;
 
@@ -21,7 +20,7 @@ class MigrateFieldInstanceTest extends MigrateDrupal7TestBase {
    *
    * @var array
    */
-  public static $modules = array(
+  static $modules = array(
     'comment',
     'datetime',
     'file',
@@ -46,7 +45,6 @@ class MigrateFieldInstanceTest extends MigrateDrupal7TestBase {
     $this->createType('book');
     $this->createType('forum');
     $this->createType('test_content_type');
-    Vocabulary::create(['vid' => 'test_vocabulary'])->save();
     $this->executeMigrations(['d7_field', 'd7_field_instance']);
   }
 
@@ -78,7 +76,7 @@ class MigrateFieldInstanceTest extends MigrateDrupal7TestBase {
    *   The expected field label.
    * @param string $expected_field_type
    *   The expected field type.
-   * @param bool $is_required
+   * @param boolean $is_required
    *   Whether or not the field is required.
    */
   protected function assertEntity($id, $expected_label, $expected_field_type, $is_required) {

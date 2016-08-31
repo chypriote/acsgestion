@@ -42,5 +42,4 @@ class ConfigSchemaDiscovery implements DiscoveryInterface {
     }
     return $definitions;
   }
-
 }

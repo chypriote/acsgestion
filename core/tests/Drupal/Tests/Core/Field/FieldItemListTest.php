@@ -208,5 +208,4 @@ class FieldItemListTest extends UnitTestCase {
 
     $this->assertNull($field_list->defaultValuesFormSubmit([], $form, $form_state));
   }
-
 }

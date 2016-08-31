@@ -351,13 +351,7 @@ class ViewExecutableTest extends ViewsKernelTestBase {
     $reflection = new \ReflectionClass($view);
     $defaults = $reflection->getDefaultProperties();
     // The storage and user should remain.
-    unset(
-      $defaults['storage'],
-      $defaults['user'],
-      $defaults['request'],
-      $defaults['routeProvider'],
-      $defaults['viewsData']
-    );
+    unset($defaults['storage'], $defaults['user'], $defaults['request'], $defaults['routeProvider']);
 
     foreach ($defaults as $property => $default) {
       $this->assertIdentical($this->getProtectedProperty($view, $property), $default);
@@ -428,7 +422,7 @@ class ViewExecutableTest extends ViewsKernelTestBase {
     $count = 0;
     foreach ($view->displayHandlers as $id => $display) {
       $match = function($value) use ($display) {
-        return strpos($value, $display->display['display_title']) !== FALSE;
+        return strpos($value, $display->display['display_title']) !== false;
       };
       $this->assertTrue(array_filter($validate[$id], $match), format_string('Error message found for @id display', array('@id' => $id)));
       $count++;

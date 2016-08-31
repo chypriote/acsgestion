@@ -30,5 +30,4 @@ class ThemeEarlyInitializationTest extends WebTestBase {
     // system was initialized early.
     $this->assertRaw('classy/css/components/action-links.css');
   }
-
 }

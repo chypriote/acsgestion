@@ -196,5 +196,4 @@ class StorageReplaceDataWrapper implements StorageInterface {
     $this->replacementData[$this->collection][$name] = $data;
     return $this;
   }
-
 }

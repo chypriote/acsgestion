@@ -152,5 +152,4 @@ class PathMatcherTest extends UnitTestCase {
       ),
     );
   }
-
 }

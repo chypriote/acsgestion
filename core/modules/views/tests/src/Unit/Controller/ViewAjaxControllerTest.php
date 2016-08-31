@@ -360,3 +360,4 @@ class ViewAjaxControllerTest extends UnitTestCase {
 }
 
 }
+

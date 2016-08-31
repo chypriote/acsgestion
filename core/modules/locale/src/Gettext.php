@@ -93,5 +93,4 @@ class Gettext {
     $report['seek'] = $reader->getSeek();
     return $report;
   }
-
 }

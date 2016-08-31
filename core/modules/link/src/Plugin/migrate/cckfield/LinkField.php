@@ -7,11 +7,7 @@ use Drupal\migrate_drupal\Plugin\migrate\cckfield\CckFieldPluginBase;
 
 /**
  * @MigrateCckField(
- *   id = "link",
- *   core = {6},
- *   type_map = {
- *     "link_field" = "link"
- *   }
+ *   id = "link"
  * )
  */
 class LinkField extends CckFieldPluginBase {

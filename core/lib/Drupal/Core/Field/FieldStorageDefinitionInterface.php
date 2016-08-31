@@ -236,15 +236,13 @@ interface FieldStorageDefinitionInterface extends CacheableDependencyInterface {
    *
    * @return array[]
    *   The field schema, as an array of key/value pairs in the format returned
-   *   by \Drupal\Core\Field\FieldItemInterface::schema():
+   *   by hook_field_schema():
    *   - columns: An array of Schema API column specifications, keyed by column
    *     name. This specifies what comprises a single value for a given field.
    *     No assumptions should be made on how storage backends internally use
    *     the original column name to structure their storage.
    *   - indexes: An array of Schema API index definitions. Some storage
    *     backends might not support indexes.
-   *   - unique keys: An array of Schema API unique key definitions.  Some
-   *     storage backends might not support unique keys.
    *   - foreign keys: An array of Schema API foreign key definitions. Note,
    *     however, that depending on the storage backend specified for the field,
    *     the field data is not necessarily stored in SQL.

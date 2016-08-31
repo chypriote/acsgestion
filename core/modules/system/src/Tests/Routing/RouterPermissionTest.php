@@ -36,5 +36,4 @@ class RouterPermissionTest extends WebTestBase {
     $this->assertNoRaw('Access denied');
     $this->assertRaw('test7text', 'The correct string was returned because the route was successful.');
   }
-
 }

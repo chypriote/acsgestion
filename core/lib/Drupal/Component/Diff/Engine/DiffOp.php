@@ -8,9 +8,9 @@ namespace Drupal\Component\Diff\Engine;
  * @subpackage DifferenceEngine
  */
 class DiffOp {
-  public $type;
-  public $orig;
-  public $closing;
+  var $type;
+  var $orig;
+  var $closing;
 
   public function reverse() {
     trigger_error('pure virtual', E_USER_ERROR);
@@ -23,5 +23,4 @@ class DiffOp {
   public function nclosing() {
     return $this->closing ? sizeof($this->closing) : 0;
   }
-
 }

@@ -567,5 +567,4 @@ abstract class LocalStream implements StreamWrapperInterface {
     // have a return value.
     return TRUE;
   }
-
 }

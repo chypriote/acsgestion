@@ -55,5 +55,4 @@ class HookDiscovery implements DiscoveryInterface {
     }
     return $definitions;
   }
-
 }

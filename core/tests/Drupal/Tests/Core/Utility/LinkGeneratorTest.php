@@ -69,9 +69,7 @@ class LinkGeneratorTest extends UnitTestCase {
   protected function setUp() {
     parent::setUp();
 
-    $this->urlGenerator = $this->getMockBuilder('\Drupal\Core\Routing\UrlGenerator')
-      ->disableOriginalConstructor()
-      ->getMock();
+    $this->urlGenerator = $this->getMock('\Drupal\Core\Routing\UrlGenerator', array(), array(), '', FALSE);
     $this->moduleHandler = $this->getMock('Drupal\Core\Extension\ModuleHandlerInterface');
     $this->renderer = $this->getMock('\Drupal\Core\Render\RendererInterface');
     $this->linkGenerator = new LinkGenerator($this->urlGenerator, $this->moduleHandler, $this->renderer);
@@ -490,33 +488,6 @@ class LinkGeneratorTest extends UnitTestCase {
   }
 
   /**
-   * Tests altering the URL object using hook_link_alter().
-   *
-   * @covers ::generate
-   */
-  public function testGenerateWithAlterHook() {
-    $options = ['query' => [], 'language' => NULL, 'set_active_class' => FALSE, 'absolute' => FALSE];
-    $this->urlGenerator->expects($this->any())
-      ->method('generateFromRoute')
-      ->will($this->returnValueMap([
-        ['test_route_1', [], $options, TRUE, (new GeneratedUrl())->setGeneratedUrl('/test-route-1')],
-        ['test_route_2', [], $options, TRUE, (new GeneratedUrl())->setGeneratedUrl('/test-route-2')],
-      ]));
-
-    $url = new Url('test_route_2');
-    $url->setUrlGenerator($this->urlGenerator);
-
-    $this->moduleHandler->expects($this->atLeastOnce())
-      ->method('alter')
-      ->willReturnCallback(function ($hook, &$options) {
-        $options['url'] = (new Url('test_route_1'))->setUrlGenerator($this->urlGenerator);
-      });
-
-    $expected_link_markup = '<a href="/test-route-1">Test</a>';
-    $this->assertEquals($expected_link_markup, (string) $this->linkGenerator->generate('Test', $url)->getGeneratedLink());
-  }
-
-  /**
    * Checks that a link with certain properties exists in a given HTML snippet.
    *
    * @param array $properties
@@ -548,7 +519,7 @@ class LinkGeneratorTest extends UnitTestCase {
     }
 
     // Execute the query.
-    $document = new \DOMDocument();
+    $document = new \DOMDocument;
     $document->loadHTML($html);
     $xpath = new \DOMXPath($document);
 
@@ -567,7 +538,7 @@ class LinkGeneratorTest extends UnitTestCase {
    *   The number of results that are found.
    */
   protected function assertNoXPathResults($query, $html) {
-    $document = new \DOMDocument();
+    $document = new \DOMDocument;
     $document->loadHTML($html);
     $xpath = new \DOMXPath($document);
 

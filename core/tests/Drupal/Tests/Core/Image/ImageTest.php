@@ -9,7 +9,6 @@ use Drupal\Tests\UnitTestCase;
 /**
  * Tests the image class.
  *
- * @requires extension gd
  * @group Image
  */
 class ImageTest extends UnitTestCase {

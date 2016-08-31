@@ -76,3 +76,4 @@ class TestAccessBlock extends BlockBase implements ContainerFactoryPluginInterfa
   }
 
 }
+

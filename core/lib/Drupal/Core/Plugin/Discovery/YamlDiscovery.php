@@ -101,5 +101,4 @@ class YamlDiscovery implements DiscoveryInterface {
 
     return $definitions;
   }
-
 }

@@ -223,17 +223,6 @@ class ContainerTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * Tests that Container::has() for aliased services works properly.
-   *
-   * @covers ::has
-   */
-  public function testHasForAliasedService() {
-    $service = $this->container->has('service.provider');
-    $aliased_service = $this->container->has('service.provider_alias');
-    $this->assertSame($service, $aliased_service);
-  }
-
-  /**
    * Tests that Container::get() for circular dependencies works properly.
    * @expectedException \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
    * @covers ::get
@@ -452,8 +441,8 @@ class ContainerTest extends \PHPUnit_Framework_TestCase {
    */
   public function testGetForInstantiationWithVariousArgumentLengths() {
     $args = array();
-    for ($i = 0; $i < 12; $i++) {
-      $instantiation_service = $this->container->get('service_test_instantiation_' . $i);
+    for ($i=0; $i < 12; $i++) {
+      $instantiation_service = $this->container->get('service_test_instantiation_'. $i);
       $this->assertEquals($args, $instantiation_service->getArguments());
       $args[] = 'arg_' . $i;
     }
@@ -491,7 +480,7 @@ class ContainerTest extends \PHPUnit_Framework_TestCase {
    */
   public function testGetForFactoryClass() {
     $service = $this->container->get('service.provider');
-    $factory_service = $this->container->get('factory_class');
+    $factory_service= $this->container->get('factory_class');
 
     $this->assertInstanceOf(get_class($service), $factory_service);
     $this->assertEquals('bar', $factory_service->getSomeParameter(), 'Correct parameter was passed via the factory class instantiation.');
@@ -903,7 +892,7 @@ class ContainerTest extends \PHPUnit_Framework_TestCase {
 
     // Test multiple arguments.
     $args = array();
-    for ($i = 0; $i < 12; $i++) {
+    for ($i=0; $i < 12; $i++) {
       $services['service_test_instantiation_' . $i] = array(
         'class' => '\Drupal\Tests\Component\DependencyInjection\MockInstantiationService',
         // Also test a collection that does not need resolving.

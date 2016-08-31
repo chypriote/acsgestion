@@ -18,5 +18,4 @@ interface DestructableInterface {
    * Performs destruct operations.
    */
   public function destruct();
-
 }

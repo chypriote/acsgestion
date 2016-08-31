@@ -97,7 +97,6 @@ class TranslationManagerTest extends UnitTestCase {
       ['bar %baz @bar', ['%baz' => 'baz', '@bar' => 'bar'], 'bar <em class="placeholder">baz</em> bar'],
     ];
   }
-
 }
 
 class TestTranslationManager extends TranslationManager {

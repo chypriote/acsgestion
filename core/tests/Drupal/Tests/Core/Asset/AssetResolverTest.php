@@ -165,5 +165,4 @@ class TestMemoryBackend extends MemoryBackend {
   public function getAllCids() {
     return array_keys($this->cache);
   }
-
 }

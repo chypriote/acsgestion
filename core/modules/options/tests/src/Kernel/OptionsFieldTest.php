@@ -96,5 +96,4 @@ class OptionsFieldTest extends OptionsFieldUnitTestBase {
     $entity->{$this->fieldName}->generateSampleItems();
     $this->entityValidateAndSave($entity);
   }
-
 }

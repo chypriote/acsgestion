@@ -152,7 +152,6 @@ class Select extends QuerySelect {
 
     return $result;
   }
-
 }
 
 /**

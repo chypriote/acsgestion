@@ -64,7 +64,7 @@ interface PhpStreamWrapperInterface {
   public function stream_cast($cast_as);
 
   /**
-   * Closes stream.
+   * @return void
    */
   public function stream_close();
 

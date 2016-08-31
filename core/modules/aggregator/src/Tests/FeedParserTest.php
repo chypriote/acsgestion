@@ -107,5 +107,4 @@ class FeedParserTest extends AggregatorTestBase {
     $this->clickLink(t('Update items'));
     $this->assertRaw(t('The feed from %title seems to be broken because of error', array('%title' => $feed->label())));
   }
-
 }

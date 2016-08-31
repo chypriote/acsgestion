@@ -22,7 +22,7 @@ class UserPicture extends DrupalSqlBase {
     $query = $this->select('users', 'u')
       ->condition('picture', '', '<>')
       ->fields('u', array('uid', 'access', 'picture'))
-      ->orderBy('u.access');
+      ->orderBy('access');
     return $query;
   }
 

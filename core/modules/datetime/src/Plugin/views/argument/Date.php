@@ -37,5 +37,4 @@ class Date extends NumericDate {
     // Pass in the string-field option.
     return $this->query->getDateFormat($this->getDateField(), $format, TRUE);
   }
-
 }

@@ -31,5 +31,4 @@ interface PrimitiveInterface {
    * @return mixed
    */
   public function getCastedValue();
-
 }

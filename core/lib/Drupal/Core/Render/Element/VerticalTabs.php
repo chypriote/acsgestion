@@ -24,24 +24,24 @@ use Drupal\Core\Render\Element;
  *
  * $form['author'] = array(
  *   '#type' => 'details',
- *   '#title' => $this->t('Author'),
+ *   '#title' => 'Author',
  *   '#group' => 'information',
  * );
  *
  * $form['author']['name'] = array(
  *   '#type' => 'textfield',
- *   '#title' => $this->t('Name'),
+ *   '#title' => t('Name'),
  * );
  *
  * $form['publication'] = array(
  *   '#type' => 'details',
- *   '#title' => $this->t('Publication'),
+ *   '#title' => t('Publication'),
  *   '#group' => 'information',
  * );
  *
  * $form['publication']['publisher'] = array(
  *   '#type' => 'textfield',
- *   '#title' => $this->t('Publisher'),
+ *   '#title' => t('Publisher'),
  * );
  * @endcode
  *
@@ -125,7 +125,7 @@ class VerticalTabs extends RenderElement {
     // form is rendered, e.g. on preview pages or when form validation
     // fails.
     $name = implode('__', $element['#parents']);
-    if ($form_state->hasValue($name . '__active_tab')) {
+    if ($form_state->hasValue($name . '__active_tab')){
       $element['#default_tab'] = $form_state->getValue($name . '__active_tab');
     }
     $element[$name . '__active_tab'] = array(

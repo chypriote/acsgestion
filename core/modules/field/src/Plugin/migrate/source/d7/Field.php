@@ -70,5 +70,4 @@ class Field extends DrupalSqlBase {
       ),
     );
   }
-
 }

@@ -30,5 +30,4 @@ class DummyRemoteStreamWrapper extends PublicStream {
   function realpath() {
     return FALSE;
   }
-
 }

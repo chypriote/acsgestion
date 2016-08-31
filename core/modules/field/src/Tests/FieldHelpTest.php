@@ -37,7 +37,7 @@ class FieldHelpTest extends WebTestBase {
    * Test the Field module's help page.
    */
   public function testFieldHelp() {
-    // Log in the admin user.
+    // Login the admin user.
     $this->drupalLogin($this->adminUser);
 
     // Visit the Help page and make sure no warnings or notices are thrown.

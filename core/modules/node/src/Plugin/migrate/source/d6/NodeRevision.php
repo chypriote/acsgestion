@@ -1,7 +1,6 @@
 <?php
 
 namespace Drupal\node\Plugin\migrate\source\d6;
-use Drupal\Core\Database\Query\SelectInterface;
 
 /**
  * Drupal 6 node revision source from database.
@@ -36,13 +35,6 @@ class NodeRevision extends Node {
     $ids['vid']['type'] = 'integer';
     $ids['vid']['alias'] = 'nr';
     return $ids;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  protected function handleTranslations(SelectInterface $query) {
-    // @todo in https://www.drupal.org/node/2746541
   }
 
 }

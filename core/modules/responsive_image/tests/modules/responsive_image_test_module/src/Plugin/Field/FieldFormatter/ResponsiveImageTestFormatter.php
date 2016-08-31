@@ -31,5 +31,4 @@ class ResponsiveImageTestFormatter extends ResponsiveImageFormatter {
     }
     return $elements;
   }
-
 }

@@ -88,5 +88,4 @@ abstract class SearchTestBase extends WebTestBase {
       $this->fail(format_string('Found the requested form fields at @path', array('@path' => $path)));
     }
   }
-
 }

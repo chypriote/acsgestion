@@ -1,4 +1,3 @@
-# The menu_settings migration is in the menu_ui module.
 id: menu
 label: Menus
 migration_tags:

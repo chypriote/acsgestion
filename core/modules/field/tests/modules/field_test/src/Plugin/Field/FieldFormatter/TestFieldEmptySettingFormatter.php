@@ -69,5 +69,4 @@ class TestFieldEmptySettingFormatter extends FormatterBase {
 
     return $elements;
   }
-
 }

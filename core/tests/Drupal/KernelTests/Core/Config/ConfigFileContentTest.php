@@ -227,5 +227,4 @@ class ConfigFileContentTest extends KernelTestBase {
     $key = 'invalid xml';
     $this->assertIdentical($config_data[$key], $config_parsed[$key]);
   }
-
 }

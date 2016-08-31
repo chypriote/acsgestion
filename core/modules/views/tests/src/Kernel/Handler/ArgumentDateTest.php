@@ -315,5 +315,4 @@ class ArgumentDateTest extends ViewsKernelTestBase {
     $expected = array();
     $this->assertIdenticalResultset($view, $expected, $this->columnMap);
   }
-
 }

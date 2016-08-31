@@ -252,8 +252,7 @@ class DatabaseStorage implements StorageInterface {
    * Implements Drupal\Core\Config\StorageInterface::decode().
    *
    * @throws ErrorException
-   *   The unserialize() call will trigger E_NOTICE if the string cannot
-   *   be unserialized.
+   *   unserialize() triggers E_NOTICE if the string cannot be unserialized.
    */
   public function decode($raw) {
     $data = @unserialize($raw);
@@ -325,5 +324,6 @@ class DatabaseStorage implements StorageInterface {
       return array();
     }
   }
+
 
 }

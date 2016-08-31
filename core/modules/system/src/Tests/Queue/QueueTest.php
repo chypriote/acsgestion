@@ -116,5 +116,4 @@ class QueueTest extends KernelTestBase {
     }
     return $score;
   }
-
 }

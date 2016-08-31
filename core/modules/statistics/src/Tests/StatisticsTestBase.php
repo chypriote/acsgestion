@@ -47,5 +47,4 @@ abstract class StatisticsTestBase extends WebTestBase {
       ->set('count_content_views', 1)
       ->save();
   }
-
 }

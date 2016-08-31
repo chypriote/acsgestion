@@ -47,6 +47,7 @@ class AdminPathConfigEntityConverter extends EntityConverter {
    *   The config factory.
    * @param \Drupal\Core\Routing\AdminContext $admin_context
    *   The route admin context service.
+   *
    */
   public function __construct(EntityManagerInterface $entity_manager, ConfigFactoryInterface $config_factory, AdminContext $admin_context) {
     parent::__construct($entity_manager);

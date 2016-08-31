@@ -91,4 +91,5 @@ class AjaxResponseTest extends UnitTestCase {
     $this->assertEquals($response->getContent(), '<textarea>[]</textarea>');
   }
 
+
 }

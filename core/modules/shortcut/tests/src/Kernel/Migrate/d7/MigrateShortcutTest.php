@@ -18,7 +18,7 @@ class MigrateShortcutTest extends MigrateDrupal7TestBase {
    *
    * @var array
    */
-  public static $modules = array(
+  static $modules = array(
     'link',
     'field',
     'shortcut',

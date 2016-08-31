@@ -128,5 +128,4 @@ class UserRoleAdminTest extends WebTestBase {
     // The order of the roles should be reversed.
     $this->assertIdentical($rids, array_reverse($saved_rids));
   }
-
 }

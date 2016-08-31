@@ -93,5 +93,4 @@ class FileTokenReplaceTest extends FileFieldTestBase {
       $this->assertEqual($output, $expected, format_string('Unsanitized file token %token replaced.', array('%token' => $input)));
     }
   }
-
 }

@@ -88,5 +88,4 @@ class SystemConfigSubscriber implements EventSubscriberInterface {
     $events[ConfigEvents::IMPORT_VALIDATE][] = array('onConfigImporterValidateSiteUUID', 256);
     return $events;
   }
-
 }

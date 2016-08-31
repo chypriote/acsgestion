@@ -140,5 +140,4 @@ class PathProcessorManager implements InboundPathProcessorInterface, OutboundPat
     }
     return $sorted;
   }
-
 }

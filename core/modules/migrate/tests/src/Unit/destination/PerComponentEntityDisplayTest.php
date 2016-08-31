@@ -63,5 +63,4 @@ class TestPerComponentEntityDisplay extends ComponentEntityDisplayBase {
   public function getTestValues() {
     return $this->testValues;
   }
-
 }

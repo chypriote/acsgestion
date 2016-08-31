@@ -78,5 +78,4 @@ class WordLevelDiff extends MappedDiff {
     $lines = $closing->getLines();
     return $lines;
   }
-
 }

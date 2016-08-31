@@ -335,5 +335,4 @@ class Row {
   public function isStub() {
     return $this->isStub;
   }
-
 }

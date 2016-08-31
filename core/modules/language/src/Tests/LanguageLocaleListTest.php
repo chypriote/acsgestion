@@ -69,5 +69,4 @@ class LanguageLocaleListTest extends WebTestBase {
     // Check the language list displayed is ordered.
     $this->assertTrue($options === $options_ordered, 'Language list is ordered.');
   }
-
 }

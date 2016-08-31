@@ -13,8 +13,6 @@ use Drupal\user\UserInterface;
 /**
  * Defines the file entity class.
  *
- * @ingroup file
- *
  * @ContentEntityType(
  *   id = "file",
  *   label = @Translation("File"),
@@ -188,11 +186,7 @@ class File extends ContentEntityBase implements FileInterface {
   public function preSave(EntityStorageInterface $storage) {
     parent::preSave($storage);
 
-    // The file itself might not exist or be available right now.
-    $uri = $this->getFileUri();
-    if ($size = @filesize($uri)) {
-      $this->setSize($size);
-    }
+    $this->setSize(filesize($this->getFileUri()));
   }
 
   /**

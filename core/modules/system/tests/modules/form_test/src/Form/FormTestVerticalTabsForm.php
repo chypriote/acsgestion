@@ -52,5 +52,4 @@ class FormTestVerticalTabsForm extends FormBase {
     print Json::encode($form_state->getValues());
     exit;
   }
-
 }

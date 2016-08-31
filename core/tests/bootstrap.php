@@ -7,8 +7,6 @@
  * @see phpunit.xml.dist
  */
 
-use Drupal\Component\Assertion\Handle;
-
 /**
  * Finds all valid extension directories recursively within a given directory.
  *
@@ -23,9 +21,7 @@ function drupal_phpunit_find_extension_directories($scan_directory) {
   $dirs = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($scan_directory, \RecursiveDirectoryIterator::FOLLOW_SYMLINKS));
   foreach ($dirs as $dir) {
     if (strpos($dir->getPathname(), '.info.yml') !== FALSE) {
-      // Cut off ".info.yml" from the filename for use as the extension name. We
-      // use getRealPath() so that we can scan extensions represented by
-      // directory aliases.
+      // Cut off ".info.yml" from the filename for use as the extension name.
       $extensions[substr($dir->getFilename(), 0, -9)] = $dir->getPathInfo()
         ->getRealPath();
     }
@@ -36,16 +32,11 @@ function drupal_phpunit_find_extension_directories($scan_directory) {
 /**
  * Returns directories under which contributed extensions may exist.
  *
- * @param string $root
- *   (optional) Path to the root of the Drupal installation.
- *
  * @return array
  *   An array of directories under which contributed extensions may exist.
  */
-function drupal_phpunit_contrib_extension_directory_roots($root = NULL) {
-  if ($root === NULL) {
-    $root = dirname(dirname(__DIR__));
-  }
+function drupal_phpunit_contrib_extension_directory_roots() {
+  $root = dirname(dirname(__DIR__));
   $paths = array(
     $root . '/core/modules',
     $root . '/core/profiles',
@@ -150,4 +141,5 @@ date_default_timezone_set('Australia/Sydney');
 // runtime assertions. By default this setting is on. Here we make a call to
 // make PHP 5 and 7 handle assertion failures the same way, but this call does
 // not turn runtime assertions on if they weren't on already.
-Handle::register();
+\Drupal\Component\Assertion\Handle::register();
+

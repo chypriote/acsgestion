@@ -77,5 +77,4 @@ class PrimitiveTypeConstraintValidator extends ConstraintValidator {
       ));
     }
   }
-
 }

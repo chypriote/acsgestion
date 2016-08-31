@@ -12,7 +12,7 @@ namespace Drupal\entity_test\Entity;
  *     "access" = "Drupal\entity_test\EntityTestAccessControlHandler",
  *     "view_builder" = "Drupal\entity_test\EntityTestViewBuilderOverriddenView",
  *   },
- *   base_table = "entity_test_view_builder",
+ *   base_table = "entity_test",
  *   render_cache = FALSE,
  *   entity_keys = {
  *     "id" = "id",

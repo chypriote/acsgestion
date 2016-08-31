@@ -43,7 +43,7 @@ class UserLanguageTest extends WebTestBase {
     $this->drupalPostForm('admin/config/regional/language/add', $edit, t('Add custom language'));
     $this->drupalLogout();
 
-    // Log in as normal user and edit account settings.
+    // Login as normal user and edit account settings.
     $this->drupalLogin($web_user);
     $path = 'user/' . $web_user->id() . '/edit';
     $this->drupalGet($path);
@@ -63,5 +63,4 @@ class UserLanguageTest extends WebTestBase {
 
     $this->drupalLogout();
   }
-
 }

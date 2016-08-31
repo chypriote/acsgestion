@@ -28,5 +28,4 @@ abstract class PathUnitTestBase extends KernelTestBase {
 
     parent::tearDown();
   }
-
 }

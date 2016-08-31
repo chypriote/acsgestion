@@ -638,5 +638,4 @@ msgstr "Deutsch"
 
 EOF;
   }
-
 }

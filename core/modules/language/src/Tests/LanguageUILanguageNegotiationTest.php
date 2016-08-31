@@ -532,5 +532,4 @@ class LanguageUILanguageNegotiationTest extends WebTestBase {
     $block = Block::load($block_id);
     $this->assertFalse($block, 'Language switcher block was removed.');
   }
-
 }

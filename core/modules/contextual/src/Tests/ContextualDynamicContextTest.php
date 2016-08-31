@@ -184,5 +184,4 @@ class ContextualDynamicContextTest extends WebTestBase {
     }
     return $this->drupalPostWithFormat('contextual/render', 'json', $post, array('query' => array('destination' => $current_path)));
   }
-
 }

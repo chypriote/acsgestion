@@ -15,7 +15,7 @@ use Drupal\Core\Render\Element;
  * @code
  * $form['email'] = array(
  *   '#type' => 'email',
- *   '#title' => $this->t('Email'),
+ *   '#title' => t('Email'),
  * );
  * @end
  *

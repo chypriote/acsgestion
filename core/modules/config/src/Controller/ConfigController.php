@@ -160,5 +160,4 @@ class ConfigController implements ContainerInjectionInterface {
 
     return $build;
   }
-
 }

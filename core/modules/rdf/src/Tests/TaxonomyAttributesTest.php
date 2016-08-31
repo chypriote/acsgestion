@@ -77,5 +77,4 @@ class TaxonomyAttributesTest extends TaxonomyTestBase {
     // @todo Add test for term description once it is a field:
     //   https://www.drupal.org/node/569434.
   }
-
 }

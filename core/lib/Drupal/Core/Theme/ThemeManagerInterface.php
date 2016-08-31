@@ -65,8 +65,7 @@ interface ThemeManagerInterface {
   /**
    * Passes alterable variables to specific $theme_TYPE_alter() implementations.
    *
-   * Executes an alter hook on the current theme. It also invokes alter hooks
-   * for all base themes.
+   * It also invokes alter hooks for all base themes.
    *
    * $theme specifies the theme name of the active theme and all its base
    * themes.
@@ -115,6 +114,7 @@ interface ThemeManagerInterface {
    *   (optional) An additional variable that is passed by reference. If more
    *   context needs to be provided to implementations, then this should be an
    *   associative array as described above.
+   * Execute the alter hook on the current theme.
    *
    * @see \Drupal\Core\Extension\ModuleHandlerInterface
    */

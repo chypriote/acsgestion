@@ -75,5 +75,4 @@ abstract class OptionsDynamicValuesTestBase extends FieldTestBase {
       'uri' => $this->entity->url(),
     ];
   }
-
 }

@@ -440,8 +440,7 @@ class ConfigNamesMapperTest extends UnitTestCase {
       $this->configNamesMapper->getLangcode();
       $this->fail();
     }
-    catch (\RuntimeException $e) {
-    }
+    catch (\RuntimeException $e) {}
   }
 
   /**

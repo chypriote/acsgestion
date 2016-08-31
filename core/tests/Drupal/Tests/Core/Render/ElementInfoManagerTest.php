@@ -151,7 +151,6 @@ class ElementInfoManagerTest extends UnitTestCase {
     $this->assertNull($element_info->getInfoProperty('foo', '#non_existing_property'));
     $this->assertSame('qux', $element_info->getInfoProperty('foo', '#non_existing_property', 'qux'));
   }
-
 }
 
 /**

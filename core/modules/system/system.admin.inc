@@ -385,3 +385,4 @@ function template_preprocess_system_themes_page(&$variables) {
   }
   $variables['theme_groups'] = $groups;
 }
+

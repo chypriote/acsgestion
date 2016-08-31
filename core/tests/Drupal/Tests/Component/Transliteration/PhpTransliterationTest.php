@@ -184,5 +184,4 @@ class PhpTransliterationTest extends UnitTestCase {
     $transliterated = $transliteration->transliterate(chr(0xC2) . chr(0x82), '../index');
     $this->assertSame($transliterated, 'safe');
   }
-
 }

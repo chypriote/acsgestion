@@ -71,5 +71,4 @@ class RegisterSerializationClassesCompilerPass implements CompilerPassInterface 
 
     return $sorted;
   }
-
 }

@@ -57,5 +57,4 @@ class ComplexDataConstraint extends Constraint {
   public function getRequiredOptions() {
     return array('properties');
   }
-
 }

@@ -1,5 +1,5 @@
 {
-  "name": "drupal/core-file-cache",
+  "name": "drupal/core-fileCache",
   "description": "FileCache.",
   "keywords": ["drupal"],
   "homepage": "https://www.drupal.org/project/drupal",

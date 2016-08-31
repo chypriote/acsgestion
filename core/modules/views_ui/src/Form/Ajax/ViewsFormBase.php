@@ -3,20 +3,17 @@
 namespace Drupal\views_ui\Form\Ajax;
 
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\CloseModalDialogCommand;
 use Drupal\Core\Ajax\OpenModalDialogCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormState;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\BubbleableMetadata;
 use Drupal\Core\Render\RenderContext;
-use Drupal\views\Ajax\HighlightCommand;
-use Drupal\views\Ajax\ReplaceTitleCommand;
-use Drupal\views\Ajax\ShowButtonsCommand;
-use Drupal\views\Ajax\TriggerPreviewCommand;
 use Drupal\views\ViewEntityInterface;
-use Drupal\views_ui\Ajax\SetFormCommand;
+use Drupal\views\Ajax;
+use Drupal\views_ui\Ajax as AjaxUI;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\CloseModalDialogCommand;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
@@ -154,10 +151,10 @@ abstract class ViewsFormBase extends FormBase implements ViewsFormInterface {
     else {
       $response = new AjaxResponse();
       $response->addCommand(new CloseModalDialogCommand());
-      $response->addCommand(new ShowButtonsCommand(!empty($view->changed)));
-      $response->addCommand(new TriggerPreviewCommand());
+      $response->addCommand(new Ajax\ShowButtonsCommand(!empty($view->changed)));
+      $response->addCommand(new Ajax\TriggerPreviewCommand());
       if ($page_title = $form_state->get('page_title')) {
-        $response->addCommand(new ReplaceTitleCommand($page_title));
+        $response->addCommand(new Ajax\ReplaceTitleCommand($page_title));
       }
     }
     // If this form was for view-wide changes, there's no need to regenerate
@@ -251,10 +248,10 @@ abstract class ViewsFormBase extends FormBase implements ViewsFormInterface {
       // Usually this happens at the same path, but custom paths may be
       // specified in $form_state.
       $form_url = $form_state->has('url') ? $form_state->get('url')->toString() : $this->url('<current>');
-      $response->addCommand(new SetFormCommand($form_url));
+      $response->addCommand(new AjaxUI\SetFormCommand($form_url));
 
       if ($section = $form_state->get('#section')) {
-        $response->addCommand(new HighlightCommand('.' . Html::cleanCssIdentifier($section)));
+        $response->addCommand(new Ajax\HighlightCommand('.' . Html::cleanCssIdentifier($section)));
       }
 
       return $response;

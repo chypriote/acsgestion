@@ -31,7 +31,7 @@ abstract class CachePluginBase extends PluginBase {
   /**
    * Contains all data that should be written/read from cache.
    */
-  public $storage = array();
+  var $storage = array();
 
   /**
    * Which cache bin to store query results in.

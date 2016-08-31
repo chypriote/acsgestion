@@ -28,8 +28,6 @@ class PasswordItem extends StringItem {
       ->setSetting('case_sensitive', TRUE);
     $properties['existing'] = DataDefinition::create('string')
       ->setLabel(new TranslatableMarkup('Existing password'));
-    $properties['pre_hashed'] = DataDefinition::create('boolean')
-      ->setLabel(new TranslatableMarkup('Determines if a password needs hashing'));
 
     return $properties;
   }
@@ -42,11 +40,8 @@ class PasswordItem extends StringItem {
 
     $entity = $this->getEntity();
 
-    if ($this->pre_hashed) {
-      // Reset the pre_hashed value since it has now been used.
-      $this->pre_hashed = FALSE;
-    }
-    elseif ($entity->isNew() || (strlen(trim($this->value)) > 0 && $this->value != $entity->original->{$this->getFieldDefinition()->getName()}->value)) {
+    // Update the user password if it has changed.
+    if ($entity->isNew() || (strlen(trim($this->value)) > 0 && $this->value != $entity->original->{$this->getFieldDefinition()->getName()}->value)) {
       // Allow alternate password hashing schemes.
       $this->value = \Drupal::service('password')->hash(trim($this->value));
       // Abort if the hashing failed and returned FALSE.

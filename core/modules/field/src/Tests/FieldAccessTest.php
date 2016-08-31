@@ -88,5 +88,4 @@ class FieldAccessTest extends FieldTestBase {
     $this->drupalGet('node/' . $this->node->id());
     $this->assertNoText($this->testViewFieldValue);
   }
-
 }

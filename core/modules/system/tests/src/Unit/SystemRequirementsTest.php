@@ -6,13 +6,12 @@ use Drupal\system\SystemRequirements;
 use Drupal\Tests\UnitTestCase;
 
 /**
- * @coversDefaultClass \Drupal\system\SystemRequirements
+ * @coversDefaultClass Drupal\system\SystemRequirements
  * @group system
  */
 class SystemRequirementsTest extends UnitTestCase {
 
   /**
-   * @covers ::phpVersionWithPdoDisallowMultipleStatements
    * @dataProvider providerTestPhpVersionWithPdoDisallowMultipleStatements
    */
   public function testPhpVersionWithPdoDisallowMultipleStatements($version, $expected) {

@@ -80,5 +80,4 @@ class AggregatorAdminTest extends AggregatorTestBase {
     $count = $this->container->get('entity.manager')->getStorage('aggregator_item')->getItemCount($feed);
     $this->assertEqual(\Drupal::translation()->formatPlural($count, '1 item', '@count items'), (string) $result[0]->td[1]);
   }
-
 }

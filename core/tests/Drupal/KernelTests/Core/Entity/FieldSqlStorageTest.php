@@ -274,7 +274,6 @@ class FieldSqlStorageTest extends EntityKernelTestBase {
   function testLongNames() {
     // Use one of the longest entity_type names in core.
     $entity_type = $bundle = 'entity_test_label_callback';
-    $this->installEntitySchema('entity_test_label_callback');
     $storage = $this->container->get('entity.manager')->getStorage($entity_type);
 
     // Create two fields and generate random values.

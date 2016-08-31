@@ -81,3 +81,4 @@ class BookSettingsForm extends ConfigFormBase {
   }
 
 }
+

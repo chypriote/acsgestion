@@ -23,5 +23,4 @@ class SetDialogTitleCommand extends SetDialogOptionCommand {
     $this->optionName = 'title';
     $this->optionValue = $title;
   }
-
 }

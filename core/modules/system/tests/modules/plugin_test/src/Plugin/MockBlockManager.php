@@ -133,5 +133,4 @@ class MockBlockManager extends PluginManagerBase {
     // printing TranslatableMarkup objects.
     return new ContextDefinition($data_type, (string) $label, $required);
   }
-
 }

@@ -35,5 +35,4 @@ class NextIdTest extends KernelTestBase {
     $result = db_next_id(1000);
     $this->assertEqual($result, 1001, 'Sequence provides a larger number than the existing ID.');
   }
-
 }

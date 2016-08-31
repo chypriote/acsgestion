@@ -33,5 +33,4 @@ class OpenModalDialogCommand extends OpenDialogCommand {
     $dialog_options['modal'] = TRUE;
     parent::__construct('#drupal-modal', $title, $content, $dialog_options, $settings);
   }
-
 }

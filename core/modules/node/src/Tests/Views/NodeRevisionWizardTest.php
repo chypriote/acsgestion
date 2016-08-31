@@ -59,3 +59,4 @@ class NodeRevisionWizardTest extends WizardTestBase {
   }
 
 }
+

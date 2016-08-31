@@ -26,5 +26,4 @@ class SchemaOrgDataConverter {
     $interaction_type = $arguments['interaction_type'];
     return "$interaction_type:$count";
   }
-
 }

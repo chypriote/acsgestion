@@ -126,12 +126,9 @@ class RequestHandlerTest extends KernelTestBase {
 
 }
 
-/**
- * Stub class where we can prophesize methods.
- */
 class StubRequestHandlerResourcePlugin extends ResourceBase {
 
+  /** stub methods so they can be prophesied. */
   function get() {}
   function patch() {}
-
 }

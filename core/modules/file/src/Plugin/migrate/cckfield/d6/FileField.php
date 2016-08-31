@@ -8,8 +8,7 @@ use Drupal\migrate_drupal\Plugin\migrate\cckfield\CckFieldPluginBase;
 
 /**
  * @MigrateCckField(
- *   id = "filefield",
- *   core = {6}
+ *   id = "filefield"
  * )
  */
 class FileField extends CckFieldPluginBase {

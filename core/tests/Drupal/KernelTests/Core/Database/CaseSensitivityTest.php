@@ -27,5 +27,4 @@ class CaseSensitivityTest extends DatabaseTestBase {
     $saved_age = db_query('SELECT age FROM {test} WHERE name = :name', array(':name' => 'john'))->fetchField();
     $this->assertIdentical($saved_age, '2', 'Can retrieve after inserting.');
   }
-
 }

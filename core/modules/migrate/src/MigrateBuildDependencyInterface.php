@@ -18,5 +18,4 @@ interface MigrateBuildDependencyInterface {
    *   An array of migrations.
    */
   public function buildDependencyMigration(array $migrations, array $dynamic_ids);
-
 }

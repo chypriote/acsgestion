@@ -54,5 +54,4 @@ class BlockContent extends DeriverBase implements ContainerDeriverInterface {
     }
     return parent::getDerivativeDefinitions($base_plugin_definition);
   }
-
 }

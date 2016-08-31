@@ -89,5 +89,4 @@ class TelephoneLinkFormatter extends FormatterBase {
 
     return $element;
   }
-
 }

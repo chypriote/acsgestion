@@ -79,5 +79,4 @@ class TestFieldPrepareViewFormatter extends FormatterBase {
 
     return $elements;
   }
-
 }

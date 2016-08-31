@@ -17,7 +17,7 @@ use Drupal\Core\Render\Element;
  * $form['actions'] = array('#type' => 'actions');
  * $form['actions']['submit'] = array(
  *   '#type' => 'submit',
- *   '#value' => $this->t('Save'),
+ *   '#value' => t('Save'),
  * );
  * @endcode
  *

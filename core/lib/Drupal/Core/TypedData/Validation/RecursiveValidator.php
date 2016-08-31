@@ -85,7 +85,7 @@ class RecursiveValidator implements ValidatorInterface {
   /**
    * {@inheritdoc}
    */
-  public function validate($value, $constraints = NULL, $groups = NULL) {
+  public function validate($value, $constraints = null, $groups = null) {
     return $this->startContext($value)
       ->validate($value, $constraints, $groups)
       ->getViolations();

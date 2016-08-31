@@ -29,3 +29,4 @@ class ImageFieldWidgetTest extends ImageFieldTestBase {
   }
 
 }
+

@@ -19,6 +19,7 @@ class ConvertTokens extends ProcessPluginBase {
 
   /**
    * {@inheritdoc}
+   *
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     $tokens = array(

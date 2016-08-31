@@ -38,5 +38,4 @@ class ClearTest extends CacheTestBase {
       $this->assertFalse($this->checkCacheExists($cid, $this->defaultValue, $bin), format_string('All cache entries removed from @bin.', array('@bin' => $bin)));
     }
   }
-
 }

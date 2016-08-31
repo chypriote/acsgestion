@@ -64,5 +64,4 @@ class MenuLinkContentFormTest extends WebTestBase {
     );
     $this->assertText(t('Manually entered paths should start with /, ? or #.'));
   }
-
 }

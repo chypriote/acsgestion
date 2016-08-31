@@ -23,5 +23,4 @@ class FolderTest extends WebTestBase {
     $directory = file_default_scheme() . '://styles';
     $this->assertTrue(file_prepare_directory($directory, FALSE), 'Directory created.');
   }
-
 }

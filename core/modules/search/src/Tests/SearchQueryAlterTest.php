@@ -19,7 +19,7 @@ class SearchQueryAlterTest extends SearchTestBase {
    * Tests that the query alter works.
    */
   function testQueryAlter() {
-    // Log in with sufficient privileges.
+    // Login with sufficient privileges.
     $this->drupalLogin($this->drupalCreateUser(array('create page content', 'search content')));
 
     // Create a node and an article with the same keyword. The query alter
@@ -45,5 +45,4 @@ class SearchQueryAlterTest extends SearchTestBase {
     $this->assertText('article', 'Article is in search results');
     $this->assertNoText('page', 'Page is not in search results');
   }
-
 }

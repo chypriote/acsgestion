@@ -40,5 +40,4 @@ class GetRdfNamespacesTest extends WebTestBase {
       $this->pass('Expected exception thrown: ' . $e->getMessage());
     }
   }
-
 }

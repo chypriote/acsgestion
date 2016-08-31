@@ -11,3 +11,4 @@ namespace Drupal\Core\Database;
  * developers should account for it separately.
  */
 interface DatabaseException { }
+

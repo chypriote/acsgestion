@@ -75,5 +75,4 @@ class TermEntityReferenceTest extends TaxonomyTestBase {
 
     $this->assertIdentical($result, $expected_result, 'Terms selection restricted to a single vocabulary.');
   }
-
 }

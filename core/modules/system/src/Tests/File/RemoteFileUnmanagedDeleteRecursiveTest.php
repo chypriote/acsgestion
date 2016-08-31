@@ -34,5 +34,4 @@ class RemoteFileUnmanagedDeleteRecursiveTest extends UnmanagedDeleteRecursiveTes
     parent::setUp();
     $this->config('system.file')->set('default_scheme', 'dummy-remote')->save();
   }
-
 }

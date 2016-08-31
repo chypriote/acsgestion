@@ -532,5 +532,4 @@ class SelectExtender implements SelectInterface {
   public function orConditionGroup() {
     return $this->conditionGroupFactory('OR');
   }
-
 }

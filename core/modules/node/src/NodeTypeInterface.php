@@ -80,5 +80,4 @@ interface NodeTypeInterface extends ConfigEntityInterface {
    *   The description of this node type.
    */
   public function getDescription();
-
 }

@@ -79,5 +79,4 @@ class LanguageFilter extends InOperator implements ContainerFactoryPluginInterfa
 
     parent::query();
   }
-
 }

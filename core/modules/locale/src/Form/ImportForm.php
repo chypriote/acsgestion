@@ -192,5 +192,4 @@ class ImportForm extends FormBase {
 
     $form_state->setRedirect('locale.translate_page');
   }
-
 }

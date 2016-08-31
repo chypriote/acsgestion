@@ -82,5 +82,4 @@ class SaveTest extends FileManagedUnitTestBase {
     $this->assertEqual(array($uppercase_file->id() => $uppercase_file->id()), $fids);
 
   }
-
 }

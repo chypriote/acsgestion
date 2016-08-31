@@ -17,5 +17,4 @@ class Truncate extends QueryTruncate {
 
     return $comments . 'DELETE FROM {' . $this->connection->escapeTable($this->table) . '} ';
   }
-
 }

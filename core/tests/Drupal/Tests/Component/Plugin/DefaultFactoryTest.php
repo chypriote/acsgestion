@@ -154,3 +154,4 @@ class DefaultFactoryTest extends UnitTestCase {
   }
 
 }
+

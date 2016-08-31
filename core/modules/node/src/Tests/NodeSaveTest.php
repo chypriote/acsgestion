@@ -178,5 +178,4 @@ class NodeSaveTest extends NodeTestBase {
     $node = $this->drupalCreateNode(array('title' => 'new'));
     $this->assertEqual($node->getTitle(), 'Node ' . $node->id(), 'Node saved on node insert.');
   }
-
 }

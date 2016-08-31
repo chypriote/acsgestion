@@ -31,5 +31,4 @@ class ContactAuthenticatedUserTest extends WebTestBase {
     // Ensure that there is no textfield for email.
     $this->assertFalse($this->xpath('//input[@name=:name]', array(':name' => 'mail')));
   }
-
 }

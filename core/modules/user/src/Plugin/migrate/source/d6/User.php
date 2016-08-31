@@ -20,7 +20,7 @@ class User extends DrupalSqlBase {
   public function query() {
     return $this->select('users', 'u')
       ->fields('u', array_keys($this->baseFields()))
-      ->condition('u.uid', 0, '>');
+      ->condition('uid', 0, '>');
   }
 
   /**

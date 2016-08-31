@@ -101,5 +101,4 @@ class ImageFieldValidateTest extends ImageFieldTestBase {
     $this->assertNoText(t('Alternative text field is required.'));
     $this->assertNoText(t('Title field is required.'));
   }
-
 }

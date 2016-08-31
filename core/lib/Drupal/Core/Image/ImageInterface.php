@@ -238,5 +238,4 @@ interface ImageInterface {
    *   TRUE on success, FALSE on failure.
    */
   public function rotate($degrees, $background = NULL);
-
 }

@@ -157,5 +157,4 @@ interface TypedDataInterface {
    *   root of a typed data tree. Defaults to NULL.
    */
   public function setContext($name = NULL, TraversableTypedDataInterface $parent = NULL);
-
 }

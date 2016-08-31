@@ -116,5 +116,4 @@ class CommentFieldFilterTest extends CommentTestBase {
       $this->assertEqual(substr_count($text, $this->commentTitles[$langcode]), 2 * $count, 'Translation ' . $langcode . ' has count ' . $count . ' with ' . $message);
     }
   }
-
 }

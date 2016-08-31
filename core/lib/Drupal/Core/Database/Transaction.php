@@ -93,5 +93,4 @@ class Transaction {
     $this->rolledBack = TRUE;
     $this->connection->rollback($this->name);
   }
-
 }

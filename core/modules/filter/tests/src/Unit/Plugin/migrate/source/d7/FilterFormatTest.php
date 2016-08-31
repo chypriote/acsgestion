@@ -29,7 +29,6 @@ class FilterFormatTest extends MigrateSqlSourceTestCase {
       'weight' => 0,
       'filters' => array(
         'filter_autop' => array(
-          'format' => 'custom_text_format',
           'module' => 'filter',
           'name' => 'filter_autop',
           'weight' => 0,
@@ -37,7 +36,6 @@ class FilterFormatTest extends MigrateSqlSourceTestCase {
           'settings' => array(),
         ),
         'filter_html' => array(
-          'format' => 'custom_text_format',
           'module' => 'filter',
           'name' => 'filter_html',
           'weight' => 1,
@@ -54,7 +52,6 @@ class FilterFormatTest extends MigrateSqlSourceTestCase {
       'weight' => 1,
       'filters' => array(
         'filter_url' => array(
-          'format' => 'full_html',
           'module' => 'filter',
           'name' => 'filter_url',
           'weight' => 0,

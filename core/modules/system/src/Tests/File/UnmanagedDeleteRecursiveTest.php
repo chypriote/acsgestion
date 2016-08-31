@@ -70,5 +70,4 @@ class UnmanagedDeleteRecursiveTest extends FileTestBase {
     $this->assertFalse(file_exists($subdirectory), 'Subdirectory has been deleted.');
     $this->assertFalse(file_exists($directory), 'Directory has been deleted.');
   }
-
 }

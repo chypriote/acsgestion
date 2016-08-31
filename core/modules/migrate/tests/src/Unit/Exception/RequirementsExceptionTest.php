@@ -47,5 +47,4 @@ class RequirementsExceptionTest extends UnitTestCase {
       ),
     );
   }
-
 }

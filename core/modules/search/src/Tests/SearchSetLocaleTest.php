@@ -47,5 +47,4 @@ class SearchSetLocaleTest extends SearchTestBase {
     // necessary here.
     $this->nodeSearchPlugin->execute();
   }
-
 }

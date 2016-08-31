@@ -103,5 +103,4 @@ class Memory implements QueueInterface {
     $this->queue = array();
     $this->idSequence = 0;
   }
-
 }

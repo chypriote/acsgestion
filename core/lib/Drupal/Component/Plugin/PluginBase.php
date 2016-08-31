@@ -92,5 +92,4 @@ abstract class PluginBase implements PluginInspectionInterface, DerivativeInspec
   public function getPluginDefinition() {
     return $this->pluginDefinition;
   }
-
 }

@@ -19,7 +19,7 @@ use Drupal\Core\Render\Element;
  * @code
  * $form['quantity'] = array(
  *   '#type' => 'number',
- *   '#title' => $this->t('Quantity'),
+ *   '#title' => t('Quantity'),
  * );
  * @endcode
  *

@@ -37,5 +37,4 @@ class SyslogTest extends WebTestBase {
       }
     }
   }
-
 }

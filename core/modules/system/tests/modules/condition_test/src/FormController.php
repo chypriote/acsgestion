@@ -48,6 +48,7 @@ class FormController implements FormInterface {
 
   /**
    * Implements \Drupal\Core\Form\FormInterface::validateForm().
+   *
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $this->condition->validateConfigurationForm($form, $form_state);
@@ -69,5 +70,4 @@ class FormController implements FormInterface {
       drupal_set_message(t('Executed successfully.'));
     }
   }
-
 }

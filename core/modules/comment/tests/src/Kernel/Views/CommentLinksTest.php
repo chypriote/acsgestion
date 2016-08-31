@@ -172,5 +172,4 @@ class CommentLinksTest extends CommentViewsKernelTestBase {
     $replyto_comment = $view->style_plugin->getField(0, 'replyto_comment');
     $this->assertFalse((string) $replyto_comment, "Didn't find the comment reply link as an anonymous user.");
   }
-
 }

@@ -24,5 +24,4 @@ class StringData extends PrimitiveBase implements StringInterface {
   public function getCastedValue() {
     return $this->getString();
   }
-
 }

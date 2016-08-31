@@ -6,8 +6,14 @@ source:
   plugin: d6_filter_format
 process:
   format:
-    plugin: machine_name
-    source: name
+    -
+      plugin: machine_name
+      source: name
+    -
+      plugin: dedupe_entity
+      entity_type: filter_format
+      field: format
+      length: 32
   name: name
   cache: cache
   filters:

@@ -88,5 +88,4 @@ class EntityNormalizer extends ComplexDataNormalizer implements DenormalizerInte
 
     return $entity;
   }
-
 }

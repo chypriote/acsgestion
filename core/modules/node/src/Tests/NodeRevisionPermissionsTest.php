@@ -165,5 +165,4 @@ class NodeRevisionPermissionsTest extends NodeTestBase {
       $this->assertFalse($node_revision_access->checkAccess($revision, $case['account'], $case['op']), "{$this->typeMap[$case['op']]} did not grant revision permission for articles.");
     }
   }
-
 }

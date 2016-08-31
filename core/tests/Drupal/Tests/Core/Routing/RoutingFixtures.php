@@ -238,5 +238,4 @@ class RoutingFixtures {
 
     return $tables;
   }
-
 }

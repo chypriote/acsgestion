@@ -372,5 +372,4 @@ class CommentAttributesTest extends CommentTestBase {
     $comment->save();
     return $comment;
   }
-
 }

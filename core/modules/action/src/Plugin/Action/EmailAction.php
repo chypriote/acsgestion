@@ -55,8 +55,7 @@ class EmailAction extends ConfigurableActionBase implements ContainerFactoryPlug
    */
   protected $mailManager;
 
-  /**
-   * The language manager.
+  /** The language manager.
    *
    * @var \Drupal\Core\Language\LanguageManagerInterface
    */

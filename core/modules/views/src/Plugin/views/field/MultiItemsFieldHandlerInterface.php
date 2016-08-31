@@ -45,3 +45,4 @@ interface MultiItemsFieldHandlerInterface extends FieldHandlerInterface {
   public function renderItems($items);
 
 }
+
