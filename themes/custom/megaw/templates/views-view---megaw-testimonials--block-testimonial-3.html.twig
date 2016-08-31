@@ -1,0 +1,22 @@
+{% if rows %}
+    {% if header %}
+        {{ header }}
+    {% endif %}
+    <div class="wrap-column">
+        <div class="content-column1">
+            <div class="widget-entry">
+                <div class="column1"> </div>
+                <div class="cleared"></div>
+                {{ rows }}
+                <div class="cleared"></div>
+                <div class="cleared"></div>
+                <div class="cleared"></div>
+            </div>
+            <!-- end widget entry --> </div>
+        <div class="cleared"></div>
+    </div>
+    <!-- end wrap-column no-wrap --> 
+
+</div>
+<!-- end content section --> 
+{% endif %}
