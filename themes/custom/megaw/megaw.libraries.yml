@@ -7,10 +7,6 @@ megaw-lib:
       plugins/revslider/public/assets/css/settings.css: {}
       maxmegamenu/style.css: {}
       css/dashicons.min.css: {}
-      # plugins/yith-woocommerce-quick-view/assets/css/yith-quick-view.css: {}
-      # plugins/yith-woocommerce-wishlist/assets/css/jquery.selectBox.css: {}
-      # plugins/yith-woocommerce-wishlist/assets/css/style.css: {}
-      # plugins/yith-woocommerce-wishlist/assets/css/font-awesome.min.css: {}
       plugins/mailchimp-for-wp/assets/css/checkbox.min.css: {}
       http://fonts.googleapis.com/css?family=Montserrat%3A400%2C700&#038;ver=4.4.2: {}
       http://fonts.googleapis.com/css?family=Open+Sans%3A300%2C300italic%2C400%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic&#038;ver=4.4.2: {}
@@ -35,9 +31,6 @@ megaw-lib:
     plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js: {}
     js/hoverIntent.min.js: {}
     plugins/megamenu/js/maxmegamenu.js: {}
-    # plugins/yith-woocommerce-quick-view/assets/js/frontend.js: {}
-    # plugins/yith-woocommerce-wishlist/assets/js/jquery.selectBox.min.js: {}
-    # plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl.js: {}
     js/jquery/ui/core.min.js: {}
     js/jquery/ui/widget.min.js: {}
     js/jquery/ui/accordion.min.js: {}
