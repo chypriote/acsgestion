@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains \Drupal\block_visibility_groups\Tests\VisibilityTest.
- */
-
 
 namespace Drupal\block_visibility_groups\Tests;
-
 
 use Drupal\block_visibility_groups\Entity\BlockVisibilityGroup;
 
@@ -16,7 +10,6 @@ use Drupal\block_visibility_groups\Entity\BlockVisibilityGroup;
  * @group block_visibility_groups
  */
 class VisibilityTest extends BlockVisibilityGroupsTestBase {
-
 
   /**
    * {@inheritdoc}
@@ -31,16 +24,23 @@ class VisibilityTest extends BlockVisibilityGroupsTestBase {
         'name' => 'Basic page',
         'display_submitted' => FALSE,
       ));
-      $this->drupalCreateContentType(array('type' => 'article', 'name' => 'Article'));
+      $this->drupalCreateContentType(array(
+        'type' => 'article',
+        'name' => 'Article',
+      ));
     }
   }
+
   /**
    * Modules to enable.
    *
-   * var array
+   * Var array.
    */
   public static $modules = ['block', 'block_visibility_groups', 'node'];
 
+  /**
+   *
+   */
   public function testSingleConditions() {
     // @todo Condition with node doesn't work for some reason.
     $config = [
@@ -61,16 +61,16 @@ class VisibilityTest extends BlockVisibilityGroupsTestBase {
 
     $page_node = $this->drupalCreateNode();
     $this->drupalGet('node/' . $page_node->id());
-    $this->assertText($block_title,'Block shows up on page node when added via UI.');
+    $this->assertText($block_title, 'Block shows up on page node when added via UI.');
 
     $this->drupalGet('user');
-    $this->assertNoText($block_title,'Block does not show up on user page when added via UI.');
+    $this->assertNoText($block_title, 'Block does not show up on user page when added via UI.');
 
     $block = $this->placeBlockInGroup('system_powered_by_block', $group->id());
     $this->drupalGet('node/' . $page_node->id());
-    $this->assertText($block->label(),'Block shows up on page node.');
+    $this->assertText($block->label(), 'Block shows up on page node.');
     $this->drupalGet('user');
-    $this->assertNoText($block->label(),'Block does not show up on user page.');
+    $this->assertNoText($block->label(), 'Block does not show up on user page.');
   }
 
   /**
@@ -93,4 +93,5 @@ class VisibilityTest extends BlockVisibilityGroupsTestBase {
     $group->save();
     return $group;
   }
+
 }

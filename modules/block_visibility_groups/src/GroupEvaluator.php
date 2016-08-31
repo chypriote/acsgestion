@@ -1,10 +1,7 @@
 <?php
-/**
- * @file
- * Contains Drupal\block_visibility_groups\GroupEvaluator.
- */
 
 namespace Drupal\block_visibility_groups;
+
 use Drupal\block_visibility_groups\Entity\BlockVisibilityGroup;
 use Drupal\Component\Plugin\Exception\ContextException;
 use Drupal\Core\Condition\ConditionAccessResolverTrait;
@@ -12,7 +9,6 @@ use Drupal\Core\Condition\ConditionPluginCollection;
 use Drupal\Core\Plugin\Context\ContextHandlerInterface;
 use Drupal\Core\Plugin\Context\ContextRepositoryInterface;
 use Drupal\Core\Plugin\ContextAwarePluginInterface;
-
 
 /**
  * Class ConditionEvaluator.
@@ -37,9 +33,10 @@ class GroupEvaluator implements GroupEvaluatorInterface {
    */
   protected $contextRepository;
   /**
-   * @var array $group_evaluations;
+   * @var array $group_evaluations ;
    */
   protected $group_evaluations = [];
+
   /**
    * Constructor.
    */
@@ -74,6 +71,9 @@ class GroupEvaluator implements GroupEvaluatorInterface {
     return $this->group_evaluations[$group_id];
   }
 
+  /**
+   *
+   */
   protected function applyContexts(ConditionPluginCollection &$conditions, $logic) {
     $have_1_testable_condition = FALSE;
     foreach ($conditions as $id => $condition) {
@@ -102,4 +102,5 @@ class GroupEvaluator implements GroupEvaluatorInterface {
     }
     return TRUE;
   }
+
 }

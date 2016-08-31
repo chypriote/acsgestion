@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\media_entity\Plugin\views\wizard\Media.
- */
-
 namespace Drupal\media_entity\Plugin\views\wizard;
 
 use Drupal\views\Plugin\views\wizard\WizardPluginBase;
@@ -44,7 +39,7 @@ class Media extends WizardPluginBase {
    */
   public function getAvailableSorts() {
     return [
-      'media_field_data-name:DESC' => t('Media name'),
+      'media_field_data-name:DESC' => $this->t('Media name'),
     ];
   }
 

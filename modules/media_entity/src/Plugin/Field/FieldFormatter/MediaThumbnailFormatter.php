@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains Drupal\media_entity\Plugin\Field\FieldFormatter\MediaThumbnailFormatter.
- */
-
 namespace Drupal\media_entity\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemListInterface;
@@ -98,8 +93,8 @@ class MediaThumbnailFormatter extends ImageFormatter {
     $element = parent::settingsForm($form, $form_state);
 
     $link_types = array(
-      'content' => t('Content'),
-      'media' => t('Media entity'),
+      'content' => $this->t('Content'),
+      'media' => $this->t('Media entity'),
     );
     $element['image_link']['#options'] = $link_types;
 
@@ -113,8 +108,8 @@ class MediaThumbnailFormatter extends ImageFormatter {
     $summary = parent::settingsSummary();
 
     $link_types = array(
-      'content' => t('Linked to content'),
-      'media' => t('Linked to media entity'),
+      'content' => $this->t('Linked to content'),
+      'media' => $this->t('Linked to media entity'),
     );
     // Display this setting only if image is linked.
     $image_link_setting = $this->getSetting('image_link');

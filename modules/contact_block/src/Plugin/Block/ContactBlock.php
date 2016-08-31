@@ -9,14 +9,14 @@ namespace Drupal\contact_block\Plugin\Block;
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Entity\EntityFormBuilder;
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Entity\EntityFormBuilderInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Render\Renderer;
+use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Entity\EntityManager;
-use Drupal\Core\Config\ConfigFactory;
 
 /**
  * Provides a 'ContactBlock' block.
@@ -29,11 +29,11 @@ use Drupal\Core\Config\ConfigFactory;
 class ContactBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The EntityManager.
+   * The EntityTypeManager.
    *
-   * @var \Drupal\Core\Entity\EntityManager
+   * @var \Drupal\Core\Entity\EntityTypeManager
    */
-  protected $entityManager;
+  protected $entityTypeManager;
 
   /**
    * The ConfigFactory.
@@ -72,22 +72,22 @@ class ContactBlock extends BlockBase implements ContainerFactoryPluginInterface 
    *   The plugin_id for the plugin instance.
    * @param string $plugin_definition
    *   The plugin implementation definition.
-   * @param EntityManager $entity_manager
+   * @param EntityTypeManagerInterface $entity_type_manager
    *   The entity manager.
-   * @param ConfigFactory $config_factory
+   * @param ConfigFactoryInterface $config_factory
    *   The config factory.
-   * @param EntityFormBuilder $entity_form_builder
+   * @param EntityFormBuilderInterface $entity_form_builder
    *   The entity form builder.
-   * @param Renderer $renderer
+   * @param RendererInterface $renderer
    *   The renderer.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityManager $entity_manager, ConfigFactory $config_factory, EntityFormBuilder $entity_form_builder, Renderer $renderer) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition);
-
-    $this->entityManager = $entity_manager;
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, ConfigFactoryInterface $config_factory, EntityFormBuilderInterface $entity_form_builder, RendererInterface $renderer) {
+    $this->entityTypeManager = $entity_type_manager;
     $this->configFactory = $config_factory;
     $this->entityFormBuilder = $entity_form_builder;
     $this->renderer = $renderer;
+
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
 
   /**
@@ -98,7 +98,7 @@ class ContactBlock extends BlockBase implements ContainerFactoryPluginInterface 
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('entity.manager'),
+      $container->get('entity_type.manager'),
       $container->get('config.factory'),
       $container->get('entity.form_builder'),
       $container->get('renderer')
@@ -139,9 +139,11 @@ class ContactBlock extends BlockBase implements ContainerFactoryPluginInterface 
    * {@inheritdoc}
    */
   public function defaultConfiguration() {
+    $default_form = $this->configFactory->get('contact.settings')->get('default_form');
+
     return array(
       'label' => t('Contact block'),
-      'contact_form' => 'personal',
+      'contact_form' => $default_form,
     );
   }
 
@@ -150,7 +152,7 @@ class ContactBlock extends BlockBase implements ContainerFactoryPluginInterface 
    */
   public function blockForm($form, FormStateInterface $form_state) {
 
-    $options = $this->entityManager
+    $options = $this->entityTypeManager
       ->getStorage('contact_form')
       ->loadMultiple();
     foreach ($options as $key => $option) {
@@ -211,7 +213,7 @@ class ContactBlock extends BlockBase implements ContainerFactoryPluginInterface 
   protected function getContactForm() {
     if (!isset($this->contactForm)) {
       if (isset($this->configuration['contact_form'])) {
-        $this->contactForm = $this->entityManager
+        $this->contactForm = $this->entityTypeManager
           ->getStorage('contact_form')
           ->load($this->configuration['contact_form']);
       }
@@ -230,7 +232,7 @@ class ContactBlock extends BlockBase implements ContainerFactoryPluginInterface 
 
     $contact_form = $this->getContactForm();
     if ($contact_form) {
-      $contact_message = $this->entityManager
+      $contact_message = $this->entityTypeManager
         ->getStorage('contact_message')
         ->create(['contact_form' => $contact_form->id()]);
     }

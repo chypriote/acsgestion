@@ -1,18 +1,14 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\media_entity\MediaBundleInterface.
- */
-
 namespace Drupal\media_entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityInterface;
+use Drupal\entity\Entity\RevisionableEntityBundleInterface;
 
 /**
  * Provides an interface defining a media bundle entity.
  */
-interface MediaBundleInterface extends ConfigEntityInterface {
+interface MediaBundleInterface extends ConfigEntityInterface, RevisionableEntityBundleInterface {
 
   /**
    * Returns the label.
@@ -35,6 +31,22 @@ interface MediaBundleInterface extends ConfigEntityInterface {
    *   Returns the media bundle ID.
    */
   public static function exists($id);
+
+  /**
+   * Returns whether thumbnail downloads are queued.
+   *
+   * @return bool
+   *   Returns download now or later.
+   */
+  public function getQueueThumbnailDownloads();
+
+  /**
+   * Sets a flag to indicate that thumbnails should be downloaded via a queue.
+   *
+   * @param bool $queue_thumbnail_downloads
+   *   The queue downloads flag.
+   */
+  public function setQueueThumbnailDownloads($queue_thumbnail_downloads);
 
   /**
    * Returns the Media bundle description.
@@ -67,4 +79,21 @@ interface MediaBundleInterface extends ConfigEntityInterface {
    *   The type configuration.
    */
   public function setTypeConfiguration($configuration);
+
+  /**
+   * Returns the media type status.
+   *
+   * @return bool
+   *   The status.
+   */
+  public function getStatus();
+
+  /**
+   * Sets whether a new revision should be created by default.
+   *
+   * @param bool $new_revision
+   *   TRUE if a new revision should be created by default.
+   */
+  public function setNewRevision($new_revision);
+
 }

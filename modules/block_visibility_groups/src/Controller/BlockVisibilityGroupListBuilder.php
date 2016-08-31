@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains Drupal\block_visibility_groups\Controller\BlockVisibilityGroupListBuilder.
- */
-
 namespace Drupal\block_visibility_groups\Controller;
 
 use Drupal\Core\Config\Entity\ConfigEntityListBuilder;
@@ -15,6 +10,7 @@ use Drupal\Core\Url;
  * Provides a listing of Block Visibility Group entities.
  */
 class BlockVisibilityGroupListBuilder extends ConfigEntityListBuilder {
+
   /**
    * {@inheritdoc}
    */
@@ -22,7 +18,7 @@ class BlockVisibilityGroupListBuilder extends ConfigEntityListBuilder {
     $header['label'] = $this->t('Block Visibility Group');
     $header['id'] = $this->t('Machine name');
     $header += parent::buildHeader();
-    // $header['manage_blocks'] = $this->t('Manage Blocks');
+    // $header['manage_blocks'] = $this->t('Manage Blocks');.
     return $header;
   }
 
@@ -40,10 +36,10 @@ class BlockVisibilityGroupListBuilder extends ConfigEntityListBuilder {
       ['query' => ['block_visibility_group' => $row['id']]]
     );
     /*$row['manage_blocks'] = array(
-      '#type' => 'link',
-      '#title' => 'Manage Blocks',
-      // @todo Why does this crash?
-      '#url' => $url,
+    '#type' => 'link',
+    '#title' => 'Manage Blocks',
+    // @todo Why does this crash?
+    '#url' => $url,
 
     ); */
     $row['operations']['data']['#links']['manage_blocks'] = [

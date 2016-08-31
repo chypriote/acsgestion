@@ -1,18 +1,15 @@
 <?php
-/**
- * @file
- * Contains \Drupal\block_visibility_groups\ConditionsSetFormTrait;
- */
 
 namespace Drupal\block_visibility_groups;
 
 use Drupal\block_visibility_groups\Entity\BlockVisibilityGroup;
 use Drupal\Component\Serialization\Json;
 use Drupal\Component\Utility\NestedArray;
-use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Url;
 
-
+/**
+ *
+ */
 trait ConditionsSetFormTrait {
 
   /**
@@ -35,7 +32,7 @@ trait ConditionsSetFormTrait {
         'button--small',
         'button-action',
         'form-item',
-      ]
+      ],
     ]);
     $form['conditions_section'] = [
       '#type' => 'fieldset',
@@ -67,7 +64,6 @@ trait ConditionsSetFormTrait {
         ],
         '#empty' => $this->t('There are no conditions.'),
       ];
-
 
       foreach ($conditions as $condition_id => $condition) {
         $row = [];
@@ -101,4 +97,5 @@ trait ConditionsSetFormTrait {
     }
     return $form['conditions_section'];
   }
+
 }

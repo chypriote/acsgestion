@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains \Drupal\block_visibility_groups\ConditionRedirectTrait.
- */
-
 
 namespace Drupal\block_visibility_groups;
-
 
 use Drupal\Core\Form\FormStateInterface;
 
@@ -54,4 +48,5 @@ trait ConditionRedirectTrait {
       '#value' => $redirect,
     ];
   }
+
 }
