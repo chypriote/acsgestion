@@ -24,7 +24,6 @@
 
         //highlight current mega menu
         var mega_menu_item = jQuery('.mega-menu-item-has-children').find('.mega-sub-menu').find('.current-menu-item');
-        console.log(mega_menu_item);
         if (mega_menu_item.length > 0) {
             var abc = mega_menu_item.parent().parent().parent().parent().parent().addClass('mega-current-menu-ancestor');
         }

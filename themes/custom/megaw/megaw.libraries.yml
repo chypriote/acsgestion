@@ -5,16 +5,8 @@ megaw-lib:
       css/layerslider.css: {}
       http://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900%7COpen+Sans:300%7CIndie+Flower:regular%7COswald:300,regular,700&#038;subset=latin%2Clatin-ext: {}
       plugins/revslider/public/assets/css/settings.css: {}
-      # plugins/woocommerce/assets/css/woocommerce-layout.css: {}
-      # plugins/woocommerce/assets/css/woocommerce-smallscreen.css: {}
-      # plugins/woocommerce/assets/css/woocommerce.css: {}
       maxmegamenu/style.css: {}
       css/dashicons.min.css: {}
-      # plugins/yith-woocommerce-quick-view/assets/css/yith-quick-view.css: {}
-      # plugins/woocommerce/assets/css/prettyPhoto.css: {}
-      # plugins/yith-woocommerce-wishlist/assets/css/jquery.selectBox.css: {}
-      # plugins/yith-woocommerce-wishlist/assets/css/style.css: {}
-      # plugins/yith-woocommerce-wishlist/assets/css/font-awesome.min.css: {}
       plugins/mailchimp-for-wp/assets/css/checkbox.min.css: {}
       http://fonts.googleapis.com/css?family=Montserrat%3A400%2C700&#038;ver=4.4.2: {}
       http://fonts.googleapis.com/css?family=Open+Sans%3A300%2C300italic%2C400%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic&#038;ver=4.4.2: {}
@@ -26,29 +18,16 @@ megaw-lib:
       pe-icon-7-stroke/css/pe-icon-7-stroke.css: {}
       plugins/mailchimp-for-wp/assets/css/form.min.css: {}
       css/custom.css: {}
-      # css/shop.css: {}
       css/update.css: {}
       css/acsgestion.css: {}
   js:
     plugins/LayerSlider/static/js/greensock.js: {}
-    js/jquery/jquery.js: {}
-    js/jquery/jquery-migrate.min.js: {}
     plugins/LayerSlider/static/js/layerslider.kreaturamedia.jquery.js: {}
     plugins/LayerSlider/static/js/layerslider.transitions.js: {}
     plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js: {}
     plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js: {}
     js/hoverIntent.min.js: {}
     plugins/megamenu/js/maxmegamenu.js: {}
-    # plugins/woocommerce/assets/js/frontend/add-to-cart.min.js: {}
-    # plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js: {}
-    # plugins/woocommerce/assets/js/frontend/woocommerce.min.js: {}
-    # plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min.js: {}
-    # plugins/woocommerce/assets/js/frontend/cart-fragments.min.js: {}
-    # plugins/yith-woocommerce-quick-view/assets/js/frontend.js: {}
-    # plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.min.js: {}
-    # plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.init.min.js: {}
-    # plugins/yith-woocommerce-wishlist/assets/js/jquery.selectBox.min.js: {}
-    # plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl.js: {}
     js/jquery/ui/core.min.js: {}
     js/jquery/ui/widget.min.js: {}
     js/jquery/ui/accordion.min.js: {}

@@ -8,6 +8,18 @@
 	background-color: #272525;
 	height: auto;
 }
+body.toolbar-tray-open {
+	padding: 0 !important;
+}
+.toolbar-tray-open #scroll-header {
+	margin-top: 77.9931px;
+}
+.toolbar-tray-open #background {
+	padding-top: 77.9931px;
+}
+#toolbar-administration {
+	z-index: 1000;
+}
 
 #header .header_content .wrap,
 #scroll-header #scroll-header-content .wrap {
@@ -109,6 +121,13 @@
 
 #block-views-block-megaw-portfolios-block-block-latest-projects1 .portfolio-style-2 .portfolio-cell-data {
 	bottom: -97px;
+	padding: 23px 0;
+}
+#block-views-block-megaw-portfolios-block-block-latest-projects1 .portfolio-cell:hover .portfolio-cell-data {
+	bottom: 0;
+}
+#block-views-block-megaw-portfolios-block-block-latest-projects1 .portfolio-cell-categories {
+	display: none;
 }
 
 /*! Bloc en chiffres */
