@@ -9,7 +9,7 @@ use Drupal\entity\Form\RevisionableContentEntityForm;
 /**
  * Form controller for the media edit forms.
  */
-class MediaForm extends RevisionableContentEntityForm {
+class MediaForm {
 
   /**
    * Default settings for this media bundle.

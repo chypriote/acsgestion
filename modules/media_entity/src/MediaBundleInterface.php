@@ -8,7 +8,7 @@ use Drupal\entity\Entity\RevisionableEntityBundleInterface;
 /**
  * Provides an interface defining a media bundle entity.
  */
-interface MediaBundleInterface extends ConfigEntityInterface, RevisionableEntityBundleInterface {
+interface MediaBundleInterface extends ConfigEntityInterface {
 
   /**
    * Returns the label.
