@@ -202,7 +202,11 @@ class FormattableMarkup implements MarkupInterface, \Countable {
 
         case ':':
           // Strip URL protocols that can be XSS vectors.
-          $value = UrlHelper::stripDangerousProtocols($value);
+          if (!is_string($value)){
+            $value = UrlHelper::stripDangerousProtocols($value->toString());
+          } else {
+            $value = UrlHelper::stripDangerousProtocols($value);
+          }
           // Escape unconditionally, without checking whether the value is an
           // instance of \Drupal\Component\Render\MarkupInterface. This forces
           // characters that are unsafe for use in an "href" HTML attribute to

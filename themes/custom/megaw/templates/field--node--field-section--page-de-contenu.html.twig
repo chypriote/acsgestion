@@ -38,5 +38,12 @@
 #}
 
 {% for item in items %}
-    {{ item.content }}
+<div class="acs-content-section content-section top-spacing-medium align-center">
+	<div class="wrap">
+		<div class="content-section-heading">
+			<h1 class="content-section-title"> {{ item.title }} </h1>
+		</div>
+		{{ item.content }}
+	</div>
+</div>
 {% endfor %}

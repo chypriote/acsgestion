@@ -284,6 +284,9 @@ body.toolbar-tray-open {
 	background-color: #464040;
 	margin-bottom: 75px;
 }
+.acs-page-title.no-margin {
+	margin: 0;
+}
 
 .acs-page-title h1 {
 	color: #f9bf3b;
