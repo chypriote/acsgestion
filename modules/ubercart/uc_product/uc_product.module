@@ -567,7 +567,7 @@ function uc_product_uc_store_status() {
   $instances = \Drupal::entityManager()->getFieldDefinitions('node', 'product');
   //$field = NodeType::load('product')->getThirdPartySetting('uc_product', 'image_field', 'uc_product_image');
 
-  if (isset($instances[$field])) {
+  if (isset($field) && isset($instances[$field])) {
     $status = 'ok';
     $description = t('Product image support has been automatically configured by Ubercart.');
   }
