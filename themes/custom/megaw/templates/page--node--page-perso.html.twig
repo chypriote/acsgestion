@@ -1,0 +1,40 @@
+
+{% include theme_path ~ "/templates/header-home.html.twig" %}
+<!-- end Header -->
+<div class="cleared"></div>
+
+<!-- BEGIN CONTENT -->
+<div id="body" class="content-page">
+    <div class="wrap">
+        <div class="acs-page-title">
+            <h1>{{page.title}}</h1>
+        </div>
+    </div>
+
+    {% if type!= 'page'%}
+        {% if page.content %}
+             <div class="wrap">
+             <div class="page-entry-content content">
+            {{ page.content }}
+            <div class="cleared"></div>
+             </div>
+            </div>
+        {% endif %}
+    {% else %}
+        <!--<div class="full-column content">-->
+
+        {% if page.content %}
+            <!--<div class="post-entry-single">-->
+                {{ page.content }}
+            <!--</div>-->
+        {% endif %}
+
+        <!--</div>-->
+    {% endif %}
+
+    {% if page.section %}
+        {{ page.section }}
+    {% endif %}
+
+</div>
+{% include theme_path ~ "/templates/footer.html.twig" %}

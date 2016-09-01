@@ -23,8 +23,8 @@ megaw-lib:
       css/acsgestion.css: {}
   js:
     plugins/LayerSlider/static/js/greensock.js: {}
-    js/jquery/jquery.js: {}
-    js/jquery/jquery-migrate.min.js: {}
+    # js/jquery/jquery.js: {}
+    # js/jquery/jquery-migrate.min.js: {}
     plugins/LayerSlider/static/js/layerslider.kreaturamedia.jquery.js: {}
     plugins/LayerSlider/static/js/layerslider.transitions.js: {}
     plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js: {}

@@ -45,38 +45,38 @@
  */
 #}
 
-{% include theme_path ~ "/templates/header.html.twig" %}
-
+{% include theme_path ~ "/templates/header-home.html.twig" %}
 <!-- end Header -->
 <div class="cleared"></div>
+
 <!-- BEGIN CONTENT -->
 <div id="body" class="content-page">
-   
-        {% if type!= 'page'%}
-            {% if page.content %}
-                 <div class="wrap">
-                 <div class="page-entry-content content">
-                {{ page.content }}
-                <div class="cleared"></div>
-                 </div>
-                </div>
-            {% endif %} 
-        {% else %}
-            <!--<div class="full-column content">-->
 
-                {% if page.content %}
-                    <!--<div class="post-entry-single">-->
-                        {{ page.content }}
-                    <!--</div>-->
-                {% endif %}   
-
-            <!--</div>-->
+    {% if type!= 'page'%}
+        {% if page.content %}
+             <div class="wrap">
+             <div class="page-entry-content content">
+            {{ page.content }}
+            <div class="cleared"></div>
+             </div>
+            </div>
         {% endif %}
-    
+    {% else %}
+        <!--<div class="full-column content">-->
+
+            {% if page.content %}
+                <!--<div class="post-entry-single">-->
+                    {{ page.content }}
+                <!--</div>-->
+            {% endif %}
+
+        <!--</div>-->
+    {% endif %}
+
     {% if page.section %}
         {{ page.section }}
-    {% endif %} 
+    {% endif %}
 
 </div>
-{% include theme_path ~ "/templates/footer.html.twig" %}               
+{% include theme_path ~ "/templates/footer.html.twig" %}
 

@@ -8,6 +8,18 @@
 	background-color: #272525;
 	height: auto;
 }
+body.toolbar-tray-open {
+	padding: 0 !important;
+}
+.toolbar-tray-open #scroll-header {
+	margin-top: 77.9931px;
+}
+.toolbar-tray-open #background {
+	padding-top: 77.9931px;
+}
+#toolbar-administration {
+	z-index: 1000;
+}
 
 #header .header_content .wrap,
 #scroll-header #scroll-header-content .wrap {

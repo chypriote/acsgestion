@@ -22,13 +22,11 @@
             <h1>
                 <a class="logo-image" id="logo" href="{{ path('<front>') }}">
                     {% if site_logo %}
-                        <img  class="logo-normal" alt="{{ site_name|t }}" src="{{ site_logo }}" /> 
+                        <img  class="logo-normal" alt="{{ site_name|t }}" src="{{ site_logo }}" />
                     {% endif %}
                     <img class="logo-retina"   alt="{{ site_name|t }}" src="{{ logo_retina }}" />
-                </a> 
-
+                </a>
             </h1>
         </div>
     </div>
-
 {% endblock %}
