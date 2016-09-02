@@ -223,6 +223,9 @@ body.toolbar-tray-open {
 	padding: 0;
 	background-color: #353232;
 }
+#footer-bottom .widget-entry {
+	margin-bottom: 0;
+}
 
 #block-footercontact #content-section1 {
 	background-color: #e1e4e9;
@@ -314,6 +317,29 @@ body.toolbar-tray-open {
 	text-align: right;
 }
 
+
+#block-acscalloutcontact {
+	background-color: #464040;
+	color: #f9bf3b;
+}
+#block-acscalloutcontact .callout-content {
+	text-align: left;
+}
+#block-acscalloutcontact .callout-heading {
+	color: #f9bf3b;
+}
+#block-acscalloutcontact .callout-subtext {
+	color: #858484;
+	font-size: 15px;
+}
+#block-acscalloutcontact .callout-buttons .button {
+	background-color: #154000;
+	color: #fff;
+}
+#block-acscalloutcontact .callout-buttons .button:hover {
+	background-color: #fff;
+	color: #2e2e2e;
+}
 
 #block-megawblockhtmlfooter .footer-copyright {
 	padding: 20px 0;
