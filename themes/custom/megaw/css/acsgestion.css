@@ -114,6 +114,11 @@ body.toolbar-tray-open {
 	color: #032c54;
 }
 
+#block-megawblockhtmlsection3index a {
+	display: block;
+	cursor: pointer;
+}
+
 /*! Bloc solutions investissement */
 #block-views-block-megaw-portfolios-block-block-latest-projects1 {
 	background-color: #464040;
@@ -205,16 +210,10 @@ body.toolbar-tray-open {
 #block-views-block-megaw-logo-client-block-client1 .logo-client-item {
 	border: none;
 	padding: 0 15px;
-	-webkit-filter: grayscale(1);
-			filter: greyscale(1);
 }
 #block-views-block-megaw-logo-client-block-client1 .logo-client-item img {
 	opacity: 1;
-}
-
-#block-views-block-megaw-logo-client-block-client1 .logo-client-item:hover {
-	-webkit-filter: grayscale(0);
-			filter: greyscale(0);
+	max-height: 150px;
 }
 
 /*! Footer */
@@ -272,23 +271,25 @@ body.toolbar-tray-open {
 #contact-message-nous-contacter-form .field--type-string-long > div {
 	padding: 10px;
 }
-#contact-message-nous-contacter-form .form-actions {
+
+.form-actions {
 	margin-bottom: 30px;
 	padding: 0 10px;
 	width: 100%;
 	text-align: right;
 }
 
-
-#contact-message-nous-contacter-form input,
-#contact-message-nous-contacter-form textarea,
-#block-footercontact .contact-form input,
-#block-footercontact .contact-form textarea {
+.content input,
+.content textarea,
+.content input[type=text],
+.content input[type=tel],
+.content input[type=password],
+.contact-form input[type=text],
+.content input[type=email] {
 	background-color: #d1d4d9;
 }
 
-#contact-message-nous-contacter-form input[type="submit"],
-#block-footercontact .contact-form input[type="submit"] {
+.content input[type="submit"] {
 	background-color: #2e2e2e;
 	font-family: 'Montserrat', Arial !important;
     font-size: 14px;
@@ -307,10 +308,27 @@ body.toolbar-tray-open {
     -webkit-transition: all 300ms ease-out;
 }
 
-#contact-message-nous-contacter-form input[type="submit"]:hover,
-#block-footercontact .contact-form input[type="submit"]:hover {
+.content input[type="submit"]:hover {
 	background-color: transparent;
 	color: #2e2e2e;
+}
+
+.form-wrapper legend {
+	padding: 15px 0;
+}
+.form-wrapper .fieldset-legend {
+	color: #032c53;
+	font-family: 'Montserrat', Arial !important;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.fieldset-wrapper {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 #block-footercontact .contact-button {
