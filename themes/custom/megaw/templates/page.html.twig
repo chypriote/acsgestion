@@ -45,7 +45,14 @@
  */
 #}
 
-{% include theme_path ~ "/templates/header-home.html.twig" %}
+{% include theme_path ~ "/templates/header-page.html.twig" %}
+<header class="entry-header page-header">
+    <div class="page-title wrapper title-with-sep acs-page-title no-margin">
+        <div class="wrap">
+            <h1 class="entry-title">{{ title }}</h1>
+        </div>
+    </div>
+</header>
 <!-- end Header -->
 <div class="cleared"></div>
 
