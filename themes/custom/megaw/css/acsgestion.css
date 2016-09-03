@@ -73,8 +73,24 @@ body.toolbar-tray-open {
 }
 
 #block-views-block-megaw-block-features-block-features-1 .content-column3_1 {
-	width: 25%;
+	float: left;
+    width: 25%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0px 20px;
 }
+@media screen and (max-width: 1000px) {
+	#block-views-block-megaw-block-features-block-features-1 .content-column3_1 {
+		float: none;
+    	width: 100%;
+	}
+}
+@media screen and (max-width: 1180px) {
+	#block-views-block-megaw-block-features-block-features-1 .content-column3_1 {
+		padding: 0px 15px;
+	}
+}
+
 
 #block-views-block-megaw-block-features-block-features-1 .icon-box-item {
 	display: flex;

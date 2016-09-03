@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Apr 5, 2016, 10:34:26 PM
     Author     : danghuyen
 */
@@ -82,7 +82,7 @@ img.wp-smiley, img.emoji {
     -webkit-padding-start: 40px;
 }
 #block-megaw-local-tasks > ul > li a{
-    font-size: 15px   
+    font-size: 15px
 }
 #header .search-form.content form input[type=submit]{
     display: none;
@@ -124,7 +124,7 @@ img.wp-smiley, img.emoji {
     padding: 11px 0px 11px 54px;
 }
 .form-404{
-    padding-top: 29px;  
+    padding-top: 29px;
 }
 .search-page-404{
     text-align: center;
@@ -135,7 +135,7 @@ img.wp-smiley, img.emoji {
     padding-top:60px;
 }
 .search-block-form input[type=submit]{
-    display: none;   
+    display: none;
 }
 .content.search-form .search-input,#top-bar .search-form .search-input{
     font-size: 16px;
@@ -320,7 +320,7 @@ form.comment-form input{
 .woocommerce-single-product product .uc-product-add-to-cart-form .button{
     color: white;
     background-color: #f9bf3b !important;
-} 
+}
 .woocommerce-single-product product .uc-product-add-to-cart-form .button:hover{
     background-color: #2e2e2e !important;
 }
@@ -383,13 +383,13 @@ form.comment-form input{
 @media screen and (max-width: 1180px){
     .contact-form .form-actions,.wrap-column .md-slider-wrap{
         padding: 0 15px;
-    } 
+    }
 }
 @media screen and (max-width: 1000px){
     .contact-form .form-actions,.wrap-column .md-slider-wrap{
         float: none;
         width: 100%;
-    } 
+    }
 }
 .content-column1 .widget-column1-2:nth-child(2n+1){
     clear: both;

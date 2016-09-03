@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -209,7 +209,7 @@ jQuery(window).resize(function() { //restore scroll header
 //---------------------------------
 
 jQuery(document).ready(function() {
-    
+
   if(jQuery('.portfolio-masonry').length > 0 && jQuery('.masonry-item').length > 0){
 
     imagesLoaded(document.querySelector('.portfolio-masonry'), function(instance) {
@@ -230,7 +230,7 @@ if(jQuery('.grid-blog').length > 0 && jQuery('.post-cell-masonry').length > 0 ){
 (function($) {
     $(document).ready(function() {
         $('.content-section .testimonials-slider .testimonials-container .testimonials-each:first-child').addClass('testimonials-current');
-       
+
     });
 
     jQuery('.image-bg ').each(function() {
