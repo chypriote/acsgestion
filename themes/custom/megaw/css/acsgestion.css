@@ -374,15 +374,24 @@ body.toolbar-tray-open {
 // .acs-content-section:nth-child(even) {
 // 	background-color: #353232;
 // }
-.acs-content-section:nth-child(odd) {
+.paragraph:nth-child(even) .acs-content-section {
 	background-color: #464040;
 	color: #fff;
 }
-.acs-content-section:nth-child(even) h1 {
+.paragraph:nth-child(odd) .acs-content-section h1 {
 	color: #032c53;
 }
-.acs-content-section:nth-child(even) .content-section-title:before {
+.paragraph:nth-child(odd) .acs-content-section .content-section-title:before {
 	background-color: #032c53;
+}
+.paragraph ul {
+	list-style: initial;
+	padding-left: 30px;
+}
+.paragraph h3 {
+	padding: 0;
+	text-transform: uppercase;
+	font-size: 20px;
 }
 
 .acs-content-section {
