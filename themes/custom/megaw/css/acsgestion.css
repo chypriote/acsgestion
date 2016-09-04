@@ -502,6 +502,7 @@ body.toolbar-tray-open {
     #block-acscalloutcontact .callout-buttons .button {
         background-color: #154000;
         color: #fff;
+        border: 1px solid #fff;
     }
     #block-acscalloutcontact .callout-buttons .button:hover {
         background-color: #fff;
@@ -686,4 +687,52 @@ body.toolbar-tray-open {
         color: #383838;
         font-weight: normal;
         font-family: Montserrat;
+    }
+
+/*! Slider */
+    .acs-slider-text {
+        font-family: Montserrat;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .acs-slider-topline {
+        font-family: Montserrat;
+        text-transform: none;
+        font-weight: normal;
+    }
+    .acs-slider-headline {
+        font-family: Montserrat;
+        text-transform: none;
+        font-weight: bold;
+        font-size: 4em;
+    }
+    .acs-slider-button {
+        font-family: 'Montserrat', Arial !important;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 10px 24px;
+        display: inline-block;
+        border-radius: 0px !important;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 300ms ease-out;
+        -webkit-transition: all 300ms ease-out;
+        background-color: #154000;
+        border: 2px solid #fff;
+        color: #fff;
+        opacity: .8;
+    }
+    .acs-slider-button a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .acs-slider-button:hover {
+        background-color: #fff;
+    }
+    .acs-slider-button:hover a {
+        color: #2e2e2e !important;
     }
