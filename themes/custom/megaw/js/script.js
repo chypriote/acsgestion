@@ -53,24 +53,35 @@
         }
 
         // Carousel partenaires
-        jQuery('.logo-client').flexslider({
-            animation: "slide"
+        jQuery('.logo-client').owlCarousel({
+            items: 8,
+            autoPlay: true
         })
+
+        function getRounded(value) {
+            return Math.round(value * 100) / 100;
+        }
 
         jQuery('#calcul-mensualites').submit(function(e) {
             e.preventDefault();
 
-            var c = jQuery('#montant').val();
+            var montant = jQuery('#montant').val();
             var ans = jQuery('#duree').val();
-            var t = jQuery('#taux-interet').val();
-            var assurance = jQuery('#taux-assurance').val();
-            var n = ans * 12;
+            var taux = jQuery('#taux-interet').val();
+            var txasur = jQuery('#taux-assurance').val();
+            var mois = ans * 12;
 
-            var result = (c * t / 12) / (1 - (1 + ((t / 12) ^ (n * -1))));
-            var round = Math.round(result * 100) / 100;
-            jQuery('#result').html(round);
+            var result = (montant * taux / 12) / (1 - Math.pow(1 + (taux / 12), (mois * -1)));
+            var mens_assurance = montant * txasur / 12;
+
+            jQuery('#result').html(getRounded(result));
+            jQuery('#assurance').html(getRounded(mens_assurance));
+            jQuery('#total-cost').html(getRounded(result + mens_assurance * mois));
+            jQuery('#total-assurance').html(getRounded(mens_assurance * mois));
             jQuery('.second-form').slideDown();
         })
+
+
     });
 
 })(jQuery);

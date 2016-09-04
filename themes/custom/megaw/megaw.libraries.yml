@@ -12,16 +12,16 @@ megaw-lib:
       responsive.css: {}
       font-awesome/css/font-awesome.min.css: {}
       pe-icon-7-stroke/css/pe-icon-7-stroke.css: {}
-      css/flexslider.css: {}
       css/hint.css: {}
       css/custom.css: {}
       css/update.css: {}
+      css/owl.carousel.css: {}
       css/acsgestion.css: {}
   js:
     js/hoverIntent.min.js: {}
     plugins/megamenu/js/maxmegamenu.js: {}
     js/jquery/ui/core.min.js: {}
-    js/flexslider.min.js: {}
+    js/owl.carousel.min.js: {}
     js/script.js: {}
     js/update.js: {}
 

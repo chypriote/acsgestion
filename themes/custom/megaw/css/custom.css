@@ -231,20 +231,20 @@ opacity: 1;
 	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2) !important;
 } /* sub menu li */
 .main-menu ul ul li a, .main-menu ul li.current-menu-item li a, .main-menu ul li.current-menu-ancestor li a, .main-menu ul li.mega-current-menu-item li a, .main-menu ul li.mega-current-menu-ancestor li a, .main-menu ul li.current-menu-ancestor li.current-menu-item li a, /* SUB MENU LEVEL2 */ .main-menu ul li.current-menu-ancestor li.current-menu-parent li a, .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-item li a, .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-parent li a {
-	color: #b2b2b2 !important;
-	border-bottom: 1px solid transparent !important;
+	color: #b2b2b2;
+	border-bottom: 1px solid transparent;
 }
 .main-menu ul li.current-menu-ancestor li.current-menu-item a, .main-menu ul li.current-menu-ancestor li.current-menu-parent a, .main-menu ul li.current-menu-ancestor li.current-menu-parent li.current-menu-item a, .main-menu ul li.mega-current-menu-ancestor li.current-menu-item a, /* SUB MENU OF MEGAW 4 COLUMN DOES NOT HAVE MEGA PREFIX */ .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-item a, .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-parent a, .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-parent li.mega-current-menu-item a, .main-menu ul ul li a:hover, /* RESTORE HOVER */ .main-menu ul li.current-menu-ancestor li a:hover, .main-menu ul li.current-menu-ancestor li.current-menu-item li a:hover, .main-menu ul li.current-menu-ancestor li.current-menu-parent li a:hover, .main-menu ul li.mega-current-menu-ancestor li a:hover, .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-item li a:hover, .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-parent li a:hover {
-	color: #b2b2b2 !important;
-	border-bottom: 1px solid #b2b2b2 !important;
+	color: #b2b2b2;
+	border-bottom: 1px solid #b2b2b2;
 }
 .header-text-white .main-menu ul ul li a, .header-text-white .main-menu ul li.current-menu-item li a, .header-text-white .main-menu ul li.current-menu-ancestor li a, .header-text-white .main-menu ul li.mega-current-menu-item li a, .header-text-white .main-menu ul li.mega-current-menu-ancestor li a, .header-text-white .main-menu ul li.current-menu-ancestor li.current-menu-item li a, /* SUB MENU LEVEL2 */ .header-text-white .main-menu ul li.current-menu-ancestor li.current-menu-parent li a, .header-text-white .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-item li a, .header-text-white .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-parent li a {
-	color: white !important;
-	border-bottom: 1px solid transparent !important;
+	color: white;
+	border-bottom: 1px solid transparent;
 }
 .header-text-white .main-menu ul li.current-menu-ancestor li.current-menu-item a, .header-text-white .main-menu ul li.current-menu-ancestor li.current-menu-parent a, .header-text-white .main-menu ul li.current-menu-ancestor li.current-menu-parent li.current-menu-item a, .header-text-white .main-menu ul li.mega-current-menu-ancestor li.current-menu-item a, /* SUB MENU OF MEGAW 4 COLUMN DOES NOT HAVE MEGA PREFIX */ .header-text-white .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-item a, .header-text-white .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-parent a, .header-text-white .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-parent li.mega-current-menu-item a, .header-text-white .main-menu ul ul li a:hover, /* RESTORE HOVER */ .header-text-white .main-menu ul li.current-menu-ancestor li a:hover, .header-text-white .main-menu ul li.current-menu-ancestor li.current-menu-item li a:hover, .header-text-white .main-menu ul li.current-menu-ancestor li.current-menu-parent li a:hover, .header-text-white .main-menu ul li.mega-current-menu-ancestor li a:hover, .header-text-white .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-item li a:hover, .header-text-white .main-menu ul li.mega-current-menu-ancestor li.mega-current-menu-parent li a:hover {
-	color: white !important;
-	border-bottom: 1px solid white !important;
+	color: white;
+	border-bottom: 1px solid white;
 } /* Max Megaw Menu */
 #mega-menu-wrap-main-menu {
 	background-color: transparent !important;
