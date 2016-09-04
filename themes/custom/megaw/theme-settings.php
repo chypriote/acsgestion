@@ -59,7 +59,7 @@ $form['settings']['header'] = array(
         '#size' => 40,
         '#attributes' => array('enctype' => 'multipart/form-data'),
         '#description' => t('If you don\'t jave direct access to the server, use this field to upload your logo image. Uploads limited to .png .gif .jpg .jpeg .apng .svg extensions'),
-        '#element_validate' => array('megaw_scroll_logo_validate'),
+        '#element_validate' => array('megaw_second_logo_validate'),
     );
     // logo 4 - scroll logo
      $form['settings']['header']['megaw_logo_4'] = array(
@@ -81,7 +81,7 @@ $form['settings']['header'] = array(
         '#size' => 40,
         '#attributes' => array('enctype' => 'multipart/form-data'),
         '#description' => t('If you don\'t jave direct access to the server, use this field to upload your logo image. Uploads limited to .png .gif .jpg .jpeg .apng .svg extensions'),
-        '#element_validate' => array('megaw_scroll_logo_retina_validate'),
+        '#element_validate' => array('megaw_second_logo_validate'),
     );
 
     $form['settings']['general_setting'] = array(
@@ -112,4 +112,48 @@ $form['settings']['header'] = array(
         '#description' => t('<strong>Example:</strong><br/>h1 { font-family: \'Metrophobic\', Arial, serif; font-weight: 400; }')
     );
 
+}
+
+function megaw_second_logo_validate($element, FormStateInterface $form_state) {
+    global $base_url;
+    $validators = array('file_validate_extensions' => array('png gif jpg jpeg apng svg'));
+    $file = file_save_upload('second_logo', $validators, "public://", NULL, FILE_EXISTS_REPLACE);
+    $file1 = file_save_upload('scroll_logo', $validators, "public://", NULL, FILE_EXISTS_REPLACE);
+    $file2 = file_save_upload('scroll_logo_retina', $validators, "public://", NULL, FILE_EXISTS_REPLACE);
+
+    if (!empty($file)) {
+        // change file's status from temporary to permanent and update file database
+        if ((is_object($file[0]) == 1)) {
+            $file[0]->status = FILE_STATUS_PERMANENT;
+            $file[0]->save();
+            $uri = $file[0]->getFileUri();
+            $file_url = file_create_url($uri);
+            $file_url = str_ireplace($base_url, '', $file_url);
+            $form_state->setValue('second_logo_file', $file_url);
+        }
+    }
+
+        if (!empty($file1)) {
+        // change file's status from temporary to permanent and update file database
+        if ((is_object($file1[0]) == 1)) {
+            $file1[0]->status = FILE_STATUS_PERMANENT;
+            $file1[0]->save();
+            $uri = $file1[0]->getFileUri();
+            $file_url = file_create_url($uri);
+            $file_url = str_ireplace($base_url, '', $file_url);
+            $form_state->setValue('scroll_logo_file', $file_url);
+        }
+    }
+
+        if (!empty($file2)) {
+        // change file's status from temporary to permanent and update file database
+        if ((is_object($file2[0]) == 1)) {
+            $file2[0]->status = FILE_STATUS_PERMANENT;
+            $file2[0]->save();
+            $uri = $file2[0]->getFileUri();
+            $file_url = file_create_url($uri);
+            $file_url = str_ireplace($base_url, '', $file_url);
+            $form_state->setValue('scroll_logo_retina_file', $file_url);
+        }
+    }
 }

@@ -52,6 +52,25 @@
             jQuery('#back_top').hide();
         }
 
+        // Carousel partenaires
+        jQuery('.logo-client').flexslider({
+            animation: "slide"
+        })
+
+        jQuery('#calcul-mensualites').submit(function(e) {
+            e.preventDefault();
+
+            var c = jQuery('#montant').val();
+            var ans = jQuery('#duree').val();
+            var t = jQuery('#taux-interet').val();
+            var assurance = jQuery('#taux-assurance').val();
+            var n = ans * 12;
+
+            var result = (c * t / 12) / (1 - (1 + ((t / 12) ^ (n * -1))));
+            var round = Math.round(result * 100) / 100;
+            jQuery('#result').html(round);
+            jQuery('.second-form').slideDown();
+        })
     });
 
 })(jQuery);

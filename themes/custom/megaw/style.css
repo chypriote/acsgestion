@@ -61,8 +61,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -82,7 +82,7 @@ time, mark, audio, video {
 
 
 
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -95,7 +95,7 @@ footer, header, hgroup, menu, nav, section {
 
 
 input,textarea{
-    -webkit-border-radius:0; 
+    -webkit-border-radius:0;
     border-radius:0;
 }
 
@@ -127,7 +127,7 @@ table {
 }
 
 body{
-	
+
 }
 
 b,strong{
@@ -498,7 +498,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 	padding-bottom:0px !important;
 }
 
-#scroll-header .site-logo > a, 
+#scroll-header .site-logo > a,
 #scroll-header .site-logo > h1 > a {
 	height:60px;
 }
@@ -529,8 +529,8 @@ only screen and (min-device-pixel-ratio: 1.5) {
 	display:inline-block;
 	transition: all 200ms ease-out; /*safari and chrome */
 	-webkit-transition: all 200ms ease-out; /*safari and chrome */
-	padding: 0px 0px 4px 0px  !important;
-	height:auto !important;
+	padding: 0px 0px 4px 0px;
+	height:auto;
 }
 
 .main-menu ul li a:after{
@@ -561,7 +561,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 .main-menu ul ul.sub-menu,
 .main-menu ul li.mega-menu-flyout ul.mega-sub-menu{
 	text-align:left;
-	position: absolute; 
+	position: absolute;
 	top: 125px !important;
 	left:-30px !important;
 	padding:0px 0px !important;
@@ -574,7 +574,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 
 .main-menu ul ul.sub-menu ul.sub-menu,
 .main-menu ul li.mega-menu-flyout ul.mega-sub-menu ul.mega-sub-menu{
-	position: absolute; 
+	position: absolute;
 	top:-30px !important;
 	left:250px !important;
 	width:250px !important;
@@ -584,7 +584,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 }
 
 
-.main-menu ul li:hover ul.sub-menu{ 
+.main-menu ul li:hover ul.sub-menu{
 	z-index:100;
 	display:block;
 }
@@ -605,18 +605,18 @@ only screen and (min-device-pixel-ratio: 1.5) {
 	width:100%;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box; /* Firefox */
-	padding: 0px 30px 15px 30px !important;
-	margin: 0px !important;
+	padding: 0px 30px 15px 30px ;
+	margin: 0px ;
 }
 
 .main-menu ul li li:last-child{
-	padding-bottom: 0px !important;
+	padding-bottom: 0px;
 }
 
-.main-menu ul li li a, 
-.main-menu ul li.current-menu-item li a, 
+.main-menu ul li li a,
+.main-menu ul li.current-menu-item li a,
 .main-menu ul li.current-menu-ancestor li a{
-	display: inline-block  !important;
+	display: inline-block !important;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box; /* Firefox */
 	margin: 0px;
@@ -1206,7 +1206,7 @@ h6.section-widget-title{
 .icon-box-vertical .icon-box-detail{
 	margin-left: 110px;
 }
-	
+
 .icon-box-vertical .icon-box-right .icon-box-detail{
 	margin-left: 0px;
 	margin-right: 110px;
@@ -1214,7 +1214,7 @@ h6.section-widget-title{
 
 .icon-box-vertical .icon-box-right .icon-box-icon, .icon-box-vertical .icon-box-right .icon-box-image-box-container{
 	float: right;
-}	
+}
 
 .icon-box-vertical .icon-box-right .icon-box-detail.icon-box-image-box-detail{
 	margin-left: 0px;
@@ -1434,11 +1434,11 @@ h6.section-widget-title{
 	padding-bottom:0px;
 }
 
-.content.tab-vertical-content h1, 
+.content.tab-vertical-content h1,
 .content.tab-content h1,
-.content.tab-vertical-content h2, 
+.content.tab-vertical-content h2,
 .content.tab-content h2,
-.content.tab-vertical-content h3, 
+.content.tab-vertical-content h3,
 .content.tab-content h3{
 	padding-top: 0px;
 	padding-bottom: 22px;
@@ -1482,7 +1482,7 @@ h6.section-widget-title{
 
 .ui-state-focus{
 	outline:0px;
-	
+
 }
 
 .accor-content{
@@ -1557,7 +1557,7 @@ h6.section-widget-title{
 	margin-right:20px;
 	width:50px;
 	height:50px;
-	
+
 }
 
 .testimonials-image .testimonials-image-box{
@@ -1759,7 +1759,7 @@ h6.subscribe-box-title{
 .subscribe-box-form input[type="email"]{
 	margin-right:20px;
 	width:auto !important;
-	display:inline-block !important; 
+	display:inline-block !important;
 	min-width:250px;
 }
 
@@ -1883,7 +1883,7 @@ h6.subscribe-box-title{
 	width:100%;
 	height:100%;
 	content:'';
-	
+
 	opacity:0;
 	filter:alpha(opacity=0); /* For IE8 and earlier */
 	transition: all 300ms ease-out; /*safari and chrome */
@@ -1950,7 +1950,7 @@ h6.subscribe-box-title{
 	text-align:center;
 }
 
-div.pp_default .pp_description { 
+div.pp_default .pp_description {
 	color:#808080;
 	padding:0px 0px 0px 12px;
 }
@@ -2161,7 +2161,7 @@ div.pp_default .pp_description {
 
 ul.custom-list i{
 	margin-right: 7px;
-	
+
 	text-align:center;
 }
 
@@ -2174,7 +2174,7 @@ ul.custom-list.icon-circle i,
 ul.custom-list.icon-circle-bold i,
 ul.custom-list.icon-square i,
 ul.custom-list.icon-square-bold i{
-	width:18px;		
+	width:18px;
 	padding:3px;
 }
 
@@ -2231,35 +2231,35 @@ ul.custom-list.icon-square-bold i{
 
 /* youtube */
 
-.youtube-container { 
-	position: relative; /* keeps the aspect ratio */ 
+.youtube-container {
+	position: relative; /* keeps the aspect ratio */
 	padding-bottom:56.25%;
 	height:0;
 	overflow: hidden;
 }
 
-.youtube-container iframe,.youtube-container object,.youtube-container embed { 
-	position: absolute; 
-	top: 0; 
-	left: 0; 
-	width: 100%; 
+.youtube-container iframe,.youtube-container object,.youtube-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 	height: 100%;
 }
 
 /* vimeo */
 
-.vimeo-container { 
-	position: relative; /* keeps the aspect ratio */ 
-	padding-bottom:56.25%; /* fine tunes the video positioning */ 
+.vimeo-container {
+	position: relative; /* keeps the aspect ratio */
+	padding-bottom:56.25%; /* fine tunes the video positioning */
 	height:0;
 	overflow: hidden;
 }
 
-.vimeo-container iframe,.vimeo-container object,.vimeo-container embed { 
-	position: absolute; 
-	top: 0; 
-	left: 0; 
-	width: 100%; 
+.vimeo-container iframe,.vimeo-container object,.vimeo-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 	height: 100%;
 }
 
@@ -2276,7 +2276,7 @@ ul.custom-list.icon-square-bold i{
 
 
 .google-map-container iframe{
-	width: 100%; 
+	width: 100%;
 	height:100%;
 }
 
@@ -2492,8 +2492,8 @@ ul.custom-list.icon-square-bold i{
 	position: absolute;
 	top: 45px;
 	right: -14px;
-	width: 42px; 
-	height: 42px; 
+	width: 42px;
+	height: 42px;
 	z-index: 2;
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
@@ -2538,9 +2538,9 @@ ul.custom-list.icon-square-bold i{
 	display: none;
 }
 
-.process_container_3 .process-content h1, 
-.process_container_3 .process-content h2, 
-.process_container_3 .process-content h3, 
+.process_container_3 .process-content h1,
+.process_container_3 .process-content h2,
+.process_container_3 .process-content h3,
 .process_container_3 .process-content h4{
 	padding: 0px 0px 25px 0px;
 }
@@ -2899,7 +2899,7 @@ ul.custom-list.icon-square-bold i{
 
 
 .team-detail{
-	padding: 30px 30px 20px 30px; 
+	padding: 30px 30px 20px 30px;
 }
 
 .team-heading {
@@ -2927,7 +2927,7 @@ ul.custom-list.icon-square-bold i{
 
 .team-style-2 .team-name{
 	position:relative;
-	
+
 }
 
 .team-style-2 .team-name:before {
@@ -3057,7 +3057,7 @@ ul.custom-list.icon-square-bold i{
 
 /*-----------------------------------------------------------------
 
-CONTENTS 
+CONTENTS
 
 -------------------------------------------------------------------*/
 
@@ -3233,7 +3233,7 @@ blockquote p:last-child{
 
 
 .wrap-no-fullwidth{
-	
+
 }
 
 .widget-column1-1 .wrap-no-fullwidth{
@@ -3320,14 +3320,14 @@ blockquote p:last-child{
 	padding: 45px 35px 70px;
 }
 
-.content-column1_1{ 
+.content-column1_1{
 	float:left;
 	width:100%;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box; /* Firefox */
 }
 
-.content-column2_1{ 
+.content-column2_1{
 	float:left;
 	width:50%;
 	box-sizing:border-box;
@@ -3370,7 +3370,7 @@ blockquote p:last-child{
 }
 
 
-.widget-column1-1{ 
+.widget-column1-1{
 	float:left;
 	width:100%;
 	box-sizing:border-box;
@@ -3378,7 +3378,7 @@ blockquote p:last-child{
 	padding:0px 20px;
 }
 
-.widget-column1-2{ 
+.widget-column1-2{
 	float:left;
 	width:50%;
 	box-sizing:border-box;
@@ -3613,10 +3613,10 @@ blockquote p:last-child{
 	display:inline-block;
 
 	cursor:pointer;
-	text-decoration:none;	
+	text-decoration:none;
 	border: 0px;
-	transition: all 300ms ease-out; 
-	-webkit-transition: all 300ms ease-out; 
+	transition: all 300ms ease-out;
+	-webkit-transition: all 300ms ease-out;
 	border-radius:0px !important;
 }
 
@@ -3638,10 +3638,10 @@ a.normal-button{
 	display:inline-block;
 	border-radius:0px !important;
 	cursor:pointer;
-	text-decoration:none;	
+	text-decoration:none;
 	border: 0px;
-	transition: all 300ms ease-out; 
-	-webkit-transition: all 300ms ease-out; 
+	transition: all 300ms ease-out;
+	-webkit-transition: all 300ms ease-out;
 }
 
 .normal-button i{
@@ -3656,10 +3656,10 @@ a.large-button {
 	display:inline-block;
 
 	cursor:pointer;
-	text-decoration:none;	
+	text-decoration:none;
 	border: 0px;
-	transition: all 300ms ease-out; 
-	-webkit-transition: all 300ms ease-out; 
+	transition: all 300ms ease-out;
+	-webkit-transition: all 300ms ease-out;
 	border-radius:0px !important;
 }
 
@@ -3855,7 +3855,7 @@ h2#page-subtitle{
 
 /*-------------------------------------------------------------------
 
-BLOG	
+BLOG
 
 ---------------------------------------------------------------------*/
 
@@ -3937,7 +3937,7 @@ BLOG
 
 .post-entry-bottom a.post-entry-button{
 	padding: 8px 14px;
-} 
+}
 
 .post-entry-bottom{
 	margin-top: 50px;
@@ -3958,7 +3958,7 @@ BLOG
 	display:inline-block;
 	transition: all 200ms ease-out; /*safari and chrome */
 	-webkit-transition: all 200ms ease-out; /*safari and chrome */
-	
+
 }
 
 
@@ -4188,12 +4188,12 @@ h6.post-cell-title{
 	text-align: left;
 }
 
-.post-list-center-left .post-cell, 
+.post-list-center-left .post-cell,
 .post-list-center-right .post-cell {
 	margin-bottom: 28px;
 }
 
-.post-list-center-left .post-cell.widget-element-bottom, 
+.post-list-center-left .post-cell.widget-element-bottom,
 .post-list-center-right .post-cell.widget-element-bottom {
 	margin-bottom: 0px;
 }
@@ -4277,7 +4277,7 @@ h6.post-cell-title{
 }
 
 .author-bio-title{
-	
+
 	padding-bottom:10px;
 	position:relative;
 }
@@ -4532,7 +4532,7 @@ h3#reply-title{
 
 
 
-	
+
 
 /*----------------------------------------------------------------------
 
@@ -4585,11 +4585,11 @@ PORTFOLIO
 }
 
 .portfolio-single-navigation{
-	padding:15px 30px 15px 30px;	
+	padding:15px 30px 15px 30px;
 }
 
 .portfolio-single-navigation{
-	padding:15px 30px 15px 30px;	
+	padding:15px 30px 15px 30px;
 }
 
 .portfolio-single-navigation a{
@@ -4610,7 +4610,7 @@ PORTFOLIO
 	width:65%;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box; /* Firefox */
-	
+
 }
 
 .portfolio-small-column{
@@ -4689,7 +4689,7 @@ PORTFOLIO
 .portfolio-single-author{
 	padding-top: 0px;
  }
- 
+
 .portfolio-single-share{
 	padding-top: 14px;
 	padding-bottom: 14px;
@@ -4893,7 +4893,7 @@ a.portfolio-cell-view{
 	width:50px;
 	height:50px;
 	text-align:center;
-	
+
 	transition: all 200ms ease-out; /*safari and chrome */
 	-webkit-transition: all 200ms ease-out; /*safari and chrome */
 }
@@ -5177,7 +5177,7 @@ WIDGETS
 
 
 .sidebar-widget.content .children li{
-	
+
 	border-bottom: 1px dotted #d9d9d9;
 
 }
@@ -5309,7 +5309,7 @@ WIDGETS
 .content.search-form .search-input{
 	width: 320px;
 	margin-bottom: 0px;
-    padding: 11px 0px 11px 54px; 
+    padding: 11px 0px 11px 54px;
 }
 
 .content .search-form i {
@@ -5466,15 +5466,15 @@ WOOCOMMERCE
 /* Shop/Archive Page */
 
 .woocommerce-result-count{
-	
+
 }
 
 .woocommerce-ordering{
-	
+
 }
 
 
-.woocommerce ul.products li.product, 
+.woocommerce ul.products li.product,
 .woocommerce-page ul.products li.product{
 	text-align:center;
 	width:31.2%;
@@ -5484,32 +5484,32 @@ WOOCOMMERCE
 	margin-bottom:40px;
 }
 
-.woocommerce.columns-4 ul.products li.product, 
+.woocommerce.columns-4 ul.products li.product,
 .woocommerce-page .columns-4 ul.products li.product{
 	width:22.6%;
 	margin-right:3.2%;
 }
 
-.woocommerce.columns-3 ul.products li.product, 
+.woocommerce.columns-3 ul.products li.product,
 .woocommerce-page .columns-3 ul.products li.product{
 	width:31.2%;
 	margin-right:3.2%;
 }
 
-.woocommerce.columns-2 ul.products li.product, 
+.woocommerce.columns-2 ul.products li.product,
 .woocommerce-page .columns-2 ul.products li.product{
 	width:48.4%;
 	margin-right:3.2%;
 }
 
-.woocommerce.columns-1 ul.products li.product, 
+.woocommerce.columns-1 ul.products li.product,
 .woocommerce-page .columns-1 ul.products li.product{
 	width:100%;
 }
 
-.woocommerce ul.products li.product.last, 
+.woocommerce ul.products li.product.last,
 .woocommerce-page ul.products li.product.last{
-	
+
 	margin-right:0%;
 }
 
@@ -5566,7 +5566,7 @@ WOOCOMMERCE
 }
 
 .woocommerce ul.products li.product .product-brand{
-	
+
 }
 
 
@@ -5615,7 +5615,7 @@ WOOCOMMERCE
 	margin-bottom:30px;
 }
 
-.woocommerce nav.woocommerce-pagination ul li a, 
+.woocommerce nav.woocommerce-pagination ul li a,
 .woocommerce nav.woocommerce-pagination ul li span{
 	display:inline-block;
 	text-align:center;
@@ -5675,7 +5675,7 @@ WOOCOMMERCE
 
 
 /* item form & buttons */
-.woocommerce div.product form.cart, 
+.woocommerce div.product form.cart,
 .woocommerce div.product p.cart{
 	display:inline-block;
 	margin-bottom:0px;
@@ -5691,7 +5691,7 @@ WOOCOMMERCE
 .woocommerce div.product form.cart div.quantity input,
 .woocommerce .quantity .qty{
 	padding:12px 20px;
-	
+
 	display:inline-block;
 }
 
@@ -5730,10 +5730,10 @@ WOOCOMMERCE
 
 /* product tab */
 .woocommerce div.product .woocommerce-tabs ul.tabs li{
-	
+
     border-radius: 0px;
    padding: 6px 20px;
-   
+
 }
 
 /* product review form */
@@ -5745,9 +5745,9 @@ WOOCOMMERCE
 
 /* form */
 
-.woocommerce #respond input#submit, 
-.woocommerce a.button, 
-.woocommerce button.button, 
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
 .woocommerce input.button{
 	border-radius:0px;
 }
@@ -5829,7 +5829,7 @@ FOOTER SECTIONS
 	top:45px;
 	content:'';
 }
-	
+
 .footer-widget a{
 	transition: all 200ms ease-out; /*safari and chrome */
 	-webkit-transition: all 200ms ease-out; /*safari and chrome */
