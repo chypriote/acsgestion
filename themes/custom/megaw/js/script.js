@@ -52,6 +52,12 @@
             jQuery('#back_top').hide();
         }
 
+        jQuery('.mega-menu-item-type-custom').each(function() {
+            if (jQuery(this).find('.mega-sub-menu').length != 0) {
+                jQuery(this).children('a').attr('href', null)
+            }
+        });
+
         // Carousel partenaires
         jQuery('.logo-client').owlCarousel({
             items: 8,

@@ -62,7 +62,7 @@
             // automatically hide open panels, but only for desktop.
             if ( $(window).width() > plugin.settings.breakpoint ) {
                 // all open children of open siblings
-                anchor.parent().siblings().find('.mega-toggle-on').andSelf().children('a').each(function() { 
+                anchor.parent().siblings().find('.mega-toggle-on').andSelf().children('a').each(function() {
                     plugin.hidePanel($(this), true);
                 });
             }
@@ -115,7 +115,7 @@
                         e.preventDefault();
 
                         if ( $(this).parent().hasClass("mega-toggle-on") ) {
-                            plugin.hidePanel($(this), false);                            
+                            plugin.hidePanel($(this), false);
                         } else {
                             plugin.showPanel($(this));
                         }
@@ -125,7 +125,7 @@
         };
 
         var openOnHover = function() {
-            $('li.mega-menu-megamenu.mega-menu-item-has-children, li.mega-menu-flyout.mega-menu-item-has-children, li.mega-menu-flyout li.mega-menu-item', menu).hoverIntent({
+            $('li.mega-menu-megamenu.mega-menu-item-has-children, li.mega-menu-flyout.mega-menu-item-has-children, li.mega-menu-flyout li.mega-menu-item', menu).hover({
                 over: function () {
                     plugin.showPanel($(this).children('a'));
                 },

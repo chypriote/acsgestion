@@ -212,8 +212,8 @@ opacity: 1;
 	background-color: transparent !important;
 }
 .main-menu ul li a:hover, .main-menu ul li.current-menu-item a, .main-menu ul li.current-menu-ancestor a, .main-menu ul li.mega-current-menu-item a, .main-menu ul li.mega-current-menu-ancestor a, .main-menu ul li.current-menu-item a:hover, .main-menu ul li.current-menu-ancestor a:hover, .main-menu ul li.mega-current-menu-item {
-	color: #f9bf3b !important;
-	border-bottom: 1px solid #f9bf3b !important;
+	color: #f9bf3b;
+	border-bottom: 1px solid #f9bf3b;
 }
 .header-text-white .main-menu ul li a {
 	color: white;

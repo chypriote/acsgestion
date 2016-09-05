@@ -208,31 +208,8 @@ jQuery(window).resize(function() { //restore scroll header
 });
 //---------------------------------
 
-jQuery(document).ready(function() {
-
-  if(jQuery('.portfolio-masonry').length > 0 && jQuery('.masonry-item').length > 0){
-
-    imagesLoaded(document.querySelector('.portfolio-masonry'), function(instance) {
-        jQuery('.portfolio-masonry').masonry({
-            itemSelector: '.masonry-item'
-        });
-    });
-}
-if(jQuery('.grid-blog').length > 0 && jQuery('.post-cell-masonry').length > 0 ){
-  imagesLoaded(document.querySelector('.grid-blog'), function(instance) {
-        jQuery('.grid-blog').masonry({
-            itemSelector: '.post-cell-masonry'
-        });
-    });
-    }
-});
 
 (function($) {
-    $(document).ready(function() {
-        $('.content-section .testimonials-slider .testimonials-container .testimonials-each:first-child').addClass('testimonials-current');
-
-    });
-
     jQuery('.image-bg ').each(function() {
         if (jQuery(this).find('>img[data-type=background]').length>0) {
             var url_img = 'url(' + jQuery(this).find('>img').attr('src') + ')'; //lấy ra giá trị của thuộc tính chú ý nha.
@@ -240,8 +217,6 @@ if(jQuery('.grid-blog').length > 0 && jQuery('.post-cell-masonry').length > 0 ){
             jQuery(this).find('>img').hide();
         }
     });
-    jQuery('#footer .wrap-column .footer-column nav').parent().css('padding-bottom','80px');
-    jQuery('.simplenews-subscriber-form.content form input[type=email]').attr('placeholder','Email');
     jQuery('.search-block-form form .form-actions').removeAttr('id');
     jQuery('.search-block-form form #edit-submit').removeAttr('id');
 })(jQuery);

@@ -45,11 +45,11 @@
 #}
 
 {% include theme_path ~ "/templates/header-page.html.twig" %}
-<section id="content" role="main" class="clearfix animated blue-bg">
+<section id="content" role="main" class="clearfix animated">
     <header class="entry-header page-header">
         <div class="page-title wrapper title-with-sep acs-page-title">
             <div class="wrap">
-                <h1 class="entry-title">Nous contacter</h1>
+                <h1 class="entry-title">{{ title }}</h1>
             </div>
         </div>
     </header>
@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="cleared"></div>
-            <div class="content-column1">
+            <div class="column1">
                 <div class="widget-entry">
                     <div class="column1">
                         <div class="google-map-container" style="height: 450px">
@@ -87,17 +87,7 @@
             </div>
             <div class="cleared"></div>
         </div>
-            <!-- .grid-8 -->
-            <div class="grid-4 column-2">
-                <aside class="sidebar">
-                    {% if page.sidebar_first %}
-                        {{ page.sidebar_first }}
-                    {% endif %}
-                </aside>
-                <!-- .sidebar -->
-            </div>
-        </div>
-        <!-- .grids -->
+        <div class="cleared"></div>
     </div>
 </section>
 {% include theme_path ~ "/templates/footer.html.twig" %}
