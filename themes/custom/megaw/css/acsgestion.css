@@ -21,9 +21,6 @@
 }
 .site-logo  a {
     display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
     display: flex;
     -ms-align-items: center;
     align-items: center;
@@ -52,6 +49,9 @@
 .toggle-menu {
     top: 75px;
 }
+.header-text-white .contact-detail-line ul li a {
+    color: rgba(255,255,255,0.8);
+}
 .header-text-white .site-logo a {
     display: -webkit-flex;
     display: -moz-flex;
@@ -66,14 +66,10 @@
     #page #header {
         background: #353030;
         position: fixed;
-        height: 75px;
         top: 0;
     }
-    #page .page-header {
-        padding-top: 75px;
-    }
-    #header #top-bar-open {
-        display: none;
+    #page .page-header, #block-homestandard {
+        padding-top: 110px;
     }
     img.logo-retina, img.logo-normal {
         max-height: 50px;
@@ -246,7 +242,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         background-color: #353232;
     }
     #block-megawblockhtmlsection3index .icon-box-item {
-        background-color: #fff;
+        background-color: #464040;
     }
 
     #block-megawblockhtmlsection3index .icon-box-title {
@@ -254,7 +250,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         padding-bottom: 15px;
     }
     #block-megawblockhtmlsection3index .icon-box-title a {
-        color: #032c54;
+        color: #fff;
     }
     #block-megawblockhtmlsection3index .icon-box-title a:hover {
         color: #f9bf3b;
@@ -384,9 +380,6 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     }
     .owl-item {
         display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
         display: flex;
         height: 100px;
         -ms-align-items: center;
@@ -413,7 +406,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         background-color: #e1e4e9;
     }
     .yamlform-submission-nous-contacter-form .google-map-container {
-        height: 250px;
+        height: 325px;
     }
     iframe .place-card {
         display: none;
@@ -430,14 +423,22 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     }
 
     .yamlform-submission-nous-contacter-form .informations {
-        text-transform: none;
-        font-weight: 16px;
         color: #858484;
-        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-top: -10px;
+        font-size: 15px;
+    }
+    .yamlform-submission-nous-contacter-form .informations a {
+        color: #858484;
+        text-transform: none;
     }
     .yamlform-submission-nous-contacter-form .informations p {
         text-align: left;
         padding: 0;
+    }
+
+    #yamlform-submission-nous-contacter-form input {
+        margin-bottom: 20px;
     }
 
     #yamlform-submission-nous-contacter-form label,
@@ -480,13 +481,17 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     .yamlform-submission-nous-recommander-form .form-actions {
         padding: 0 5px;
     }
+    .yamlform-submission-nous-recommander-form p {
+        padding: 10px 0 5px;
+    }
     #yamlform-submission-nous-contacter-form .form-actions input {
         margin: 0;
     }
     #contact-message-nous-contacter-form select {
         padding: 12px 0px 10px 12px;
         margin-bottom: 10px;
-        margin-top: 0pxcolor: #808080;
+        margin-top: 0px;
+        color: #808080;
         border: 1px solid #999999;
         font-size: 16px;
         line-height: 20px;
@@ -607,7 +612,6 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
 /*! Normal page */
     .header-black {
         background: #353030;
-        color:
     }
     .header-text-gold {
     }
@@ -630,7 +634,6 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     }
     .paragraph h3 {
         padding: 0 0 10px 0;
-        text-transform: uppercase;
         font-size: 20px;
         line-height: 24px;
     }
@@ -665,12 +668,23 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
 
     .acs-page-title h1 {
         color: #f9bf3b;
-        text-transform: uppercase;
+        text-transform: capitalize;
         padding: 30px 0;
+        text-align: center;
+    }
+    @media screen and (max-width: 1000px) {
+        .acs-page-title h1 {
+            padding: 15px 0;
+            font-size: 30px;
+        }
+        .content-section-title {
+            font-size: 26px;
+        }
     }
 
     .acs-nos-bureaux {
         padding-top: 40px;
+        padding-bottom: 20px;
         font-family: 'Montserrat', Arial !important;
         color: #858484;
     }
@@ -691,9 +705,6 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     }
     #simulateur .wrap-column {
         display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
         display: flex;
         justify-content: center;
     }
@@ -708,9 +719,6 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     }
     .form-row {
         display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
         display: flex;
         -ms-align-items: center;
         align-items: center;
@@ -835,8 +843,8 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     .acs-slider-headline {
         font-family: Montserrat;
         text-transform: none;
-        font-weight: bold;
-        font-size: 3.5em;
+        font-weight: normal;
+        font-size: 3em;
     }
     .acs-slider-button {
         font-family: 'Montserrat', Arial !important;
@@ -856,9 +864,6 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         font-weight: bold;
         color: #fff;
         display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
         display: flex;
         -ms-align-items: center;
         align-items: center;

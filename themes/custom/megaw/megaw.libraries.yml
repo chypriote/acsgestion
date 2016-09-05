@@ -3,9 +3,9 @@ megaw-lib:
   css:
     theme:
       http://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900%7COpen+Sans:300%7CIndie+Flower:regular%7COswald:300,regular,700&#038;subset=latin%2Clatin-ext: {}
-      css/maxmegamenu.css: {}
       http://fonts.googleapis.com/css?family=Montserrat%3A400%2C700&#038;ver=4.4.2: {}
       http://fonts.googleapis.com/css?family=Open+Sans%3A300%2C300italic%2C400%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic&#038;ver=4.4.2: {}
+      css/maxmegamenu.css: {}
       style.css: {}
       responsive.css: {}
       font-awesome/css/font-awesome.min.css: {}
@@ -15,7 +15,6 @@ megaw-lib:
       css/owl.carousel.css: {}
       css/acsgestion.css: {}
   js:
-    js/maxmegamenu.js: {}
     js/owl.carousel.min.js: {}
     js/script.js: {}
     js/update.js: {}

@@ -61,8 +61,8 @@
         // Carousel partenaires
         jQuery('.logo-client').owlCarousel({
             items: 8,
-            autoPlay: true
-        })
+            autoPlay: 3000
+        });
 
         function getRounded(value) {
             return Math.round(value * 100) / 100;
