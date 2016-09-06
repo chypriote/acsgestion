@@ -85,7 +85,7 @@
             var pow = 1 + (taux / 12) ^ (-1 * mois);
 
             var result = (montant * taux / 12) / (1 - pow);
-            var mens_assurance = montant * txasur / 12;
+            var mens_assurance = montant * txasur / 12 / 100;
             var total_assurance = mens_assurance * mois;
 
             jQuery('#result').html(getRounded(result));
@@ -95,7 +95,20 @@
             jQuery('.second-form').slideDown();
         })
 
+
     });
 
 })(jQuery);
 
+window.initMap = function () {
+    var map = new google.maps.Map(document.getElementById('google-map'), {
+        center: {lat: 48.872646, lng: 2.330584},
+        zoom: 18,
+        disableDefaultUI: true
+    });
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(48.872646, 2.330584),
+        title:"ACS Gestion Privée",
+        map: map
+    });
+};

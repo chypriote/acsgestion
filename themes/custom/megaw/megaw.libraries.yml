@@ -19,6 +19,7 @@ megaw-lib:
     js/owl.carousel.min.js: {}
     js/script.js: {}
     js/update.js: {}
+    https://maps.googleapis.com/maps/api/js?key=AIzaSyBq-Q6fUSUEcDIcNHHn7Fjd2EFOJLXAkUQ&callback=initMap&language=fr&region=FR: {}
 
   dependencies:
     - core/jquery

@@ -403,6 +403,10 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     .yamlform-submission-nous-contacter-form .google-map-container {
         height: 325px;
     }
+    #google-map {
+        width: 100%;
+        height: 100%;
+    }
     #block-megawblockhtmlfooter .footer-copyright {
         padding: 20px 0;
     }
@@ -866,23 +870,57 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     }
 
 /*! Slider */
+    #block-homestandard {
+        position: relative;
+    }
+    .acs-slider-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom:0;
+        right:0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        z-index: 2;
+    }
     .acs-slider-text {
         font-family: Montserrat;
         text-transform: uppercase;
-        font-weight: bold;
         font-size: 1.8em;
+        color: white;
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid #f9bf3b;
+        white-space: nowrap;
+        order: 1;
+        padding-bottom:5px;
+        margin-top: 270px;
+        margin-bottom: 5vh;
+        font-weight: normal;
     }
     .acs-slider-topline {
         font-family: Montserrat;
         text-transform: none;
         font-weight: normal;
-        font-size: 3em;
+        font-size: 2rem;
+        color: white;
+        display: block;
+        text-align: center;
+        white-space: nowrap;
+        order: 2;
+        width: 100%;
+        margin-bottom: 20vh;
     }
     .acs-slider-headline {
         font-family: Montserrat;
         text-transform: none;
         font-weight: normal;
-        font-size: 3em;
+        font-size: 2rem;
+        border-bottom:none;
+        color: #fff;
+        white-space: nowrap;
     }
     .acs-slider-button {
         font-family: 'Montserrat', Arial !important;
@@ -899,12 +937,14 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         background-color: transparent;
         border: 2px solid #fff;
         font-weight: bold;
-        color: #fff;
         display: -webkit-flex;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 1.3em;
+        color: #fff;
+        white-space: nowrap;
+        order: 3;
     }
     .acs-slider-button a {
         display: flex;
@@ -913,4 +953,27 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     }
     .acs-slider-button:hover {
         background-color: #f9bf3b;
+    }
+    @media (min-width: 1001px) and (max-width: 1200px) {
+        .acs-slider-text {
+            margin-top:200px;
+        }
+        .acs-slider-button {
+            margin-bottom: 13vh;
+        }
+    }
+    @media (min-width: 781px) and (max-width: 1000px) {
+        .acs-slider-text {
+            font-size:.8em;
+            margin-top:120px;
+        }
+        .acs-slider-topline {
+            font-size: 1em;
+        }
+        .acs-slider-headline {
+            font-size: 1em;
+        }
+        .acs-slider-button {
+            font-size: .8em;
+        }
     }
