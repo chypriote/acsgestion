@@ -22,7 +22,6 @@
 .site-logo  a {
     display: -webkit-flex;
     display: flex;
-    -ms-align-items: center;
     align-items: center;
     padding: 20px 10px;
     height: auto;
@@ -54,11 +53,7 @@
 }
 .header-text-white .site-logo a {
     display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
     display: flex;
-    -ms-align-items: center;
     align-items: center;
     height: auto;
 }
@@ -69,7 +64,7 @@
         top: 0;
     }
     #page .page-header, #block-homestandard {
-        padding-top: 110px;
+        padding-top: 105px;
     }
     img.logo-retina, img.logo-normal {
         max-height: 50px;
@@ -88,10 +83,10 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     margin-left: 0;
 }
 .toolbar-tray-open #scroll-header {
-    margin-top: 77.9931px;
+    margin-top: 78px;
 }
 .toolbar-tray-open #background {
-    padding-top: 77.9931px;
+    padding-top: 78px;
 }
 #toolbar-administration {
     z-index: 1000;
@@ -194,7 +189,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     #block-views-block-megaw-block-features-block-features-1 .content-column3_1 {
         float: left;
         width: 25%;
-        padding: 0px 20px;
+        padding: 0 20px;
     }
     @media screen and (max-width: 1000px) {
         #block-views-block-megaw-block-features-block-features-1 .content-column3_1 {
@@ -204,7 +199,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     }
     @media screen and (max-width: 1180px) {
         #block-views-block-megaw-block-features-block-features-1 .content-column3_1 {
-            padding: 0px 15px;
+            padding: 0 15px;
         }
     }
 
@@ -382,7 +377,6 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         display: -webkit-flex;
         display: flex;
         height: 100px;
-        -ms-align-items: center;
         align-items: center;
         justify-content: center;
     }
@@ -398,7 +392,8 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         position: relative;
     }
 
-    .yamlform-submission-nous-contacter-form {
+    .yamlform-submission-nous-contacter-form,
+    #yamlform-contact-page {
         background-color: #e1e4e9;
     }
 
@@ -407,9 +402,6 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     }
     .yamlform-submission-nous-contacter-form .google-map-container {
         height: 325px;
-    }
-    iframe .place-card {
-        display: none;
     }
     #block-megawblockhtmlfooter .footer-copyright {
         padding: 20px 0;
@@ -427,6 +419,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         padding-bottom: 15px;
         margin-top: -10px;
         font-size: 15px;
+        text-transform: none;
     }
     .yamlform-submission-nous-contacter-form .informations a {
         color: #858484;
@@ -448,13 +441,21 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
 
 
     #yamlform-submission-nous-contacter-form,
-    #contact-message-nous-contacter-form {
+    #contact-message-nous-contacter-form,
+    #yamlform-submission-page-contact-form {
         display: flex;
         flex-wrap: wrap;
     }
-    #yamlform-submission-nous-contacter-form  .yamlform-progress {
+    #yamlform-submission-nous-contacter-form  .yamlform-progress,
+    #yamlform-submission-page-contact-form #edit-back-to,
+    #yamlform-submission-nous-contacter-form #edit-back-to,
+    #yamlform-contact-page div[role="contentinfo"] {
         display: none;
     }
+    #yamlform-submission-nous-contacter-form {
+        text-transform: none;
+    }
+
     /* Text inputs */
     .js-form-type-textfield,
     .field--type-string {
@@ -471,26 +472,36 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         flex: 100% 0 0;
         padding: 0 5px;
     }
+    /* select */
+    .js-form-type-select {
+        flex: 100% 0 0;
+        padding: 0 5px;
+    }
+
     #yamlform-submission-nous-contacter-form textarea,
-    #contact-message-nous-contacter-form textarea {
+    #contact-message-nous-contacter-form textarea,
+    #form-contact-page textarea {
         width: 100%;
         background-color: #d1d4d9;
     }
     #yamlform-submission-nous-contacter-form .form-actions,
     #contact-message-nous-contacter-form .form-actions,
-    .yamlform-submission-nous-recommander-form .form-actions {
+    .yamlform-submission-nous-recommander-form .form-actions,
+    #form-contact-page .form-actions {
         padding: 0 5px;
     }
     .yamlform-submission-nous-recommander-form p {
         padding: 10px 0 5px;
     }
-    #yamlform-submission-nous-contacter-form .form-actions input {
+    #yamlform-submission-nous-contacter-form .form-actions input,
+    #form-contact-page input {
         margin: 0;
     }
-    #contact-message-nous-contacter-form select {
-        padding: 12px 0px 10px 12px;
+    #contact-message-nous-contacter-form select,
+    #form-contact-page select {
+        padding: 12px 0 10px 12px;
         margin-bottom: 10px;
-        margin-top: 0px;
+        margin-top: 0;
         color: #808080;
         border: 1px solid #999999;
         font-size: 16px;
@@ -533,7 +544,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         border: 2px solid #2e2e2e;
         padding: 10px 24px;
         display: inline-block;
-        border-radius: 0px !important;
+        border-radius: 0 !important;
         cursor: pointer;
         text-decoration: none;
         transition: all 300ms ease-out;
@@ -678,7 +689,11 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
             font-size: 30px;
         }
         .content-section-title {
-            font-size: 26px;
+            font-size: 20px;
+            padding-bottom: 10px;
+        }
+        .content-section-title:before {
+            width: 100px;
         }
     }
 
@@ -720,7 +735,6 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     .form-row {
         display: -webkit-flex;
         display: flex;
-        -ms-align-items: center;
         align-items: center;
         padding-bottom: 15px;
         font-size: 18px;
@@ -730,10 +744,10 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     .form-row label {
         flex-grow: 1;
     }
-    .form-row input[type="text"] {
-        margin: 0;
+    .form-row input[type="text"],
+    .form-row select {
         border-radius: 5px;
-        margin-right: 10px;
+        margin: 0 10px 0 0;
         max-width: 50%;
         padding: 12px;
         text-align: right;
@@ -774,7 +788,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     .form-result {
         font-weight: bold;
         font-size: 20px;
-        width: 75%;
+        width: 70%;
         margin: auto;
         text-align: center;
         padding-bottom: 15px;
@@ -801,14 +815,13 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         margin-bottom: 10px;
         margin-right: 10px;
         display: inline-block;
-        border-radius: 0px !important;
+        border-radius: 0 !important;
         cursor: pointer;
         text-decoration: none;
-        border: 0px;
+        border: 0;
         transition: all 300ms ease-out;
         -webkit-transition: all 300ms ease-out;
         background-color: #f9bf3b;
-        border-color: transparent;
     }
     #simulateur .contact-us:hover {
         background-color: #2e2e2e;
@@ -825,6 +838,31 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         background-color: #f9bf3b;
         border-color: #f9bf3b;
         color: #2e2e2e;
+    }
+    @media (max-width: 1000px) {
+        .form-row {
+            flex-wrap: wrap;
+        }
+        .form-row input[type="text"],
+        .form-row select {
+            flex: 83% 0 0;
+        }
+        .form-row .fa-stack {
+            flex: 5% 0 0;
+        }
+        .form-row .type {
+            padding-left: 10px;
+            margin-top: -15px;
+        }
+        .form-row .single-letter {
+            font-size: 30px;
+        }
+        .form-result {
+            width: 100%;
+        }
+        .form-cost {
+            width: 100%;
+        }
     }
 
 /*! Slider */
@@ -848,13 +886,12 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     }
     .acs-slider-button {
         font-family: 'Montserrat', Arial !important;
-        font-size: 14px;
         line-height: 20px;
         letter-spacing: 2px;
         text-transform: uppercase;
         padding: 10px 24px;
         display: inline-block;
-        border-radius: 0px !important;
+        border-radius: 0 !important;
         cursor: pointer;
         text-decoration: none;
         transition: all 300ms ease-out;
@@ -865,7 +902,6 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         color: #fff;
         display: -webkit-flex;
         display: flex;
-        -ms-align-items: center;
         align-items: center;
         justify-content: center;
         font-size: 1.3em;

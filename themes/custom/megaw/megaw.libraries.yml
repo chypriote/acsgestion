@@ -15,6 +15,7 @@ megaw-lib:
       css/owl.carousel.css: {}
       css/acsgestion.css: {}
   js:
+    js/math.min.js: {}
     js/owl.carousel.min.js: {}
     js/script.js: {}
     js/update.js: {}

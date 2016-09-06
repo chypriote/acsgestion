@@ -62,7 +62,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+figure, figcaption, footer, header,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -83,7 +83,7 @@ time, mark, audio, video {
 
 
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, header, menu, nav, section {
 	display: block;
 }
 
@@ -458,7 +458,6 @@ HEADER SECTIONS
 }
 
 @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
-only screen and (-moz-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
 only screen and (min-device-pixel-ratio: 1.5) {
 	.site-logo .logo-normal, .logo-normal{
@@ -1044,7 +1043,7 @@ h6.section-widget-title{
 
 
 .widget-element-bottom{
-	margin-bottom: 0px !;
+	margin-bottom: 0px;
 }
 
 
@@ -2208,17 +2207,6 @@ ul.custom-list.icon-square-bold i{
 	vertical-align:-3px;
 }
 
-// .milestone-number:before{
-// 	position:absolute;
-// 	width:25px;
-// 	height:1px;
-// 	content:'';
-// 	left:50%;
-// 	margin-left:-12px;
-// 	top:60px;
-// 	background-color:#4c4c4c;
-// }
-
 
 
 
@@ -2801,7 +2789,7 @@ ul.custom-list.icon-square-bold i{
 	top:0;
 	width:100%;
 	height:100%;
-	background-repeat:none;
+	background-repeat:no-repeat;
 	background-position:center center;
 	background-size:cover;
 }
@@ -2849,7 +2837,7 @@ ul.custom-list.icon-square-bold i{
 	top:0;
 	width:100%;
 	height:100%;
-	background-repeat:none;
+	background-repeat: no-repeat;
 	background-position:center center;
 	background-size:cover;
 }
@@ -3100,7 +3088,6 @@ pre{
 	padding:10px 20px;
     white-space: pre-wrap;       /* CSS 3 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
