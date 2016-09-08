@@ -47,7 +47,9 @@
                 jQuery(this).children('a').attr('href', null);
                 jQuery(this).addClass('toggle-submenu');
                 jQuery(this).children('ul').css('display', 'none');
+
                 jQuery(this).on('click', function() {
+                    jQuery('#block-togglemenu').find('.open').not(jQuery(this)).removeClass('open').find('> ul').slideUp();
                     jQuery(this).toggleClass('open');
                     jQuery(this).children('ul').slideToggle();
                 })
@@ -111,7 +113,7 @@
 window.initMap = function () {
     var map = new google.maps.Map(document.getElementById('google-map'), {
         center: {lat: 48.872646, lng: 2.330584},
-        zoom: 18,
+        zoom: 16,
         disableDefaultUI: true
     });
     var marker = new google.maps.Marker({
@@ -120,3 +122,26 @@ window.initMap = function () {
         map: map
     });
 };
+
+function slide() {
+    var activeElement = jQuery('.acs-slider-slides li.active');
+    activeElement.animate({
+        'right': '0',
+        'opacity': '1'
+    }, 500).delay(3000).animate({
+        'opacity': '0',
+        'left': '100%'
+    }, 500, function() {
+        var nextActiveElement = activeElement.next('li');
+        if (nextActiveElement.length < 1) {
+            nextActiveElement = jQuery('.acs-slider-slides li').first();
+        }
+        nextActiveElement.addClass('active');
+        activeElement.removeClass('active');
+        activeElement.css('left', '0');
+        activeElement.css('right', '100%');
+        slide();
+    });
+}
+
+slide();

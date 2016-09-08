@@ -54,8 +54,8 @@
                         <i class="fa fa-info fa-stack-1x fa-inverse"></i>
                     </span>
                     <select id="duree" name="duree" required>
-                        {%  for i in 2..30 %}
-                            <option value="{{ i }}">{{ i }}</option>
+                        {%  for i in 5..30 %}
+                            <option value="{{ i }}" {{ i == 25 ? 'selected' }}>{{ i }}</option>
                         {% endfor %}
                     </select>
                     <div class="type">an(s)</div>
@@ -93,7 +93,7 @@
                     Le coût total de votre crédit sera de <span id="total-cost">16 729,08 €</span> dont <span id="total-assurance">5 400,00 €</span> d'assurance.
                 </div>
                 <div class="form-button">
-                    <a href="/contact/nous_contacter" class="button contact-us">Contactez-nous</a>
+                    <a href="mailto:contact@acsgestionprivee.fr" class="button contact-us">Contactez-nous</a>
                 </div>
             </div>
         </div>
