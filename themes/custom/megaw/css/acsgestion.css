@@ -35,6 +35,12 @@
 #scroll-header .site-logo img {
     max-height: 30px;
 }
+#top-bar {
+    display: block;
+}
+#top-bar-open {
+    display: none;
+}
 #toggle-menu-button {
     top: 15px;
 }
@@ -47,6 +53,29 @@
 }
 .toggle-menu {
     top: 75px;
+}
+.toggle-submenu ul {
+    padding: 15px 23px 0;
+}
+.toggle-submenu ul li {
+    font-size: 12px !important;
+    line-height: 14px !important;
+    margin-bottom: 12px;
+}
+li.toggle-submenu {
+    position: relative;
+}
+li.toggle-submenu:after {
+    content: '\f054';
+    font-family: FontAwesome;
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all .2s ease-in-out;
+}
+li.toggle-submenu.open:after {
+    transform: rotate(90deg);
 }
 .header-text-white .contact-detail-line ul li a {
     color: rgba(255,255,255,0.8);
@@ -261,6 +290,15 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     }
 
 /*! Bloc solutions investissement */
+    @media (max-width: 1000px) {
+        #block-views-block-megaw-portfolios-block-block-latest-projects1 .portfolio-cell {
+            border: 15px solid transparent;
+        }
+    }
+    #block-views-block-megaw-portfolios-block-block-latest-projects1 .portfolio-cell img {
+        margin-top: -20%;
+    }
+
     #block-views-block-megaw-portfolios-block-block-latest-projects1 {
         background-color: #464040;
     }
@@ -752,7 +790,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     .form-row select {
         border-radius: 5px;
         margin: 0 10px 0 0;
-        max-width: 50%;
+        max-width: 30%;
         padding: 12px;
         text-align: right;
         color: #2e2e2e;
@@ -799,6 +837,7 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
     }
     .form-result span {
         color: #ed9e07;
+        white-space: nowrap;
     }
     .form-cost {
         text-align: center;
@@ -847,16 +886,21 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
         .form-row {
             flex-wrap: wrap;
         }
+        .form-row label {
+            flex: 100% 0 0;
+            padding: 10px 0 5px
+        }
         .form-row input[type="text"],
         .form-row select {
             flex: 83% 0 0;
+            max-width: 65%;
         }
         .form-row .fa-stack {
             flex: 5% 0 0;
         }
         .form-row .type {
             padding-left: 10px;
-            margin-top: -15px;
+            font-size: 22px;
         }
         .form-row .single-letter {
             font-size: 30px;

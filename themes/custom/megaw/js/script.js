@@ -5,12 +5,6 @@
         var show_menu = false;
         var toggle = true;
 
-        //show top bar
-        jQuery('#top-bar-open').click(function() {
-            jQuery(this).parent().find('#top-bar').slideToggle();
-        });
-
-
         //highlight current mega menu
         var mega_menu_item = jQuery('.mega-menu-item-has-children').find('.mega-sub-menu').find('.current-menu-item');
         if (mega_menu_item.length > 0) {
@@ -48,9 +42,21 @@
             jQuery('#back_top').hide();
         }
 
+        jQuery('#block-togglemenu').find('> ul > li').each(function() {
+            if (jQuery(this).find('ul').length != 0) {
+                jQuery(this).children('a').attr('href', null);
+                jQuery(this).addClass('toggle-submenu');
+                jQuery(this).children('ul').css('display', 'none');
+                jQuery(this).on('click', function() {
+                    jQuery(this).toggleClass('open');
+                    jQuery(this).children('ul').slideToggle();
+                })
+            }
+        });
+
         jQuery('.mega-menu-item-type-custom').each(function() {
             if (jQuery(this).find('.mega-sub-menu').length != 0) {
-                jQuery(this).children('a').attr('href', null)
+                jQuery(this).children('a').attr('href', null);
             }
         });
 
@@ -82,16 +88,18 @@
             var txasur = jQuery('#taux-assurance').val();
             var mois = ans * 12;
 
-            var pow = 1 + (taux / 12) ^ (-1 * mois);
+            taux = taux / 100;
+            var pow = Math.pow(1 + (taux / 12), -1 * mois);
 
             var result = (montant * taux / 12) / (1 - pow);
+
             var mens_assurance = montant * txasur / 12 / 100;
             var total_assurance = mens_assurance * mois;
 
-            jQuery('#result').html(getRounded(result));
-            jQuery('#assurance').html(getRounded(mens_assurance));
-            jQuery('#total-assurance').html(getRounded(total_assurance));
-            jQuery('#total-cost').html(getRounded(montant + total_assurance));
+            jQuery('#result').html(getRounded(result) + ' €');
+            jQuery('#assurance').html(getRounded(mens_assurance) + ' €');
+            jQuery('#total-assurance').html(getRounded(total_assurance) + ' €');
+            jQuery('#total-cost').html(getRounded(montant + total_assurance) + ' €');
             jQuery('.second-form').slideDown();
         })
 
