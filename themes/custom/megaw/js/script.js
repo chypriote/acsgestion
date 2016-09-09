@@ -113,7 +113,7 @@
 window.initMap = function () {
     var map = new google.maps.Map(document.getElementById('google-map'), {
         center: {lat: 48.872646, lng: 2.330584},
-        zoom: 16,
+        zoom: 15,
         disableDefaultUI: true
     });
     var marker = new google.maps.Marker({
